@@ -49,15 +49,15 @@ ${formData.message ? `Message : ${formData.message}` : ''}
 
 Merci !`);
     
-    window.open(`https://wa.me/+2250000000000?text=${message}`, "_blank");
+    window.open(`https://wa.me/+2250778023331?text=${message}`, "_blank");
   };
 
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Téléphone",
-      value: "+225 XX XX XX XX XX",
-      action: "tel:+2250000000000"
+      value: "+225 07 78 02 33 31",
+      action: "tel:+2250778023331"
     },
     {
       icon: <Mail className="w-6 h-6" />,

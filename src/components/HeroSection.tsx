@@ -4,7 +4,7 @@ import agnidomPhoto from "@/assets/agnidom-photo.jpg";
 
 const HeroSection = () => {
   const handleWhatsAppContact = () => {
-    window.open("https://wa.me/+2250000000000?text=Bonjour%20ALLNTIC,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services.", "_blank");
+    window.open("https://wa.me/+2250778023331?text=Bonjour%20ALLNTIC,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services.", "_blank");
   };
 
   const scrollToContact = () => {
@@ -28,15 +28,15 @@ const HeroSection = () => {
           {/* Photo professionnelle */}
           <div className="order-2 lg:order-1 flex justify-center">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-accent rounded-3xl blur-2xl opacity-50 animate-glow-pulse" />
-              <div className="relative bg-white/10 backdrop-blur-sm p-8 rounded-3xl border border-white/20">
+              <div className="absolute inset-0 bg-gradient-accent rounded-3xl blur-3xl opacity-60 mega-glow" />
+              <div className="relative bg-white/15 backdrop-blur-lg p-8 rounded-3xl border-2 border-white/30 hover-mega">
                 <img
                   src={agnidomPhoto}
                   alt="Agnidom Pygnali Aboubakar - Technicien ALLNTIC"
-                  className="w-80 h-96 object-cover rounded-2xl shadow-elegant hover-lift"
+                  className="w-80 h-96 object-cover rounded-2xl shadow-floating glow-accent"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-gradient-accent text-white px-6 py-3 rounded-xl font-medium shadow-glow">
-                  <span className="gradient-text font-bold">Expert IT</span>
+                <div className="absolute -bottom-4 -right-4 bg-white text-navy-dark px-6 py-3 rounded-xl font-bold shadow-mega border-2 border-cyan-electric/30">
+                  <span className="text-cyan-electric">Expert IT</span>
                 </div>
               </div>
             </div>
@@ -55,12 +55,12 @@ const HeroSection = () => {
               
               <div className="space-y-6 animate-slide-in-right" style={{ animationDelay: "0.3s" }}>
                 {/* Biographie inspirante */}
-                <div className="glass-card p-6 rounded-xl border border-white/20">
-                  <p className="text-lg leading-relaxed text-gray-100">
-                    Agnidom Pygnali Aboubakar (ALLNTIC) est un <strong className="text-cyan-electric">technicien polyvalent</strong> en systèmes informatiques, réseaux, développement web et sécurité électronique, basé à <strong className="text-cyan-electric">Abidjan</strong>. Actuellement en poste chez EGC-CI, il intervient dans la maintenance, l'exploitation et la sécurisation d'infrastructures informatiques, tout en mettant à profit son savoir-faire en développement de solutions numériques et installation de dispositifs de sécurité électronique.
+                <div className="glass-card p-8 rounded-2xl border-2 border-white/30 hover-lift">
+                  <p className="text-lg leading-relaxed text-white font-medium">
+                    Agnidom Pygnali Aboubakar (ALLNTIC) est un <strong className="text-cyan-glow font-bold">technicien polyvalent</strong> en systèmes informatiques, réseaux, développement web et sécurité électronique, basé à <strong className="text-cyan-glow font-bold">Abidjan</strong>. Actuellement en poste chez EGC-CI, il intervient dans la maintenance, l'exploitation et la sécurisation d'infrastructures informatiques, tout en mettant à profit son savoir-faire en développement de solutions numériques et installation de dispositifs de sécurité électronique.
                   </p>
-                  <p className="text-lg leading-relaxed text-gray-100 mt-4">
-                    Sa mission est de garantir la <strong className="text-orange-accent">fiabilité, la performance et la sécurité</strong> des systèmes numériques et physiques des organisations grâce à des solutions intégrées, durables et pragmatiques.
+                  <p className="text-lg leading-relaxed text-white font-medium mt-4">
+                    Sa mission est de garantir la <strong className="text-orange-accent font-bold">fiabilité, la performance et la sécurité</strong> des systèmes numériques et physiques des organisations grâce à des solutions intégrées, durables et pragmatiques.
                   </p>
                 </div>
 
