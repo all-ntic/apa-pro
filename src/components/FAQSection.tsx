@@ -87,7 +87,7 @@ const FAQSection = () => {
                 
                 <AccordionContent className="px-6 pb-6">
                   <div className="ml-16 pt-2">
-                    <p className="text-gray-300 leading-relaxed">
+                    <p className="text-white/90 leading-relaxed text-base">
                       {faq.answer}
                     </p>
                   </div>

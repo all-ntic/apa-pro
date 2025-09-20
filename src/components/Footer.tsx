@@ -124,20 +124,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* SEO Keywords footer */}
-        <div className="mt-8 pt-6 border-t border-white/10">
-          <div className="text-xs text-gray-500 leading-relaxed">
-            <p className="mb-2">
-              <strong>Mots-clés :</strong> technicien informatique Abidjan, maintenance informatique Côte d'Ivoire, 
-              dépannage réseau, sécurité électronique, vidéosurveillance Abidjan, installation caméra IP, 
-              contrôle d'accès, développement web Abidjan, IT support Côte d'Ivoire, solutions numériques
-            </p>
-            <p>
-              ALLNTIC - Expert en maintenance informatique, réseaux, développement web et sécurité électronique 
-              à Abidjan. Solutions IT professionnelles pour entreprises en Côte d'Ivoire.
-            </p>
-          </div>
-        </div>
       </div>
     </footer>
   );
