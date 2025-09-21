@@ -30,41 +30,39 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      // Création du contenu email
-      const emailContent = `
-Nouveau message de contact depuis le site ALLNTIC
-
-Nom: ${formData.name}
-Email: ${formData.email}
-Téléphone: ${formData.phone || 'Non renseigné'}
-Service demandé: ${formData.service || 'Non spécifié'}
-
-Message:
-${formData.message}
-
----
-Envoyé depuis le formulaire de contact ALLNTIC
-Date: ${new Date().toLocaleString('fr-FR')}
-      `;
-
-      // Ouvrir le client email avec les informations pré-remplies
-      const mailtoLink = `mailto:all.ntic225@gmail.com,contact@allntic.info?subject=Demande de contact - ${formData.service || 'Service IT'}&body=${encodeURIComponent(emailContent)}`;
-      window.open(mailtoLink);
-
-      toast({
-        title: "Redirection vers votre client email",
-        description: "Votre message est prêt à être envoyé depuis votre application email.",
+      const response = await fetch('https://fymncmzluufusezawbxo.supabase.co/functions/v1/send-contact-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5bW5jbXpsdXVmdXNlemF3YnhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg0ODU4NTAsImV4cCI6MjA3NDA2MTg1MH0.Vg_ZARwcbcF5-VDdnGpx22rhbAnL6mgCEuWYeh25t5w`
+        },
+        body: JSON.stringify(formData)
       });
-      
-      // Reset du formulaire après un délai
-      setTimeout(() => {
-        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
-      }, 2000);
 
+      const result = await response.json();
+
+      if (response.ok) {
+        toast({
+          title: "Message envoyé !",
+          description: "Votre demande a été envoyée avec succès. Nous vous contacterons bientôt.",
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: ""
+        });
+      } else {
+        throw new Error(result.error || 'Erreur inconnue');
+      }
     } catch (error) {
+      console.error('Error sending email:', error);
       toast({
         title: "Erreur",
-        description: "Une erreur est survenue. Veuillez réessayer ou nous contacter directement.",
+        description: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
         variant: "destructive"
       });
     } finally {
