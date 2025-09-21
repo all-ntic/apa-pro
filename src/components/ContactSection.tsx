@@ -29,15 +29,47 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulation d'envoi
-    setTimeout(() => {
+    try {
+      // Création du contenu email
+      const emailContent = `
+Nouveau message de contact depuis le site ALLNTIC
+
+Nom: ${formData.name}
+Email: ${formData.email}
+Téléphone: ${formData.phone || 'Non renseigné'}
+Service demandé: ${formData.service || 'Non spécifié'}
+
+Message:
+${formData.message}
+
+---
+Envoyé depuis le formulaire de contact ALLNTIC
+Date: ${new Date().toLocaleString('fr-FR')}
+      `;
+
+      // Ouvrir le client email avec les informations pré-remplies
+      const mailtoLink = `mailto:all.ntic225@gmail.com,contact@allntic.info?subject=Demande de contact - ${formData.service || 'Service IT'}&body=${encodeURIComponent(emailContent)}`;
+      window.open(mailtoLink);
+
       toast({
-        title: "Message envoyé avec succès !",
-        description: "Nous vous contacterons sous 24h maximum.",
+        title: "Redirection vers votre client email",
+        description: "Votre message est prêt à être envoyé depuis votre application email.",
       });
-      setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      
+      // Reset du formulaire après un délai
+      setTimeout(() => {
+        setFormData({ name: "", email: "", phone: "", service: "", message: "" });
+      }, 2000);
+
+    } catch (error) {
+      toast({
+        title: "Erreur",
+        description: "Une erreur est survenue. Veuillez réessayer ou nous contacter directement.",
+        variant: "destructive"
+      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   const handleWhatsAppContact = () => {
@@ -61,9 +93,15 @@ Merci !`);
     },
     {
       icon: <Mail className="w-6 h-6" />,
-      title: "Email",
-      value: "contact@allntic.ci",
-      action: "mailto:contact@allntic.ci"
+      title: "Email Principal",
+      value: "all.ntic225@gmail.com",
+      action: "mailto:all.ntic225@gmail.com"
+    },
+    {
+      icon: <Mail className="w-6 h-6" />,
+      title: "Email Contact",
+      value: "contact@allntic.info",
+      action: "mailto:contact@allntic.info"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
