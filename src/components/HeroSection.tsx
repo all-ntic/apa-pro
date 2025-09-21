@@ -24,26 +24,26 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="flex flex-col lg:flex-row gap-12 items-center">
           {/* Photo professionnelle */}
-          <div className="order-2 lg:order-1 flex justify-center">
+          <div className="flex-shrink-0 lg:w-1/2 flex justify-center lg:justify-start">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-accent rounded-3xl blur-3xl opacity-60 mega-glow" />
-              <div className="relative bg-white/15 backdrop-blur-lg p-8 rounded-3xl border-2 border-white/30 hover-mega">
+              <div className="relative bg-white/15 backdrop-blur-lg p-6 rounded-3xl border-2 border-white/30 hover-mega">
                 <img
                   src={agnidomPhoto}
                   alt="Agnidom Pygnali Aboubakar - Technicien ALLNTIC"
-                  className="w-80 h-96 object-cover rounded-2xl shadow-floating glow-accent"
+                  className="w-72 h-80 lg:w-80 lg:h-96 object-cover rounded-2xl shadow-floating glow-accent"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-white text-navy-dark px-6 py-3 rounded-xl font-bold shadow-mega border-2 border-cyan-electric/30">
-                  <span className="text-cyan-electric">Expert IT</span>
+                <div className="absolute -bottom-4 -right-4 bg-white text-navy-dark px-4 py-2 lg:px-6 lg:py-3 rounded-xl font-bold shadow-mega border-2 border-cyan-electric/30">
+                  <span className="text-cyan-electric text-sm lg:text-base">Expert IT</span>
                 </div>
               </div>
             </div>
           </div>
 
           {/* Contenu textuel */}
-          <div className="order-1 lg:order-2 text-white space-y-8">
+          <div className="flex-1 lg:w-1/2 text-white space-y-6 lg:space-y-8">
             <div className="space-y-4">
               <h1 className="text-5xl lg:text-7xl font-bold leading-tight animate-fade-in">
                 <span className="gradient-text">Agnidom Pygnali</span>
