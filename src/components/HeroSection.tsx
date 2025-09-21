@@ -24,70 +24,64 @@ const HeroSection = () => {
       </div>
 
       <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Photo professionnelle */}
-          <div className="flex-shrink-0 lg:w-1/2 flex justify-center lg:justify-start">
+        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
+          {/* Photo professionnelle - Style Atisso Goha */}
+          <div className="flex-shrink-0 lg:w-2/5">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-accent rounded-3xl blur-3xl opacity-60 mega-glow" />
-              <div className="relative bg-white/15 backdrop-blur-lg p-6 rounded-3xl border-2 border-white/30 hover-mega">
+              <div className="absolute inset-0 bg-gradient-accent rounded-2xl blur-2xl opacity-40 mega-glow" />
+              <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 hover-mega">
                 <img
                   src={agnidomPhoto}
                   alt="Agnidom Pygnali Aboubakar - Technicien ALLNTIC"
-                  className="w-72 h-80 lg:w-80 lg:h-96 object-cover rounded-2xl shadow-floating glow-accent"
+                  className="w-full aspect-[4/5] object-cover rounded-xl shadow-floating glow-accent"
                 />
-                <div className="absolute -bottom-4 -right-4 bg-white text-navy-dark px-4 py-2 lg:px-6 lg:py-3 rounded-xl font-bold shadow-mega border-2 border-cyan-electric/30">
-                  <span className="text-cyan-electric text-sm lg:text-base">Expert IT</span>
+                <div className="absolute -bottom-3 -right-3 bg-white text-navy-dark px-3 py-2 rounded-lg font-bold shadow-mega border border-cyan-electric/30">
+                  <span className="text-cyan-electric text-sm">Expert IT</span>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Contenu textuel */}
-          <div className="flex-1 lg:w-1/2 text-white space-y-6 lg:space-y-8">
-            <div className="space-y-4">
-              <h1 className="text-5xl lg:text-7xl font-bold leading-tight animate-fade-in">
-                <span className="gradient-text">Agnidom Pygnali</span>
-                <br />
-                <span className="text-white">Aboubakar</span>
-                <br />
-                <span className="text-cyan-electric text-2xl lg:text-3xl font-medium">(ALLNTIC)</span>
+          {/* Contenu textuel - Style Atisso Goha */}
+          <div className="flex-1 lg:w-3/5 text-white space-y-6">
+            {/* Nom et titre */}
+            <div className="space-y-4 animate-fade-in">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+                <span className="gradient-text block">Agnidom Pygnali</span>
+                <span className="text-white block">Aboubakar</span>
               </h1>
               
-              <div className="space-y-6 animate-slide-in-right" style={{ animationDelay: "0.3s" }}>
-                {/* Biographie inspirante */}
-                <div className="glass-card p-8 rounded-2xl border-2 border-white/30 hover-lift">
-                  <p className="text-lg leading-relaxed text-white font-medium">
-                    Agnidom Pygnali Aboubakar (ALLNTIC) est un <strong className="text-cyan-glow font-bold">technicien polyvalent</strong> en systèmes informatiques, réseaux, développement web et sécurité électronique, basé à <strong className="text-cyan-glow font-bold">Abidjan</strong>. Actuellement en poste chez EGC-CI, il intervient dans la maintenance, l'exploitation et la sécurisation d'infrastructures informatiques, tout en mettant à profit son savoir-faire en développement de solutions numériques et installation de dispositifs de sécurité électronique.
-                  </p>
-                  <p className="text-lg leading-relaxed text-white font-medium mt-4">
-                    Sa mission est de garantir la <strong className="text-orange-accent font-bold">fiabilité, la performance et la sécurité</strong> des systèmes numériques et physiques des organisations grâce à des solutions intégrées, durables et pragmatiques.
-                  </p>
-                </div>
+              <h2 className="text-xl lg:text-2xl font-medium text-cyan-electric">
+                Le Technicien Polyvalent (ALLNTIC)
+              </h2>
+              
+              {/* Citation/slogan */}
+              <blockquote className="text-lg lg:text-xl font-medium italic text-orange-accent">
+                « Un technicien polyvalent, pragmatique et orienté résultats, au service de vos systèmes numériques et de votre sécurité. »
+              </blockquote>
+            </div>
 
-                {/* Slogan accrocheur */}
-                <div className="text-center lg:text-left">
-                  <blockquote className="text-xl lg:text-2xl font-medium italic text-cyan-glow border-l-4 border-cyan-electric pl-6">
-                    "Un technicien polyvalent, pragmatique et orienté résultats, au service de vos systèmes numériques et de votre sécurité."
-                  </blockquote>
-                </div>
-              </div>
+            {/* Description */}
+            <div className="space-y-4 animate-slide-in-right" style={{ animationDelay: "0.3s" }}>
+              <p className="text-base lg:text-lg leading-relaxed text-white/90">
+                Découvrez l'expertise d'un professionnel qui transforme les défis informatiques en solutions durables. Agnidom Pygnali Aboubakar (ALLNTIC) maîtrise les systèmes informatiques, réseaux, développement web et sécurité électronique pour garantir la performance de vos infrastructures numériques.
+              </p>
+              
+              <p className="text-base lg:text-lg leading-relaxed text-white/90">
+                Basé à <strong className="text-cyan-glow">Abidjan</strong> et actuellement en poste chez <strong className="text-cyan-glow">EGC-CI</strong>, il met son savoir-faire au service des organisations qui recherchent <strong className="text-orange-accent">fiabilité, performance et sécurité</strong> dans leurs solutions numériques.
+              </p>
             </div>
 
             {/* Boutons d'action */}
-            <div className="flex flex-col sm:flex-row gap-4 animate-scale-in" style={{ animationDelay: "0.6s" }}>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-scale-in" style={{ animationDelay: "0.6s" }}>
               <HeroButton onClick={handleWhatsAppContact} className="group">
                 <MessageCircle className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                WhatsApp Business
+                Contacter sur WhatsApp
               </HeroButton>
               <HeroButton variant="secondary" onClick={scrollToContact}>
                 <Phone className="w-5 h-5 mr-2" />
                 Demander un Devis
               </HeroButton>
-            </div>
-
-            {/* Scroll indicator */}
-            <div className="hidden lg:block animate-bounce mt-12">
-              <ArrowDown className="w-6 h-6 text-cyan-electric mx-auto" />
             </div>
           </div>
         </div>
