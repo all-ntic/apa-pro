@@ -30,11 +30,11 @@ const ContactSection = () => {
     setIsSubmitting(true);
     
     try {
-      const response = await fetch('https://fymncmzluufusezawbxo.supabase.co/functions/v1/send-contact-email', {
+      const response = await fetch('https://lceuznoxizqibnxazzge.supabase.co/functions/v1/send-contact-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ5bW5jbXpsdXVmdXNlemF3YnhvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTg0ODU4NTAsImV4cCI6MjA3NDA2MTg1MH0.Vg_ZARwcbcF5-VDdnGpx22rhbAnL6mgCEuWYeh25t5w`
+          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZXV6bm94aXpxaWJueGF6emdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk1MDU3NjMsImV4cCI6MjA3NTA4MTc2M30.MNRbrN46E0hl0Yznpj-SOe-dDIOnRXe1zdrDanftdBo`
         },
         body: JSON.stringify(formData)
       });

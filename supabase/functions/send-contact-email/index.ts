@@ -1,5 +1,6 @@
 import { serve } from "https://deno.land/std@0.190.0/http/server.ts";
 import { Resend } from "npm:resend@2.0.0";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
@@ -27,6 +28,28 @@ const handler = async (req: Request): Promise<Response> => {
     const { name, email, phone, service, message }: ContactEmailRequest = await req.json();
 
     console.log("Sending contact email for:", { name, email, service });
+
+    // Save to database
+    const supabaseUrl = Deno.env.get('SUPABASE_URL') as string;
+    const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') as string;
+    
+    const supabaseClient = createClient(supabaseUrl, supabaseKey);
+    
+    const { error: dbError } = await supabaseClient
+      .from('contact_messages')
+      .insert({
+        name,
+        email,
+        phone: phone || null,
+        message: `${service ? `Service: ${service}\n\n` : ''}${message}`
+      });
+
+    if (dbError) {
+      console.error('Database error:', dbError);
+      throw new Error(`Failed to save message: ${dbError.message}`);
+    }
+
+    console.log("Message saved to database successfully");
 
     // Send email to the business
     const emailResponse = await resend.emails.send({
