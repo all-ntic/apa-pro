@@ -6,6 +6,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
+import { useMutation } from "@tanstack/react-query";
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -15,7 +17,6 @@ const ContactSection = () => {
     service: "",
     message: ""
   });
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -25,49 +26,57 @@ const ContactSection = () => {
     });
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    try {
-      const response = await fetch('https://lceuznoxizqibnxazzge.supabase.co/functions/v1/send-contact-email', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxjZXV6bm94aXpxaWJueGF6emdlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk1MDU3NjMsImV4cCI6MjA3NTA4MTc2M30.MNRbrN46E0hl0Yznpj-SOe-dDIOnRXe1zdrDanftdBo`
-        },
-        body: JSON.stringify(formData)
+  // Mutation pour sauvegarder le message et envoyer l'email
+  const submitMutation = useMutation({
+    mutationFn: async (data: typeof formData) => {
+      // 1. Sauvegarder le message dans la base de données
+      const { error: dbError } = await supabase
+        .from('contact_messages')
+        .insert([{
+          name: data.name,
+          email: data.email,
+          phone: data.phone || null,
+          message: `${data.service ? `Service: ${data.service}\n\n` : ''}${data.message}`,
+          status: 'new'
+        }]);
+
+      if (dbError) throw dbError;
+
+      // 2. Envoyer l'email via edge function
+      const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+        body: data
       });
 
-      const result = await response.json();
+      if (emailError) throw emailError;
 
-      if (response.ok) {
-        toast({
-          title: "Message envoyé !",
-          description: "Votre demande a été envoyée avec succès. Nous vous contacterons bientôt.",
-        });
-        
-        // Reset form
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          service: "",
-          message: ""
-        });
-      } else {
-        throw new Error(result.error || 'Erreur inconnue');
-      }
-    } catch (error) {
+      return data;
+    },
+    onSuccess: () => {
+      toast({
+        title: "Message envoyé !",
+        description: "Votre demande a été envoyée avec succès. Nous vous contacterons bientôt.",
+      });
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        service: "",
+        message: ""
+      });
+    },
+    onError: (error) => {
       console.error('Error sending email:', error);
       toast({
         title: "Erreur",
         description: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer.",
         variant: "destructive"
       });
-    } finally {
-      setIsSubmitting(false);
     }
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    submitMutation.mutate(formData);
   };
 
   const handleWhatsAppContact = () => {
@@ -283,10 +292,10 @@ Merci !`);
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Button
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={submitMutation.isPending}
                       className="btn-hero flex-1 group"
                     >
-                      {isSubmitting ? (
+                      {submitMutation.isPending ? (
                         "Envoi en cours..."
                       ) : (
                         <>

@@ -1,8 +1,34 @@
 import { Monitor, Network, Globe, Shield, Zap, Brain, Lock, Cog } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 
 const RealizationsSection = () => {
+  // Charger les projets depuis Supabase
+  const { data: projects, isLoading } = useQuery({
+    queryKey: ['projects'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('projects')
+        .select('*')
+        .order('display_order', { ascending: true });
+      
+      if (error) throw error;
+      return data;
+    }
+  });
+
+  // Icônes statiques pour les projets (mapping par catégorie)
+  const iconMap: { [key: string]: JSX.Element } = {
+    "Web": <Globe className="w-8 h-8" />,
+    "Mobile": <Monitor className="w-8 h-8" />,
+    "Network": <Network className="w-8 h-8" />,
+    "Security": <Shield className="w-8 h-8" />,
+    "AI": <Brain className="w-8 h-8" />,
+    "Automation": <Cog className="w-8 h-8" />
+  };
+
   const pastRealizations = [
     {
       icon: <Monitor className="w-8 h-8" />,
@@ -81,7 +107,32 @@ const RealizationsSection = () => {
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {pastRealizations.map((project, index) => (
+            {isLoading ? (
+              <div className="col-span-full text-center text-gray-600">Chargement...</div>
+            ) : projects && projects.length > 0 ? (
+              projects.map((project, index) => (
+                <Card key={project.id} className="hover-lift glass-card border-0 shadow-card-soft group">
+                  <CardHeader className="text-center">
+                    <div className="mx-auto mb-4 p-4 bg-gradient-accent rounded-2xl text-white w-fit group-hover:animate-glow-pulse">
+                      {iconMap[project.category || "Web"] || <Globe className="w-8 h-8" />}
+                    </div>
+                    <CardTitle className="text-navy-dark text-xl">{project.title}</CardTitle>
+                    <CardDescription className="text-cyan-electric font-medium">{project.category || "Web"}</CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies?.map((tag, tagIndex) => (
+                        <Badge key={tagIndex} variant="secondary" className="text-xs bg-navy-primary/10 text-navy-primary">
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              pastRealizations.map((project, index) => (
               <Card key={index} className="hover-lift glass-card border-0 shadow-card-soft group">
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-4 p-4 bg-gradient-accent rounded-2xl text-white w-fit group-hover:animate-glow-pulse">
@@ -101,7 +152,7 @@ const RealizationsSection = () => {
                   </div>
                 </CardContent>
               </Card>
-            ))}
+            )))}
           </div>
         </div>
 

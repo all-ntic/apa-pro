@@ -5,8 +5,33 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { useQuery } from "@tanstack/react-query";
+import { supabase } from "@/integrations/supabase/client";
 
 const FAQSection = () => {
+  // Charger les FAQs depuis Supabase
+  const { data: faqsFromDb, isLoading } = useQuery({
+    queryKey: ['faqs'],
+    queryFn: async () => {
+      const { data, error } = await supabase
+        .from('faqs')
+        .select('*')
+        .order('display_order', { ascending: true });
+      
+      if (error) throw error;
+      return data;
+    }
+  });
+
+  // Icônes par défaut
+  const iconMap: { [key: string]: JSX.Element } = {
+    "service": <HelpCircle className="w-5 h-5 text-cyan-electric" />,
+    "contact": <MessageCircle className="w-5 h-5 text-cyan-electric" />,
+    "security": <Shield className="w-5 h-5 text-cyan-electric" />,
+    "web": <Globe className="w-5 h-5 text-cyan-electric" />,
+    "time": <Clock className="w-5 h-5 text-cyan-electric" />
+  };
+
   const faqData = [
     {
       id: "item-1",
@@ -40,6 +65,16 @@ const FAQSection = () => {
     }
   ];
 
+  // Utiliser les données de la DB si disponibles, sinon les données par défaut
+  const displayFaqs = faqsFromDb && faqsFromDb.length > 0 
+    ? faqsFromDb.map((faq, index) => ({
+        id: faq.id,
+        icon: iconMap[faq.category?.toLowerCase() || "service"] || <HelpCircle className="w-5 h-5 text-cyan-electric" />,
+        question: faq.question,
+        answer: faq.answer
+      }))
+    : faqData;
+
   return (
     <section id="faq" className="py-20 bg-navy-dark relative overflow-hidden">
       {/* Éléments de fond animés */}
@@ -64,8 +99,11 @@ const FAQSection = () => {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <Accordion type="single" collapsible className="space-y-4">
-            {faqData.map((faq, index) => (
+          {isLoading ? (
+            <div className="text-center text-gray-300">Chargement des questions...</div>
+          ) : (
+            <Accordion type="single" collapsible className="space-y-4">
+              {displayFaqs.map((faq, index) => (
               <AccordionItem 
                 key={faq.id} 
                 value={faq.id}
@@ -93,8 +131,9 @@ const FAQSection = () => {
                   </div>
                 </AccordionContent>
               </AccordionItem>
-            ))}
-          </Accordion>
+              ))}
+            </Accordion>
+          )}
         </div>
 
         {/* Call to action */}
