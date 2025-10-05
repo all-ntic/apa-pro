@@ -14,7 +14,7 @@ export default {
     },
     extend: {
       fontFamily: {
-        sans: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Poppins', 'Open Sans', 'system-ui', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
       colors: {
@@ -24,20 +24,14 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         
-        navy: {
-          dark: "hsl(var(--navy-dark))",
-          primary: "hsl(var(--navy-primary))",
-          medium: "hsl(var(--navy-medium))",
-          light: "hsl(var(--navy-light))",
-        },
-        
-        cyan: {
-          electric: "hsl(var(--cyan-electric))",
-          glow: "hsl(var(--cyan-glow))",
-        },
-        
-        orange: {
-          accent: "hsl(var(--orange-accent))",
+        eburnie: {
+          dark: "hsl(var(--eburnie-dark))",
+          primary: "hsl(var(--eburnie-primary))",
+          medium: "hsl(var(--eburnie-medium))",
+          light: "hsl(var(--eburnie-light))",
+          orange: "hsl(var(--eburnie-orange))",
+          'orange-light': "hsl(var(--eburnie-orange-light))",
+          'orange-glow': "hsl(var(--eburnie-orange-glow))",
         },
         
         gray: {
@@ -135,8 +129,8 @@ export default {
           "100%": { opacity: "1", transform: "scale(1)" },
         },
         "glow-pulse": {
-          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--cyan-electric) / 0.3)" },
-          "50%": { boxShadow: "0 0 40px hsl(var(--cyan-electric) / 0.6)" },
+          "0%, 100%": { boxShadow: "0 0 20px hsl(var(--eburnie-orange) / 0.3)" },
+          "50%": { boxShadow: "0 0 40px hsl(var(--eburnie-orange) / 0.6)" },
         },
         "float": {
           "0%, 100%": { transform: "translateY(0px)" },

@@ -1,5 +1,7 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
+import ServicesSection from "@/components/ServicesSection";
 import RealizationsSection from "@/components/RealizationsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
@@ -11,6 +13,8 @@ const Portfolio = () => {
     <div className="min-h-screen bg-background">
       <Navigation />
       <HeroSection />
+      <AboutSection />
+      <ServicesSection />
       <RealizationsSection />
       <FAQSection />
       <ContactSection />

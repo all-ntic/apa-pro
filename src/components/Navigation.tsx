@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import allnticLogo from "@/assets/allntic-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,45 +24,59 @@ const Navigation = () => {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-navy-dark/95 backdrop-blur-lg shadow-elegant" : "bg-transparent"
+      isScrolled ? "bg-eburnie-dark/95 backdrop-blur-lg shadow-elegant" : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src={allnticLogo} alt="ALLNTIC Logo" className="h-10 w-10" />
-            <span className="text-xl font-bold text-white">ALLNTIC</span>
+            <div className="w-10 h-10 bg-gradient-accent rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-lg">EGC</span>
+            </div>
+            <span className="text-xl font-bold text-white">Eburnie Groupe</span>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <button
               onClick={() => scrollToSection("accueil")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
+              className="text-white hover:text-eburnie-orange transition-colors duration-300"
             >
               Accueil
             </button>
             <button
+              onClick={() => scrollToSection("about")}
+              className="text-white hover:text-eburnie-orange transition-colors duration-300"
+            >
+              À Propos
+            </button>
+            <button
+              onClick={() => scrollToSection("services")}
+              className="text-white hover:text-eburnie-orange transition-colors duration-300"
+            >
+              Services
+            </button>
+            <button
               onClick={() => scrollToSection("realisations")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
+              className="text-white hover:text-eburnie-orange transition-colors duration-300"
             >
               Réalisations
             </button>
             <button
               onClick={() => scrollToSection("faq")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
+              className="text-white hover:text-eburnie-orange transition-colors duration-300"
             >
               FAQ
             </button>
             <button
               onClick={() => scrollToSection("contact")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
+              className="text-white hover:text-eburnie-orange transition-colors duration-300"
             >
               Contact
             </button>
             <Button
               variant="outline"
               size="sm"
-              className="bg-transparent border-cyan-electric text-cyan-electric hover:bg-cyan-electric hover:text-white transition-all duration-300"
+              className="bg-transparent border-eburnie-orange text-eburnie-orange hover:bg-eburnie-orange hover:text-white transition-all duration-300"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               Chat
@@ -85,32 +98,44 @@ const Navigation = () => {
             <div className="flex flex-col space-y-4 pt-4">
               <button
                 onClick={() => scrollToSection("accueil")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
+                className="text-white hover:text-eburnie-orange transition-colors duration-300 text-left"
               >
                 Accueil
               </button>
               <button
+                onClick={() => scrollToSection("about")}
+                className="text-white hover:text-eburnie-orange transition-colors duration-300 text-left"
+              >
+                À Propos
+              </button>
+              <button
+                onClick={() => scrollToSection("services")}
+                className="text-white hover:text-eburnie-orange transition-colors duration-300 text-left"
+              >
+                Services
+              </button>
+              <button
                 onClick={() => scrollToSection("realisations")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
+                className="text-white hover:text-eburnie-orange transition-colors duration-300 text-left"
               >
                 Réalisations
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
+                className="text-white hover:text-eburnie-orange transition-colors duration-300 text-left"
               >
                 FAQ
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
+                className="text-white hover:text-eburnie-orange transition-colors duration-300 text-left"
               >
                 Contact
               </button>
               <Button
                 variant="outline"
                 size="sm"
-                className="bg-transparent border-cyan-electric text-cyan-electric hover:bg-cyan-electric hover:text-white transition-all duration-300 w-fit"
+                className="bg-transparent border-eburnie-orange text-eburnie-orange hover:bg-eburnie-orange hover:text-white transition-all duration-300 w-fit"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Chat
