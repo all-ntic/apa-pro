@@ -2,25 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Eburnie Groupe & Consulting - Professional Design System
+/* ALLNTIC Professional Design System - Modern Tech Portfolio
 All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* Base palette - Eburnie corporate theme */
+    /* Base palette - Navy blue professional theme */
     --background: 0 0% 100%;
-    --foreground: 208 65% 15%;
+    --foreground: 220 15% 15%;
     
-    /* Eburnie blue gradient system (#0A3D62) */
-    --eburnie-dark: 208 75% 12%;
-    --eburnie-primary: 208 75% 21%; 
-    --eburnie-medium: 208 60% 30%;
-    --eburnie-light: 208 45% 42%;
+    /* Navy blue gradient system */
+    --navy-dark: 220 50% 12%;
+    --navy-primary: 220 65% 18%; 
+    --navy-medium: 220 45% 25%;
+    --navy-light: 220 35% 35%;
     
-    /* Accent colors - Eburnie orange (#E67E22) */
-    --eburnie-orange: 27 80% 52%;
-    --eburnie-orange-light: 27 70% 60%;
-    --eburnie-orange-glow: 27 85% 58%;
+    /* Accent colors */
+    --cyan-electric: 190 95% 50%;
+    --cyan-glow: 190 85% 60%;
+    --orange-accent: 25 95% 60%;
     
     /* Grays - Enhanced contrast */
     --gray-900: 220 20% 8%;
@@ -41,9 +41,9 @@ All colors MUST be HSL. */
     --popover: 0 0% 100%;
     --popover-foreground: 220 15% 15%;
 
-    --primary: var(--eburnie-primary);
+    --primary: var(--navy-primary);
     --primary-foreground: 0 0% 98%;
-    --primary-glow: var(--eburnie-orange);
+    --primary-glow: var(--cyan-electric);
 
     --secondary: var(--gray-100);
     --secondary-foreground: var(--gray-900);
@@ -51,7 +51,7 @@ All colors MUST be HSL. */
     --muted: var(--gray-100);
     --muted-foreground: var(--gray-600);
 
-    --accent: var(--eburnie-orange);
+    --accent: var(--cyan-electric);
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -59,22 +59,22 @@ All colors MUST be HSL. */
 
     --border: var(--gray-200);
     --input: var(--gray-200);
-    --ring: var(--eburnie-primary);
+    --ring: var(--navy-primary);
 
     --radius: 0.75rem;
     
-    /* Gradients - Eburnie theme */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--eburnie-dark)) 0%, hsl(var(--eburnie-primary)) 50%, hsl(var(--eburnie-medium)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--eburnie-orange)) 0%, hsl(var(--eburnie-orange-glow)) 100%);
-    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--eburnie-dark) / 0.8) 100%);
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-dark)) 0%, hsl(var(--navy-primary)) 50%, hsl(var(--navy-medium)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--cyan-electric)) 0%, hsl(var(--cyan-glow)) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--navy-dark) / 0.8) 100%);
     --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9) 0%, hsl(0 0% 100% / 0.7) 100%);
     
     /* Shadows - Enhanced for WOW effect */
-    --shadow-glow: 0 0 60px hsl(var(--eburnie-orange) / 0.4), 0 0 100px hsl(var(--eburnie-orange) / 0.2);
-    --shadow-elegant: 0 25px 80px -15px hsl(var(--eburnie-primary) / 0.3), 0 0 0 1px hsl(var(--eburnie-orange) / 0.1);
+    --shadow-glow: 0 0 60px hsl(var(--cyan-electric) / 0.4), 0 0 100px hsl(var(--cyan-electric) / 0.2);
+    --shadow-elegant: 0 25px 80px -15px hsl(var(--navy-primary) / 0.3), 0 0 0 1px hsl(var(--cyan-electric) / 0.1);
     --shadow-card: 0 15px 40px -8px hsl(var(--gray-900) / 0.15), 0 0 0 1px hsl(var(--gray-200));
-    --shadow-floating: 0 35px 70px -15px hsl(var(--eburnie-primary) / 0.5), 0 0 100px hsl(var(--eburnie-orange) / 0.3);
-    --shadow-mega: 0 50px 100px -20px hsl(var(--eburnie-primary) / 0.6), 0 0 150px hsl(var(--eburnie-orange) / 0.4);
+    --shadow-floating: 0 35px 70px -15px hsl(var(--navy-primary) / 0.5), 0 0 100px hsl(var(--cyan-electric) / 0.3);
+    --shadow-mega: 0 50px 100px -20px hsl(var(--navy-primary) / 0.6), 0 0 150px hsl(var(--cyan-electric) / 0.4);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -99,38 +99,38 @@ All colors MUST be HSL. */
   }
 
   .dark {
-    /* Dark mode - Eburnie theme */
-    --background: var(--eburnie-dark);
+    /* Dark mode - Enhanced navy theme */
+    --background: var(--navy-dark);
     --foreground: var(--gray-50);
 
-    --card: var(--eburnie-medium);
+    --card: var(--navy-medium);
     --card-foreground: var(--gray-50);
 
-    --popover: var(--eburnie-medium);
+    --popover: var(--navy-medium);
     --popover-foreground: var(--gray-50);
 
-    --primary: var(--eburnie-orange);
-    --primary-foreground: var(--eburnie-dark);
+    --primary: var(--cyan-electric);
+    --primary-foreground: var(--navy-dark);
 
-    --secondary: var(--eburnie-light);
+    --secondary: var(--navy-light);
     --secondary-foreground: var(--gray-50);
 
-    --muted: var(--eburnie-light);
+    --muted: var(--navy-light);
     --muted-foreground: var(--gray-400);
 
-    --accent: var(--eburnie-orange-glow);
-    --accent-foreground: var(--eburnie-dark);
+    --accent: var(--cyan-glow);
+    --accent-foreground: var(--navy-dark);
 
-    --border: var(--eburnie-light);
-    --input: var(--eburnie-light);
-    --ring: var(--eburnie-orange);
+    --border: var(--navy-light);
+    --input: var(--navy-light);
+    --ring: var(--cyan-electric);
     
     /* Dark gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--eburnie-dark)) 0%, hsl(208 85% 8%) 50%, hsl(208 90% 5%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--eburnie-medium) / 0.9) 0%, hsl(var(--eburnie-light) / 0.7) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-dark)) 0%, hsl(220 80% 8%) 50%, hsl(220 90% 5%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(var(--navy-medium) / 0.9) 0%, hsl(var(--navy-light) / 0.7) 100%);
     
-    --shadow-glow: 0 0 60px hsl(var(--eburnie-orange) / 0.4);
-    --shadow-elegant: 0 20px 60px -12px hsl(208 100% 5% / 0.8);
+    --shadow-glow: 0 0 60px hsl(var(--cyan-electric) / 0.4);
+    --shadow-elegant: 0 20px 60px -12px hsl(220 100% 5% / 0.8);
   }
 }
 
@@ -141,7 +141,7 @@ All colors MUST be HSL. */
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Poppins', 'Open Sans', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
@@ -169,14 +169,14 @@ All colors MUST be HSL. */
   /* Magic pulse animation */
   @keyframes magicPulse {
     0%, 100% { 
-      box-shadow: 0 0 30px hsl(var(--eburnie-orange) / 0.3),
-                  0 0 60px hsl(var(--eburnie-orange) / 0.2),
-                  inset 0 0 30px hsl(var(--eburnie-orange) / 0.1);
+      box-shadow: 0 0 30px hsl(var(--cyan-electric) / 0.3),
+                  0 0 60px hsl(var(--cyan-electric) / 0.2),
+                  inset 0 0 30px hsl(var(--cyan-electric) / 0.1);
     }
     50% { 
-      box-shadow: 0 0 80px hsl(var(--eburnie-orange) / 0.6),
-                  0 0 120px hsl(var(--eburnie-orange) / 0.4),
-                  inset 0 0 50px hsl(var(--eburnie-orange) / 0.2);
+      box-shadow: 0 0 80px hsl(var(--cyan-electric) / 0.6),
+                  0 0 120px hsl(var(--cyan-electric) / 0.4),
+                  inset 0 0 50px hsl(var(--cyan-electric) / 0.2);
     }
   }
 
@@ -224,7 +224,7 @@ All colors MUST be HSL. */
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    text-shadow: 0 0 30px hsl(var(--eburnie-orange) / 0.5);
+    text-shadow: 0 0 30px hsl(var(--cyan-electric) / 0.5);
     position: relative;
   }
 
@@ -255,7 +255,7 @@ All colors MUST be HSL. */
   .btn-hero:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: var(--shadow-mega);
-    border-color: hsl(var(--eburnie-orange-glow) / 0.3);
+    border-color: hsl(var(--cyan-glow) / 0.3);
   }
 
   .btn-hero:active {
@@ -289,16 +289,16 @@ All colors MUST be HSL. */
     inset: 0;
     border-radius: inherit;
     background: linear-gradient(135deg, 
-      hsl(var(--eburnie-orange) / 0.05) 0%,
+      hsl(var(--cyan-electric) / 0.05) 0%,
       transparent 50%,
-      hsl(var(--eburnie-orange) / 0.05) 100%);
+      hsl(var(--orange-accent) / 0.05) 100%);
     pointer-events: none;
   }
 
   .glass-card:hover {
     transform: translateY(-5px);
     box-shadow: var(--shadow-floating);
-    border-color: hsl(var(--eburnie-orange) / 0.3);
+    border-color: hsl(var(--cyan-electric) / 0.3);
   }
   
   .tech-border {
