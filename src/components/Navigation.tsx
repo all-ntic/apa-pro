@@ -43,10 +43,28 @@ const Navigation = () => {
               Accueil
             </button>
             <button
+              onClick={() => scrollToSection("apropos")}
+              className="text-white hover:text-cyan-electric transition-colors duration-300"
+            >
+              À propos
+            </button>
+            <button
+              onClick={() => scrollToSection("competences")}
+              className="text-white hover:text-cyan-electric transition-colors duration-300"
+            >
+              Compétences
+            </button>
+            <button
               onClick={() => scrollToSection("realisations")}
               className="text-white hover:text-cyan-electric transition-colors duration-300"
             >
               Réalisations
+            </button>
+            <button
+              onClick={() => scrollToSection("projets")}
+              className="text-white hover:text-cyan-electric transition-colors duration-300"
+            >
+              Projets
             </button>
             <button
               onClick={() => scrollToSection("faq")}
@@ -90,10 +108,28 @@ const Navigation = () => {
                 Accueil
               </button>
               <button
+                onClick={() => scrollToSection("apropos")}
+                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
+              >
+                À propos
+              </button>
+              <button
+                onClick={() => scrollToSection("competences")}
+                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
+              >
+                Compétences
+              </button>
+              <button
                 onClick={() => scrollToSection("realisations")}
                 className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
               >
                 Réalisations
+              </button>
+              <button
+                onClick={() => scrollToSection("projets")}
+                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
+              >
+                Projets
               </button>
               <button
                 onClick={() => scrollToSection("faq")}

@@ -6,7 +6,10 @@ const Footer = () => {
 
   const quickLinks = [
     { name: "Accueil", href: "#accueil" },
+    { name: "À propos", href: "#apropos" },
+    { name: "Compétences", href: "#competences" },
     { name: "Réalisations", href: "#realisations" },
+    { name: "Projets", href: "#projets" },
     { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" }
   ];
@@ -57,14 +60,14 @@ const Footer = () => {
               </div>
               <div className="flex items-center text-gray-300">
                 <Phone className="w-5 h-5 text-cyan-electric mr-3" />
-                <a href="tel:+2250000000000" className="hover:text-cyan-electric transition-colors duration-300">
-                  +225 XX XX XX XX XX
+                <a href="tel:+2250778023331" className="hover:text-cyan-electric transition-colors duration-300">
+                  +225 07 78 02 33 31
                 </a>
               </div>
               <div className="flex items-center text-gray-300">
                 <Mail className="w-5 h-5 text-cyan-electric mr-3" />
-                <a href="mailto:contact@allntic.ci" className="hover:text-cyan-electric transition-colors duration-300">
-                  contact@allntic.ci
+                <a href="mailto:all.ntic225@gmail.com" className="hover:text-cyan-electric transition-colors duration-300">
+                  all.ntic225@gmail.com
                 </a>
               </div>
             </div>
@@ -111,16 +114,19 @@ const Footer = () => {
           
           <div className="flex items-center space-x-4">
             <a
-              href="https://wa.me/+2250000000000"
+              href="https://wa.me/+2250778023331"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full transition-all duration-300 hover:shadow-glow group"
             >
               <MessageCircle className="w-5 h-5 group-hover:animate-pulse" />
             </a>
-            <button className="bg-cyan-electric/10 hover:bg-cyan-electric hover:text-white text-cyan-electric p-3 rounded-full transition-all duration-300">
+            <a
+              href="mailto:all.ntic225@gmail.com"
+              className="bg-cyan-electric/10 hover:bg-cyan-electric hover:text-white text-cyan-electric p-3 rounded-full transition-all duration-300"
+            >
               <Mail className="w-5 h-5" />
-            </button>
+            </a>
           </div>
         </div>
 
