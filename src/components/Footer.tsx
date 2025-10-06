@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Mail, MapPin, Shield, Monitor } from "lucide-react";
+import { MessageCircle, Phone, Mail, MapPin, Shield, Monitor, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 import allnticLogo from "@/assets/allntic-logo.png";
 
 const Footer = () => {
@@ -118,15 +118,75 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full transition-all duration-300 hover:shadow-glow group"
+              aria-label="WhatsApp"
             >
               <MessageCircle className="w-5 h-5 group-hover:animate-pulse" />
             </a>
             <a
               href="mailto:all.ntic225@gmail.com"
               className="bg-cyan-electric/10 hover:bg-cyan-electric hover:text-white text-cyan-electric p-3 rounded-full transition-all duration-300"
+              aria-label="Email"
             >
               <Mail className="w-5 h-5" />
             </a>
+          </div>
+        </div>
+
+        {/* Social Media Links */}
+        <div className="mt-8 pt-6 border-t border-white/10">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <p className="text-gray-400 text-sm mb-4 md:mb-0">
+              Suivez-nous sur les réseaux sociaux
+            </p>
+            <div className="flex items-center space-x-3">
+              <a
+                href="https://www.facebook.com/allntic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
+                aria-label="Facebook"
+              >
+                <Facebook className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/allntic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.instagram.com/allntic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
+                aria-label="Instagram"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
+              <a
+                href="https://www.tiktok.com/@allntic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
+                aria-label="TikTok"
+              >
+                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+              </a>
+              <a
+                href="https://www.youtube.com/@allntic"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
+                aria-label="YouTube"
+              >
+                <Youtube className="w-5 h-5" />
+              </a>
+            </div>
           </div>
         </div>
 
