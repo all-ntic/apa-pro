@@ -1,4 +1,4 @@
-import { Monitor, Network, Globe, Shield, Zap, Brain, Lock, Cog } from "lucide-react";
+import { Monitor, Network, Globe, Shield, Zap, Brain, Lock, Cog, Church, Heart, Palette, Truck, PartyPopper } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { useQuery } from "@tanstack/react-query";
@@ -31,32 +31,52 @@ const RealizationsSection = () => {
 
   const pastRealizations = [
     {
-      icon: <Monitor className="w-8 h-8" />,
-      title: "Maintenance Informatique",
-      description: "Hardware & Software",
-      details: "Réparation PC, diagnostic système, optimisation performances, mise à jour logiciels",
-      tags: ["Hardware", "Software", "Diagnostic", "Optimisation"]
-    },
-    {
-      icon: <Network className="w-8 h-8" />,
-      title: "Installation Réseaux",
-      description: "LAN/WAN & Infrastructure",
-      details: "Configuration routeurs, switch, câblage structuré, administration réseau d'entreprise",
-      tags: ["LAN", "WAN", "Routeur", "Switch"]
-    },
-    {
       icon: <Globe className="w-8 h-8" />,
-      title: "Développement Web",
-      description: "Sites Vitrines & Portails",
-      details: "Création sites professionnels, portfolios, plateformes sur mesure avec technologies modernes",
-      tags: ["React", "Responsive", "SEO", "CMS"]
+      title: "APA Pro - Portfolio Professionnel",
+      description: "Portfolio IT & Web",
+      details: "Portfolio professionnel complet avec design moderne, animations, chatbot intelligent et formulaire de contact",
+      tags: ["React", "Portfolio", "Responsive", "Chatbot"],
+      link: "https://apa-pro.allntic.com"
     },
     {
-      icon: <Shield className="w-8 h-8" />,
-      title: "Sécurité Électronique",
-      description: "Vidéosurveillance & Alarmes",
-      details: "Installation caméras IP, systèmes d'alarme, contrôle d'accès, monitoring sécurisé",
-      tags: ["Caméras IP", "Alarmes", "Monitoring", "Contrôle"]
+      icon: <Church className="w-8 h-8" />,
+      title: "Ivoire Église+",
+      description: "Plateforme Multi-Église",
+      details: "Solution cloud complète : gestion membres, événements, dons en ligne, chatbot spirituel IA",
+      tags: ["Cloud", "Multi-tenant", "IA", "Paystack"],
+      link: "https://ivoire-eglise.allntic.com"
+    },
+    {
+      icon: <Heart className="w-8 h-8" />,
+      title: "OLCAP-CI",
+      description: "ONG Santé & Solidarité",
+      details: "Site institutionnel pour ONG de lutte contre l'anémie et sensibilisation aux cancers féminins",
+      tags: ["NGO", "Impact", "Responsive", "Dons"],
+      link: "https://olcap-ci.allntic.com"
+    },
+    {
+      icon: <Palette className="w-8 h-8" />,
+      title: "Atisso Goha",
+      description: "Portfolio Artiste Sculpteur",
+      details: "Portfolio artistique immersif pour sculpteur monumental - galerie, parcours et exposition virtuelle",
+      tags: ["Art", "Portfolio", "Galerie", "Immersif"],
+      link: "https://atisso-goha.lovable.app"
+    },
+    {
+      icon: <Truck className="w-8 h-8" />,
+      title: "TradLog",
+      description: "Solution Logistique",
+      details: "Plateforme de gestion logistique et transport pour optimisation des opérations commerciales",
+      tags: ["Logistique", "SaaS", "Gestion", "Transport"],
+      link: "https://tradlog.lovable.app"
+    },
+    {
+      icon: <PartyPopper className="w-8 h-8" />,
+      title: "Chill Party",
+      description: "Plateforme Événementiel",
+      details: "Application web pour organisation et gestion d'événements festifs et sociaux",
+      tags: ["Événementiel", "Social", "Web App", "Planning"],
+      link: "https://chill-party.lovable.app"
     }
   ];
 
@@ -106,33 +126,8 @@ const RealizationsSection = () => {
             <h3 className="text-3xl font-bold text-navy-dark">Réalisations Accomplies</h3>
           </div>
           
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {isLoading ? (
-              <div className="col-span-full text-center text-gray-600">Chargement...</div>
-            ) : projects && projects.length > 0 ? (
-              projects.map((project, index) => (
-                <Card key={project.id} className="hover-lift glass-card border-0 shadow-card-soft group">
-                  <CardHeader className="text-center">
-                    <div className="mx-auto mb-4 p-4 bg-gradient-accent rounded-2xl text-white w-fit group-hover:animate-glow-pulse">
-                      {iconMap[project.category || "Web"] || <Globe className="w-8 h-8" />}
-                    </div>
-                    <CardTitle className="text-navy-dark text-xl">{project.title}</CardTitle>
-                    <CardDescription className="text-cyan-electric font-medium">{project.category || "Web"}</CardDescription>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {project.technologies?.map((tag, tagIndex) => (
-                        <Badge key={tagIndex} variant="secondary" className="text-xs bg-navy-primary/10 text-navy-primary">
-                          {tag}
-                        </Badge>
-                      ))}
-                    </div>
-                  </CardContent>
-                </Card>
-              ))
-            ) : (
-              pastRealizations.map((project, index) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {pastRealizations.map((project, index) => (
               <Card key={index} className="hover-lift glass-card border-0 shadow-card-soft group">
                 <CardHeader className="text-center">
                   <div className="mx-auto mb-4 p-4 bg-gradient-accent rounded-2xl text-white w-fit group-hover:animate-glow-pulse">
@@ -143,16 +138,27 @@ const RealizationsSection = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.details}</p>
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge key={tagIndex} variant="secondary" className="text-xs bg-navy-primary/10 text-navy-primary">
                         {tag}
                       </Badge>
                     ))}
                   </div>
+                  {project.link && (
+                    <a 
+                      href={project.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-cyan-electric hover:text-cyan-glow transition-colors duration-300 font-medium text-sm"
+                    >
+                      Voir le projet
+                      <Globe className="w-4 h-4" />
+                    </a>
+                  )}
                 </CardContent>
               </Card>
-            )))}
+            ))}
           </div>
         </div>
 
