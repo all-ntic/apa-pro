@@ -15,7 +15,7 @@ const AboutSection = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl lg:text-5xl font-bold text-navy-dark mb-4">
-              À propos de <span className="gradient-text">ALLNTIC</span>
+              À propos de <span className="gradient-text">APA</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6"></div>
           </div>
@@ -24,7 +24,7 @@ const AboutSection = () => {
           <div className="mb-16 animate-slide-in-right">
             <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-elegant border border-gray-100">
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                <strong className="text-navy-dark">Agnidom Pygnali Aboubakar</strong>, alias <strong className="text-cyan-electric">ALLNTIC</strong>, est un technicien ivoirien expérimenté dans les domaines de la maintenance informatique, des réseaux, du développement web et de la sécurité électronique.
+                <strong className="text-navy-dark">Agnidom Pygnali Aboubakar</strong>, alias <strong className="text-cyan-electric">APA</strong>, est un technicien ivoirien expérimenté dans les domaines de la maintenance informatique, des réseaux, du développement web et de la sécurité électronique.
               </p>
               
               <p className="text-lg leading-relaxed text-gray-700 mb-6">

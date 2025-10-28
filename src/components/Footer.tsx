@@ -1,5 +1,4 @@
 import { MessageCircle, Phone, Mail, MapPin, Shield, Monitor, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
-import allnticLogo from "@/assets/allntic-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -40,12 +39,9 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Informations entreprise */}
           <div className="lg:col-span-2">
-            <div className="flex items-center mb-6">
-              <img src={allnticLogo} alt="ALLNTIC Logo" className="h-12 w-12 mr-4" />
-              <div>
-                <h3 className="text-2xl font-bold">ALLNTIC</h3>
-                <p className="text-cyan-electric">Agnidom Pygnali Aboubakar</p>
-              </div>
+            <div className="mb-6">
+              <h3 className="text-2xl font-bold">APA</h3>
+              <p className="text-cyan-electric">Agnidom Pygnali Aboubakar</p>
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
@@ -109,7 +105,7 @@ const Footer = () => {
         {/* Bottom section */}
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} ALLNTIC - Agnidom Pygnali Aboubakar. Tous droits réservés.
+            © {currentYear} APA - Agnidom Pygnali Aboubakar. Tous droits réservés.
           </div>
           
           <div className="flex items-center space-x-4">
@@ -140,7 +136,7 @@ const Footer = () => {
             </p>
             <div className="flex items-center space-x-3">
               <a
-                href="https://www.facebook.com/allntic"
+                href="https://www.facebook.com/apa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
@@ -149,7 +145,7 @@ const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/allntic"
+                href="https://www.linkedin.com/in/apa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
@@ -158,7 +154,7 @@ const Footer = () => {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://www.instagram.com/allntic"
+                href="https://www.instagram.com/apa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
@@ -167,7 +163,7 @@ const Footer = () => {
                 <Instagram className="w-5 h-5" />
               </a>
               <a
-                href="https://www.tiktok.com/@allntic"
+                href="https://www.tiktok.com/@apa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
@@ -178,7 +174,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://www.youtube.com/@allntic"
+                href="https://www.youtube.com/@apa"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"

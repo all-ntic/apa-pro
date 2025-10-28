@@ -4,7 +4,7 @@ import agnidomPhoto from "@/assets/agnidom-photo.jpg";
 
 const HeroSection = () => {
   const handleWhatsAppContact = () => {
-    window.open("https://wa.me/+2250778023331?text=Bonjour%20ALLNTIC,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services.", "_blank");
+    window.open("https://wa.me/+2250778023331?text=Bonjour%20APA,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services.", "_blank");
   };
 
   const scrollToRealisations = () => {
@@ -39,7 +39,7 @@ const HeroSection = () => {
               <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 hover-mega">
                 <img
                   src={agnidomPhoto}
-                  alt="Agnidom Pygnali Aboubakar - Technicien ALLNTIC"
+                  alt="Agnidom Pygnali Aboubakar - Technicien APA"
                   className="w-full aspect-[4/5] object-cover rounded-xl shadow-floating glow-accent"
                 />
                 <div className="absolute -bottom-3 -right-3 bg-white text-navy-dark px-3 py-2 rounded-lg font-bold shadow-mega border border-cyan-electric/30">

@@ -80,7 +80,7 @@ const ContactSection = () => {
   };
 
   const handleWhatsAppContact = () => {
-    const message = encodeURIComponent(`Bonjour ALLNTIC,
+    const message = encodeURIComponent(`Bonjour APA,
 
 Je souhaite obtenir des informations sur vos services :
 ${formData.service ? `Service : ${formData.service}` : ''}
@@ -107,8 +107,8 @@ Merci !`);
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Contact",
-      value: "contact@allntic.info",
-      action: "mailto:contact@allntic.info"
+      value: "contact@apa.info",
+      action: "mailto:contact@apa.info"
     },
     {
       icon: <MapPin className="w-6 h-6" />,
@@ -140,7 +140,7 @@ Merci !`);
             Démarrons Votre <span className="gradient-text">Projet Ensemble</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Prêt à transformer vos systèmes IT ? Contactez ALLNTIC pour une consultation personnalisée et un devis sur mesure.
+            Prêt à transformer vos systèmes IT ? Contactez APA pour une consultation personnalisée et un devis sur mesure.
           </p>
         </div>
 

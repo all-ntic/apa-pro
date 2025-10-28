@@ -20,7 +20,7 @@ const FutureProjectsSection = () => {
     },
     {
       icon: Building2,
-      title: "Agence Technique Digitale ALLNTIC",
+      title: "Agence Technique Digitale APA",
       description: "Création d'une entité spécialisée dans la conception de solutions intégrées : IT, web et sécurité.",
       status: "Vision 2026",
       color: "cyan-glow"
@@ -37,7 +37,7 @@ const FutureProjectsSection = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Découvrez les projets en cours et à venir qui façonneront l'avenir d'ALLNTIC
+            Découvrez les projets en cours et à venir qui façonneront l'avenir d'APA
           </p>
         </div>
 

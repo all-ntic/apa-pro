@@ -16,7 +16,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Je suis l'assistant virtuel d'ALLNTIC. Comment puis-je vous aider avec vos besoins en informatique et sécurité électronique ?",
+      text: "Bonjour ! Je suis l'assistant virtuel d'APA. Comment puis-je vous aider avec vos besoins en informatique et sécurité électronique ?",
       isUser: false,
       timestamp: new Date()
     }
@@ -38,8 +38,8 @@ const ChatBot = () => {
     const message = userMessage.toLowerCase();
     
     // Identité et profil
-    if (message.includes("qui") || message.includes("allntic") || message.includes("aboubakar")) {
-      return "Je suis ALLNTIC (Agnidom Pygnali Aboubakar), technicien polyvalent ivoirien spécialisé en systèmes informatiques, réseaux, développement web et sécurité électronique. Mon approche repose sur le pragmatisme, la précision technique et l'innovation durable.";
+    if (message.includes("qui") || message.includes("apa") || message.includes("aboubakar")) {
+      return "Je suis APA (Agnidom Pygnali Aboubakar), technicien polyvalent ivoirien spécialisé en systèmes informatiques, réseaux, développement web et sécurité électronique. Mon approche repose sur le pragmatisme, la précision technique et l'innovation durable.";
     }
     
     // Services proposés
@@ -94,7 +94,7 @@ const ChatBot = () => {
     
     // Contact
     if (message.includes("contact") || message.includes("joindre") || message.includes("appeler") || message.includes("email")) {
-      return "Vous pouvez me contacter par WhatsApp au +225 07 78 02 33 31, par email à all.ntic225@gmail.com, ou via le formulaire de contact sur ce site. Je réponds généralement sous 24h. Mon profil LinkedIn : linkedin.com/in/allntic";
+      return "Vous pouvez me contacter par WhatsApp au +225 07 78 02 33 31, par email à all.ntic225@gmail.com, ou via le formulaire de contact sur ce site. Je réponds généralement sous 24h. Mon profil LinkedIn : linkedin.com/in/apa";
     }
     
     // Horaires
@@ -104,7 +104,7 @@ const ChatBot = () => {
     
     // Projets à venir
     if (message.includes("projet") || message.includes("innovation") || message.includes("avenir")) {
-      return "Je travaille actuellement sur plusieurs projets : une plateforme de gestion d'interventions techniques, une solution de sécurité connectée intelligente, et la création de l'agence ALLNTIC pour des solutions IT intégrées complètes.";
+      return "Je travaille actuellement sur plusieurs projets : une plateforme de gestion d'interventions techniques, une solution de sécurité connectée intelligente, et la création de l'agence APA pour des solutions IT intégrées complètes.";
     }
     
     // Remerciements
@@ -174,7 +174,7 @@ const ChatBot = () => {
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold">Assistant ALLNTIC</h3>
+                <h3 className="font-semibold">Assistant APA</h3>
                 <p className="text-xs text-cyan-100">En ligne</p>
               </div>
             </div>

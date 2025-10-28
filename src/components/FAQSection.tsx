@@ -36,8 +36,8 @@ const FAQSection = () => {
     {
       id: "item-1",
       icon: <HelpCircle className="w-5 h-5 text-cyan-electric" />,
-      question: "Quels services propose ALLNTIC ?",
-      answer: "ALLNTIC propose une gamme complète de services IT : maintenance informatique (hardware/software), installation et administration de réseaux LAN/WAN, développement de sites web professionnels, et installation de systèmes de sécurité électronique (vidéosurveillance, alarmes, contrôle d'accès). Nous couvrons tous vos besoins technologiques avec une approche intégrée et professionnelle."
+      question: "Quels services propose APA ?",
+      answer: "APA propose une gamme complète de services IT : maintenance informatique (hardware/software), installation et administration de réseaux LAN/WAN, développement de sites web professionnels, et installation de systèmes de sécurité électronique (vidéosurveillance, alarmes, contrôle d'accès). Nous couvrons tous vos besoins technologiques avec une approche intégrée et professionnelle."
     },
     {
       id: "item-2", 

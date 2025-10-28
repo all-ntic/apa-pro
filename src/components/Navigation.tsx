@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import allnticLogo from "@/assets/allntic-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -30,8 +29,7 @@ const Navigation = () => {
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3">
-            <img src={allnticLogo} alt="ALLNTIC Logo" className="h-10 w-10" />
-            <span className="text-xl font-bold text-white">ALLNTIC</span>
+            <span className="text-xl font-bold text-white">APA</span>
           </div>
 
           {/* Desktop Navigation */}
