@@ -131,12 +131,6 @@ Merci !`);
       action: "mailto:all.ntic225@gmail.com"
     },
     {
-      icon: <Mail className="w-6 h-6" />,
-      title: "Email Contact",
-      value: "contact@apa.info",
-      action: "mailto:contact@apa.info"
-    },
-    {
       icon: <MapPin className="w-6 h-6" />,
       title: "Localisation",
       value: "Abidjan, Côte d'Ivoire",
