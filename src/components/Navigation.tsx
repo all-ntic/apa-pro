@@ -59,12 +59,6 @@ const Navigation = () => {
               Réalisations
             </button>
             <button
-              onClick={() => scrollToSection("projets")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
-            >
-              Projets
-            </button>
-            <button
               onClick={() => scrollToSection("faq")}
               className="text-white hover:text-cyan-electric transition-colors duration-300"
             >
@@ -122,12 +116,6 @@ const Navigation = () => {
                 className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
               >
                 Réalisations
-              </button>
-              <button
-                onClick={() => scrollToSection("projets")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
-              >
-                Projets
               </button>
               <button
                 onClick={() => scrollToSection("faq")}
