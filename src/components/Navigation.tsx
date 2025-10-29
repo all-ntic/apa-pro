@@ -97,7 +97,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-white/10 bg-navy-dark/95 backdrop-blur-lg rounded-b-lg">
+          <div className="md:hidden mt-4 pb-4 border-t border-white/10 bg-navy-dark/95 backdrop-blur-lg rounded-b-lg px-4">
             <div className="flex flex-col space-y-4 pt-4">
               <button
                 onClick={() => scrollToSection("accueil")}
