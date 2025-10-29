@@ -33,87 +33,232 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Base de connaissances RAG locale
+  // Base de connaissances RAG enrichie avec informations ALLNTIC
   const getAutomaticResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase();
     
-    // Identité et profil
-    if (message.includes("qui") || message.includes("apa") || message.includes("aboubakar")) {
-      return "Je suis APA (Agnidom Pygnali Aboubakar), technicien polyvalent ivoirien spécialisé en systèmes informatiques, réseaux, développement web et sécurité électronique. Mon approche repose sur le pragmatisme, la précision technique et l'innovation durable.";
+    // Salutations
+    if (message.match(/^(bonjour|salut|hello|hi|hey|bonsoir)$/i)) {
+      return "Bonjour et bienvenue ! Je suis le chatbot ALLNTIC, comment puis-je vous aider aujourd'hui ?";
+    }
+    
+    if (message.includes("comment") && (message.includes("vas") || message.includes("allez"))) {
+      return "Je vais très bien, merci ! Et vous ? Comment puis-je vous assister dans vos projets techniques ?";
+    }
+    
+    // Identité et profil ALLNTIC
+    if (message.includes("qui") || message.includes("allntic") || message.includes("apa") || message.includes("aboubakar") || message.includes("pygnali") || message.includes("agnidom")) {
+      return "Je suis ALLNTIC (Agnidom Pygnali Aboubakar), technicien ivoirien expert en systèmes informatiques, réseaux, développement web et sécurité électronique basé à Abidjan, Cocody. Ma devise : Fiabilité, performance et sécurité au service du numérique africain.";
+    }
+    
+    if (message.includes("mission") || message.includes("objectif")) {
+      return "Ma mission : Accompagner particuliers et entreprises dans la transformation numérique sécurisée grâce à des solutions intégrées en IT, web et sécurité électronique. Ma vision : Faire de la Côte d'Ivoire un pôle technologique africain.";
     }
     
     // Services proposés
-    if (message.includes("service") || message.includes("proposez") || message.includes("offrez")) {
-      return "Je propose : maintenance informatique (hardware/software), installation et administration de réseaux LAN/WAN, développement web (sites vitrines, portfolios), et sécurité électronique (vidéosurveillance IP/analogique, alarmes, contrôle d'accès). Je propose également des formations techniques et du support à distance.";
+    if (message.includes("service") || message.includes("proposez") || message.includes("offrez") || message.includes("faire")) {
+      return "Mes services : 1) Maintenance et dépannage informatique 2) Développement de sites web professionnels SEO-optimisés 3) Installation de réseaux LAN/WAN/Wi-Fi sécurisés 4) Sécurité électronique (vidéosurveillance IP, alarmes, contrôle d'accès) 5) Formation technique 6) Support à distance.";
     }
     
     // Maintenance informatique
-    if (message.includes("maintenance") || message.includes("dépannage") || message.includes("réparation")) {
-      return "Je réalise la maintenance hardware et software : diagnostic et réparation de PC, serveurs, installation de logiciels, optimisation système, nettoyage et upgrades. Intervention rapide à domicile ou sur site selon votre localisation.";
+    if (message.includes("maintenance") || message.includes("dépannage") || message.includes("réparation") || message.includes("ordinateur")) {
+      return "Maintenance informatique complète : hardware/software, diagnostic et réparation PC/serveurs, configuration Windows/Linux, optimisation système, nettoyage, upgrades. Intervention rapide 24-72h selon urgence sur Abidjan.";
     }
     
     // Réseaux
-    if (message.includes("réseau") || message.includes("lan") || message.includes("wan") || message.includes("wifi")) {
-      return "J'installe et configure des réseaux LAN/WAN sécurisés : routeurs, switches managés, points d'accès Wi-Fi professionnel, câblage structuré, segmentation réseau et configuration VPN. Audit et optimisation de réseaux existants également disponibles.";
+    if (message.includes("réseau") || message.includes("lan") || message.includes("wan") || message.includes("wifi") || message.includes("routeur") || message.includes("switch")) {
+      return "Installation réseaux professionnels : LAN/WAN/Wi-Fi, configuration routeurs (Cisco, Ubiquiti, MikroTik), switches managés, VLAN, VPN, pare-feux, câblage structuré, supervision et audit réseau. Solutions adaptées PME et institutions.";
     }
     
     // Sécurité électronique
-    if (message.includes("vidéo") || message.includes("surveillance") || message.includes("caméra") || message.includes("alarme") || message.includes("sécurité")) {
-      return "J'installe des systèmes de vidéosurveillance complets (IP et analogiques) : caméras HD 4K, enregistreurs DVR/NVR, accès à distance sur mobile, systèmes d'alarme connectés, et contrôle d'accès biométrique. Intégration de marques Hikvision, Dahua, Synology.";
+    if (message.includes("vidéo") || message.includes("surveillance") || message.includes("caméra") || message.includes("alarme") || message.includes("sécurité") || message.includes("hikvision") || message.includes("dahua")) {
+      return "Installation systèmes de sécurité : vidéosurveillance IP/analogique HD 4K, caméras Hikvision/Dahua/Uniview, enregistreurs DVR/NVR, accès mobile temps réel, alarmes connectées, contrôle d'accès biométrique, interphonie. Maintenance préventive incluse.";
     }
     
     // Développement web
-    if (message.includes("web") || message.includes("site") || message.includes("développement") || message.includes("création")) {
-      return "Je crée des sites web professionnels : sites vitrines, portfolios, plateformes sur mesure avec HTML5, CSS3, JavaScript et WordPress. Tous mes sites sont responsive, optimisés SEO et hébergés de manière sécurisée. Je propose également la maintenance et les mises à jour.";
+    if (message.includes("web") || message.includes("site") || message.includes("développement") || message.includes("création") || message.includes("internet") || message.includes("portfolio")) {
+      return "Création sites web professionnels : vitrines, portfolios, PWA mobile-first, optimisation SEO avancée (Google, Bing, Meta), WordPress, React, Supabase, Lovable. Tous mes sites sont responsive, sécurisés et hébergés cloud (Vercel, Netlify).";
     }
     
-    // Délais et interventions
+    if (message.includes("seo") || message.includes("référencement") || message.includes("google")) {
+      return "Optimisation SEO complète : balises title/meta/ALT, Open Graph, structured data, sitemap XML, robots.txt, performance web, accessibilité, keywords stratégiques. Je garantis une visibilité maximale sur les moteurs de recherche.";
+    }
+    
+    // Technologies utilisées
+    if (message.includes("technologie") || message.includes("outil") || message.includes("logiciel") || message.includes("langage")) {
+      return "Technologies maîtrisées : HTML5, CSS3, JavaScript, React, Next.js, Laravel, WordPress, Supabase, GitHub, Cisco, Ubiquiti, Windows Server, Linux, Hikvision, Dahua, Synology. Je m'adapte à vos besoins spécifiques.";
+    }
+    
+    // Réalisations
+    if (message.includes("réalisation") || message.includes("projet réalisé") || message.includes("expérience") || message.includes("portfolio")) {
+      return "Principales réalisations : 1) Déploiement réseau sécurisé PME (Cisco, Ubiquiti, Windows Server) 2) Site institutionnel éducatif responsive SEO-optimisé 3) Système vidéosurveillance IP avec accès mobile 4) Tableau de bord technique React/Supabase 5) Refonte portail ALLNTIC avec Next.js/TailwindCSS.";
+    }
+    
+    // Projets futurs
+    if (message.includes("projet") || message.includes("innovation") || message.includes("avenir") || message.includes("développer")) {
+      return "Projets à venir : 1) Plateforme SaaS de gestion d'interventions techniques avec rapports dynamiques 2) Solution IoT de sécurité intelligente (vidéo + alarme + alertes mobiles) 3) Agence technique digitale ALLNTIC intégrant IT, web, sécurité et formation.";
+    }
+    
+    // Délais et disponibilité
     if (message.includes("délai") || message.includes("quand") || message.includes("combien de temps") || message.includes("rapide")) {
-      return "Mes délais moyens sont de 24 à 72 heures selon la complexité et l'urgence. Pour les urgences critiques sur Abidjan, je peux intervenir dans les 4h. Les projets web sont planifiés avec des jalons précis et validés avec vous.";
+      return "Délais moyens : 24 à 72h selon complexité. Urgences critiques sur Abidjan : intervention sous 4h. Horaires : Lundi-Samedi 8h-18h. Assistance d'urgence disponible sur demande en dehors des horaires.";
+    }
+    
+    if (message.includes("horaire") || message.includes("disponible") || message.includes("ouvert")) {
+      return "Horaires : Lundi au Samedi, 8h à 18h. Assistance d'urgence possible en dehors de ces horaires pour interventions critiques. N'hésitez pas à me contacter via WhatsApp pour toute demande.";
     }
     
     // Tarifs et devis
-    if (message.includes("prix") || message.includes("tarif") || message.includes("coût") || message.includes("devis")) {
-      return "Mes tarifs varient selon la complexité du projet. Je propose systématiquement un devis gratuit et sans engagement après analyse de vos besoins. Contactez-moi pour obtenir une estimation personnalisée adaptée à votre budget.";
+    if (message.includes("prix") || message.includes("tarif") || message.includes("coût") || message.includes("devis") || message.includes("budget")) {
+      return "Mes tarifs varient selon la complexité et l'ampleur du projet. Je propose systématiquement un devis gratuit détaillé et sans engagement après analyse de vos besoins. Contactez-moi pour une estimation personnalisée adaptée à votre budget.";
     }
     
     // Formation
-    if (message.includes("formation") || message.includes("apprendre") || message.includes("cours")) {
-      return "Je propose des formations techniques en bureautique, maintenance informatique de base, administration réseau et sécurité électronique. Formations adaptées à votre niveau, en présentiel ou à distance selon vos préférences.";
+    if (message.includes("formation") || message.includes("apprendre") || message.includes("cours") || message.includes("enseigner")) {
+      return "Formations techniques disponibles : bureautique, maintenance informatique, administration réseaux, sécurité électronique, cybersécurité. Formations adaptées à votre niveau, en présentiel ou à distance, avec support de cours et accompagnement personnalisé.";
     }
     
     // Zone d'intervention
-    if (message.includes("où") || message.includes("zone") || message.includes("abidjan") || message.includes("intervenir")) {
-      return "Je suis basé à Abidjan et j'interviens principalement sur toute la ville (Cocody, Plateau, Yopougon, Koumassi, etc.) et ses environs. Interventions possibles dans d'autres villes de Côte d'Ivoire sur demande et selon le projet.";
+    if (message.includes("où") || message.includes("zone") || message.includes("abidjan") || message.includes("intervenir") || message.includes("localisation")) {
+      return "Basé à Abidjan, Cocody. J'interviens sur toute la ville : Cocody, Plateau, Yopougon, Koumassi, Marcory, Abobo, etc. Interventions possibles dans d'autres villes de Côte d'Ivoire selon le projet et sur devis.";
     }
     
     // Contrats de maintenance
-    if (message.includes("contrat") || message.includes("abonnement") || message.includes("suivi")) {
-      return "Oui, je propose des contrats de maintenance informatique et sécurité avec interventions préventives et curatives programmées. Idéal pour les PME et structures nécessitant un suivi régulier et une disponibilité garantie.";
+    if (message.includes("contrat") || message.includes("abonnement") || message.includes("suivi") || message.includes("maintenance préventive")) {
+      return "Oui, je propose des contrats de maintenance IT et sécurité avec interventions préventives et curatives programmées, mises à jour régulières et assistance prioritaire. Idéal pour PME nécessitant un suivi technique continu.";
     }
     
-    // Contact
-    if (message.includes("contact") || message.includes("joindre") || message.includes("appeler") || message.includes("email")) {
-      return "Vous pouvez me contacter par WhatsApp au +225 07 78 02 33 31, par email à all.ntic225@gmail.com, ou via le formulaire de contact sur ce site. Je réponds généralement sous 24h. Mon profil LinkedIn : linkedin.com/in/apa";
+    // Contact et réseaux sociaux
+    if (message.includes("contact") || message.includes("joindre") || message.includes("appeler") || message.includes("email") || message.includes("whatsapp")) {
+      return "Contact : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://apa-pro.allntic.com. Suivez-moi sur LinkedIn, GitHub, Instagram, YouTube, Facebook, TikTok @allntic. Réponse sous 24h garantie.";
     }
     
-    // Horaires
-    if (message.includes("horaire") || message.includes("disponible") || message.includes("ouvert")) {
-      return "Je suis disponible du lundi au samedi, de 8h à 18h. Pour les urgences techniques critiques, une assistance peut être organisée en dehors de ces horaires sur demande. N'hésitez pas à me contacter.";
+    if (message.includes("linkedin") || message.includes("github") || message.includes("instagram") || message.includes("facebook") || message.includes("youtube") || message.includes("tiktok") || message.includes("réseau social")) {
+      return "Mes réseaux : GitHub github.com/all-ntic, LinkedIn linkedin.com/in/pygnali-aboubakar-agnidom-2813b6188, Instagram/TikTok @allntic225, YouTube @allntic, Facebook ALLNTIC. Suivez mes actualités et projets techniques !";
     }
     
-    // Projets à venir
-    if (message.includes("projet") || message.includes("innovation") || message.includes("avenir")) {
-      return "Je travaille actuellement sur plusieurs projets : une plateforme de gestion d'interventions techniques, une solution de sécurité connectée intelligente, et la création de l'agence APA pour des solutions IT intégrées complètes.";
+    // Certifications et qualifications
+    if (message.includes("certification") || message.includes("diplôme") || message.includes("qualification")) {
+      return "Plusieurs formations validées en IT, réseaux, sécurité et développement web. Technicien certifié avec expérience terrain confirmée sur plus de 30 projets (sites web, réseaux sécurisés, installations de sécurité électronique).";
+    }
+    
+    // Matériel recommandé
+    if (message.includes("recommandation") || message.includes("marque") || message.includes("matériel")) {
+      return "Marques recommandées : Réseaux (Ubiquiti, Cisco, TP-Link Pro, MikroTik), Sécurité (Hikvision, Dahua, Uniview, Synology), Serveurs (Windows Server, Linux Ubuntu/Debian). Je travaille avec des équipements professionnels fiables et évolutifs.";
+    }
+    
+    // Support technique
+    if (message.includes("support") || message.includes("assistance") || message.includes("aide") || message.includes("problème")) {
+      return "Support technique disponible : télémaintenance via outils sécurisés, assistance à distance, intervention sur site Abidjan, diagnostic rapide, résolution de problèmes IT et sécurité. Contactez-moi pour toute urgence technique.";
+    }
+    
+    // Entreprises et PME
+    if (message.includes("entreprise") || message.includes("pme") || message.includes("société") || message.includes("professionnel")) {
+      return "Je collabore avec des PME, institutions, écoles et entrepreneurs en Afrique de l'Ouest. Services dédiés : infrastructure IT complète, réseaux d'entreprise sécurisés, solutions de sécurité professionnelles, formation équipes, contrats de maintenance prioritaires.";
+    }
+    
+    // Lovable et outils modernes
+    if (message.includes("lovable") || message.includes("supabase") || message.includes("moderne")) {
+      return "J'utilise des technologies modernes : Lovable pour le développement rapide d'applications, Supabase pour les backends, Paystack pour les paiements, API modernes (Eventbrite, etc.). Solutions cloud scalables et sécurisées.";
+    }
+    
+    // Cybersécurité
+    if (message.includes("cybersécurité") || message.includes("sécurité informatique") || message.includes("protection")) {
+      return "Services cybersécurité : configuration pare-feux, VPN sécurisés, politiques d'accès, protection contre intrusions, audit sécurité réseau, sensibilisation équipes, gestion mots de passe, sauvegarde données. Votre sécurité numérique est ma priorité.";
+    }
+    
+    // Intelligence artificielle
+    if (message.includes("ia") || message.includes("intelligence artificielle") || message.includes("automatisation")) {
+      return "Je m'intéresse aux solutions IA et automatisation : chatbots intelligents, génération de contenu, automatisation de tâches, analyse de données. Je peux intégrer des solutions IA modernes dans vos projets web et IT.";
+    }
+    
+    // Cloud et hébergement
+    if (message.includes("cloud") || message.includes("hébergement") || message.includes("serveur")) {
+      return "Solutions cloud professionnelles : hébergement sécurisé (Vercel, Netlify, AWS, Supabase), configuration serveurs Windows/Linux, migration vers le cloud, sauvegarde automatique, scalabilité. Infrastructure moderne et performante.";
+    }
+    
+    // E-commerce
+    if (message.includes("e-commerce") || message.includes("boutique") || message.includes("vente en ligne")) {
+      return "Création sites e-commerce : intégration Paystack/WooCommerce, catalogue produits, panier, paiement sécurisé XOF, gestion stocks, suivi commandes. Solutions adaptées au marché ivoirien et africain.";
+    }
+    
+    // Caméras spécifiques
+    if (message.includes("nvr") || message.includes("dvr") || message.includes("enregistreur")) {
+      return "Enregistreurs vidéo : NVR pour caméras IP (4K, H.265+, PoE), DVR pour analogiques. Marques : Hikvision, Dahua, Synology Surveillance Station. Accès mobile iOS/Android, alertes temps réel, stockage local et cloud.";
+    }
+    
+    // VLAN et segmentation
+    if (message.includes("vlan") || message.includes("segmentation")) {
+      return "Configuration VLAN : segmentation logique réseau, isolation trafic, sécurité renforcée, gestion switches managés, politiques d'accès par groupe. Idéal pour séparer administration, production, invités dans une infrastructure complexe.";
+    }
+    
+    // WordPress
+    if (message.includes("wordpress") || message.includes("cms")) {
+      return "Développement WordPress : sites vitrines, blogs, CMS personnalisés, thèmes sur mesure, plugins, optimisation vitesse, sécurité renforcée, sauvegarde automatique, mises à jour. Solution flexible pour gérer votre contenu facilement.";
+    }
+    
+    // React et frameworks modernes
+    if (message.includes("react") || message.includes("next") || message.includes("framework")) {
+      return "Développement avec frameworks modernes : React, Next.js, TailwindCSS. Applications web performantes, PWA, SEO-friendly, responsive design, intégration API. Code propre, maintenable et évolutif.";
+    }
+    
+    // Création de site vitrine
+    if (message.includes("site vitrine") || message.includes("présence web")) {
+      return "Création site vitrine professionnel : design moderne, responsive mobile-first, formulaire contact, intégration réseaux sociaux, galerie photos/vidéos, optimisation SEO, hébergement sécurisé. Présence web impactante garantie.";
+    }
+    
+    // Garantie et SAV
+    if (message.includes("garantie") || message.includes("sav") || message.includes("après-vente")) {
+      return "Service après-vente complet : garantie sur prestations, suivi technique, mises à jour régulières, assistance prioritaire pour clients sous contrat, documentation détaillée. Votre satisfaction est ma priorité.";
+    }
+    
+    // Intervention d'urgence
+    if (message.includes("urgence") || message.includes("panne") || message.includes("critique")) {
+      return "Intervention d'urgence disponible : diagnostic rapide, résolution problèmes critiques, restauration systèmes, récupération données. Sur Abidjan, intervention possible sous 4h pour urgences techniques. Contactez-moi immédiatement.";
+    }
+    
+    // Paystack et paiements
+    if (message.includes("paystack") || message.includes("paiement") || message.includes("transaction")) {
+      return "Intégration Paystack pour paiements en ligne : transactions sécurisées XOF, cartes bancaires, Mobile Money (MTN, Moov, Orange), webhooks, réconciliation automatique. Solution de paiement adaptée au marché ivoirien.";
+    }
+    
+    // Sauvegarde et récupération
+    if (message.includes("sauvegarde") || message.includes("backup") || message.includes("récupération")) {
+      return "Solutions de sauvegarde : automatisation backups, stockage local et cloud, plan de reprise d'activité (PRA), récupération données en cas de panne, protection contre ransomware. Vos données en sécurité.";
+    }
+    
+    // Formation cybersécurité
+    if (message.includes("formation cybersécurité") || message.includes("sensibilisation")) {
+      return "Formation cybersécurité : sensibilisation équipes, bonnes pratiques, gestion mots de passe, phishing, protection données personnelles, RGPD. Sessions interactives adaptées à tous niveaux.";
+    }
+    
+    // Audit technique
+    if (message.includes("audit") || message.includes("diagnostic") || message.includes("analyse")) {
+      return "Audit technique complet : diagnostic infrastructure IT, analyse sécurité réseau, évaluation systèmes, recommandations d'amélioration, rapport détaillé, plan d'action priorisé. Optimisez votre IT.";
+    }
+    
+    // Travail à distance
+    if (message.includes("distance") || message.includes("remote") || message.includes("télémaintenance")) {
+      return "Oui, télémaintenance et support à distance via outils sécurisés (TeamViewer, AnyDesk, SSH). Idéal pour diagnostic, configuration, formation, résolution problèmes sans déplacement. Efficace et économique.";
+    }
+    
+    // Collaboration
+    if (message.includes("collaboration") || message.includes("partenariat") || message.includes("équipe")) {
+      return "Ouvert aux collaborations techniques, partenariats sur projets IT, intégration dans équipes pluridisciplinaires. Capacité d'adaptation, esprit d'équipe, communication transparente. Contactez-moi pour discuter opportunités.";
+    }
+    
+    // Valeurs
+    if (message.includes("valeur") || message.includes("principe") || message.includes("éthique")) {
+      return "Mes valeurs : Rigueur technique, Innovation pragmatique, Fiabilité des solutions, Transparence totale, Service orienté client, Engagement qualité, Excellence opérationnelle. Ces principes guident chacune de mes prestations.";
     }
     
     // Remerciements
-    if (message.includes("merci") || message.includes("au revoir") || message.includes("bye")) {
-      return "Merci pour votre intérêt ! N'hésitez pas à me contacter pour concrétiser votre projet technique. Je suis à votre disposition pour toute question. À très bientôt !";
+    if (message.includes("merci") || message.includes("au revoir") || message.includes("bye") || message.includes("ciao")) {
+      return "Merci pour votre intérêt ! N'hésitez pas à me contacter via WhatsApp +225 07 78 02 33 31 ou all.ntic225@gmail.com pour concrétiser votre projet. Je suis à votre disposition. À très bientôt ! 🚀";
     }
     
-    // Réponse par défaut
-    return "Je n'ai pas encore cette information précise dans ma base. Pour obtenir une réponse détaillée et personnalisée, contactez-moi directement au +225 07 78 02 33 31 (WhatsApp) ou via all.ntic225@gmail.com. Je serai ravi de vous aider !";
+    // Réponse par défaut enrichie
+    return "Je n'ai pas cette information précise dans ma base actuellement. Pour une réponse détaillée et personnalisée, contactez ALLNTIC directement : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://apa-pro.allntic.com. Je serai ravi de vous aider !";
   };
 
   const handleSendMessage = async () => {
