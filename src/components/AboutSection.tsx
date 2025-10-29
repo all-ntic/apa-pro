@@ -14,7 +14,7 @@ const AboutSection = () => {
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold text-navy-dark mb-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-navy-dark mb-4 font-serif">
               À propos de <span className="gradient-text">APA</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6"></div>
@@ -39,7 +39,7 @@ const AboutSection = () => {
 
           {/* Values */}
           <div className="animate-scale-in">
-            <h3 className="text-2xl lg:text-3xl font-bold text-navy-dark text-center mb-10">
+            <h3 className="text-2xl lg:text-3xl font-bold text-navy-dark text-center mb-10 font-serif">
               Mes Valeurs
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

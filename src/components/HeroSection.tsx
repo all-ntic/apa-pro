@@ -53,7 +53,7 @@ const HeroSection = () => {
           <div className="flex-1 lg:w-3/5 text-white space-y-6">
             {/* Nom et titre */}
             <div className="space-y-4 animate-fade-in">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight">
+              <h1 className="text-4xl lg:text-6xl font-bold leading-tight font-serif">
                 <span className="gradient-text block">Agnidom Pygnali</span>
                 <span className="text-white block">Aboubakar</span>
               </h1>
