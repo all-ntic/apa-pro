@@ -2,7 +2,6 @@ import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SkillsSection from "@/components/SkillsSection";
-import RealizationsSection from "@/components/RealizationsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import ChatBot from "@/components/ChatBot";
@@ -15,7 +14,6 @@ const Portfolio = () => {
       <HeroSection />
       <AboutSection />
       <SkillsSection />
-      <RealizationsSection />
       <FAQSection />
       <ContactSection />
       <Footer />
