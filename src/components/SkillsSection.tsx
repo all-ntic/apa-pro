@@ -1,4 +1,4 @@
-import { Monitor, Network, Code, Shield, Settings, GraduationCap } from "lucide-react";
+import { Monitor, Network, Code, Shield } from "lucide-react";
 
 const SkillsSection = () => {
   const skills = [
@@ -25,18 +25,6 @@ const SkillsSection = () => {
       title: "Sécurité Électronique",
       description: "Vidéosurveillance IP/analogique, alarmes, contrôle d'accès, DVR/NVR",
       color: "cyan-electric"
-    },
-    {
-      icon: Settings,
-      title: "Gestion de Projets",
-      description: "Cahiers des charges, planification, supervision équipes, audit technique",
-      color: "cyan-glow"
-    },
-    {
-      icon: GraduationCap,
-      title: "Formation Utilisateurs",
-      description: "Accompagnement technique, formation outils et systèmes",
-      color: "orange-accent"
     }
   ];
 

@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, Mail, MapPin, Shield, Monitor, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Shield, Monitor, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -8,7 +8,6 @@ const Footer = () => {
     { name: "À propos", href: "#apropos" },
     { name: "Compétences", href: "#competences" },
     { name: "Réalisations", href: "#realisations" },
-    { name: "Projets", href: "#projets" },
     { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" }
   ];
@@ -58,12 +57,6 @@ const Footer = () => {
                 <Phone className="w-5 h-5 text-cyan-electric mr-3" />
                 <a href="tel:+2250778023331" className="hover:text-cyan-electric transition-colors duration-300">
                   +225 07 78 02 33 31
-                </a>
-              </div>
-              <div className="flex items-center text-gray-300">
-                <Mail className="w-5 h-5 text-cyan-electric mr-3" />
-                <a href="mailto:all.ntic225@gmail.com" className="hover:text-cyan-electric transition-colors duration-300">
-                  all.ntic225@gmail.com
                 </a>
               </div>
             </div>
@@ -117,13 +110,6 @@ const Footer = () => {
                 aria-label="WhatsApp"
               >
                 <MessageCircle className="w-5 h-5 group-hover:animate-pulse" />
-              </a>
-              <a
-                href="mailto:all.ntic225@gmail.com"
-                className="bg-cyan-electric/10 hover:bg-cyan-electric hover:text-white text-cyan-electric p-3 rounded-full transition-all duration-300"
-                aria-label="Email"
-              >
-                <Mail className="w-5 h-5" />
               </a>
               <a
                 href="https://www.facebook.com/apa"
