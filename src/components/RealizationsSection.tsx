@@ -1,4 +1,4 @@
-import { Monitor, Network, Globe, Shield, Zap, Brain, Lock, Cog, Church, Heart, Palette, Truck, PartyPopper } from "lucide-react";
+import { Monitor, Network, Globe, Shield, Zap, Brain, Lock, Cog, Church, Heart, Palette, Truck, PartyPopper, Github, Youtube } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -10,48 +10,60 @@ const RealizationsSection = () => {
       title: "APA Pro - Portfolio Professionnel",
       description: "Portfolio IT & Web",
       details: "Portfolio professionnel complet présentant expertise en systèmes informatiques, réseaux, développement web et sécurité électronique avec chatbot intelligent",
-      tags: ["React", "Portfolio", "Responsive", "Chatbot IA"],
-      link: "https://apa-pro.allntic.com"
+      tags: ["React", "Supabase", "Responsive", "Chatbot IA", "SEO"],
+      link: "https://apa-pro.allntic.com",
+      github: "https://github.com/all-ntic/apa-portfolio",
+      youtube: "https://www.youtube.com/@allntic"
     },
     {
       icon: <Church className="w-8 h-8" />,
       title: "Ivoire Église+",
       description: "Plateforme Multi-Église Cloud",
       details: "Solution SaaS complète pour églises : gestion membres, événements, messagerie, dons en ligne Paystack et assistant spirituel IA",
-      tags: ["Cloud", "Multi-tenant", "Paystack", "IA Spirituelle"],
-      link: "https://ivoire-eglise.allntic.com"
+      tags: ["Cloud", "Multi-tenant", "Paystack", "IA Spirituelle", "TypeScript"],
+      link: "https://ivoire-eglise.allntic.com",
+      github: "https://github.com/all-ntic/ivoire-eglise",
+      youtube: "https://www.youtube.com/@allntic"
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "OLCAP-CI",
       description: "ONG Santé & Solidarité",
       details: "Site institutionnel pour ONG de lutte contre l'anémie falciforme et sensibilisation aux cancers féminins en Côte d'Ivoire",
-      tags: ["NGO", "Santé", "Impact Social", "Dons"],
-      link: "https://olcap-ci.allntic.com"
+      tags: ["NGO", "Santé", "Impact Social", "Dons", "React"],
+      link: "https://olcap-ci.allntic.com",
+      github: "https://github.com/all-ntic/olcap-ci",
+      youtube: "https://www.youtube.com/@allntic"
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Atisso Goha",
       description: "Portfolio Artiste Sculpteur",
       details: "Galerie en ligne immersive pour sculpteur monumental ivoirien - exposition virtuelle d'œuvres monumentales et parcours artistique",
-      tags: ["Art", "Galerie", "Portfolio", "Culture"],
-      link: "https://atisso-goha.lovable.app"
+      tags: ["Art", "Galerie", "Portfolio", "Culture", "Next.js"],
+      link: "https://atisso-goha.lovable.app",
+      github: "https://github.com/all-ntic/atisso-goha",
+      youtube: "https://www.youtube.com/@allntic"
     },
     {
       icon: <Truck className="w-8 h-8" />,
       title: "TradLog Côte d'Ivoire",
       description: "Logistique & Matériaux BTP",
       details: "Plateforme logistique professionnelle : transport routier, distribution ciment, acier et granulats avec couverture nationale",
-      tags: ["Logistique", "BTP", "Transport", "E-commerce"],
-      link: "https://tradlog.lovable.app"
+      tags: ["Logistique", "BTP", "Transport", "E-commerce", "React"],
+      link: "https://tradlog.lovable.app",
+      github: "https://github.com/all-ntic/tradlog-ci",
+      youtube: "https://www.youtube.com/@allntic"
     },
     {
       icon: <PartyPopper className="w-8 h-8" />,
       title: "Chill Side Party",
       description: "Événement Pool Party",
       details: "Site événementiel pour soirée festive à Abidjan : billetterie en ligne, compte à rebours, DJ live et pool party aux Résidences Saint Jérôme",
-      tags: ["Événement", "Billetterie", "Landing Page", "Festif"],
-      link: "https://chill-party.lovable.app"
+      tags: ["Événement", "Billetterie", "Landing Page", "Festif", "Tailwind"],
+      link: "https://chill-party.lovable.app",
+      github: "https://github.com/all-ntic/chill-side-party",
+      youtube: "https://www.youtube.com/@allntic"
     }
   ];
 
@@ -120,17 +132,41 @@ const RealizationsSection = () => {
                       </Badge>
                     ))}
                   </div>
-                  {project.link && (
-                    <a 
-                      href={project.link} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-cyan-electric hover:text-cyan-glow transition-colors duration-300 font-medium text-sm"
-                    >
-                      Voir le projet
-                      <Globe className="w-4 h-4" />
-                    </a>
-                  )}
+                  <div className="flex flex-wrap gap-3">
+                    {project.link && (
+                      <a 
+                        href={project.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-cyan-electric hover:text-cyan-glow transition-colors duration-300 font-medium text-sm"
+                      >
+                        <Globe className="w-4 h-4" />
+                        Démo Live
+                      </a>
+                    )}
+                    {project.github && (
+                      <a 
+                        href={project.github} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-navy-dark hover:text-cyan-electric transition-colors duration-300 font-medium text-sm"
+                      >
+                        <Github className="w-4 h-4" />
+                        Code Source
+                      </a>
+                    )}
+                    {project.youtube && (
+                      <a 
+                        href={project.youtube} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-orange-accent hover:text-orange-accent/80 transition-colors duration-300 font-medium text-sm"
+                      >
+                        <Youtube className="w-4 h-4" />
+                        Vidéo
+                      </a>
+                    )}
+                  </div>
                 </CardContent>
               </Card>
             ))}
