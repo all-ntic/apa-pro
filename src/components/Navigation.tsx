@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import { Menu, X, MessageCircle } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import allnticLogo from "@/assets/allntic-logo-new.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,73 +24,42 @@ const Navigation = () => {
   };
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? "bg-navy-dark/95 backdrop-blur-lg shadow-elegant" : "bg-transparent"
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      isScrolled 
+        ? "bg-navy-dark/98 backdrop-blur-xl shadow-elegant border-b border-gold-primary/10" 
+        : "bg-transparent"
     }`}>
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <span className="text-xl font-bold text-white">APA</span>
+          {/* Logo */}
+          <div className="flex items-center space-x-3 cursor-pointer" onClick={() => scrollToSection("accueil")}>
+            <img src={allnticLogo} alt="ALLNTIC Logo" className="h-10 w-auto transition-transform duration-300 hover:scale-110" />
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            <button
-              onClick={() => scrollToSection("accueil")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
-            >
-              Accueil
-            </button>
-            <button
-              onClick={() => scrollToSection("apropos")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
-            >
-              À propos
-            </button>
-            <button
-              onClick={() => scrollToSection("competences")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
-            >
-              Compétences
-            </button>
-            <button
-              onClick={() => scrollToSection("realisations")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
-            >
-              Réalisations
-            </button>
-            <button
-              onClick={() => scrollToSection("projets")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
-            >
-              Projets
-            </button>
-            <button
-              onClick={() => scrollToSection("faq")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
-            >
-              FAQ
-            </button>
-            <button
-              onClick={() => scrollToSection("contact")}
-              className="text-white hover:text-cyan-electric transition-colors duration-300"
-            >
-              Contact
-            </button>
+          <div className="hidden lg:flex items-center space-x-8">
+            {["Accueil", "À propos", "Compétences", "Réalisations", "Projets", "FAQ", "Contact"].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item.toLowerCase().replace("à propos", "apropos").replace("compétences", "competences").replace("réalisations", "realisations"))}
+                className="relative text-white/90 hover:text-gold-primary font-medium transition-all duration-300 group"
+              >
+                {item}
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-gold group-hover:w-full transition-all duration-300" />
+              </button>
+            ))}
             <Button
-              variant="outline"
-              size="sm"
-              className="bg-transparent border-cyan-electric text-cyan-electric hover:bg-cyan-electric hover:text-white transition-all duration-300"
+              onClick={() => window.open("https://wa.me/2250778023331", "_blank")}
+              className="bg-gradient-gold text-navy-dark hover:shadow-glow font-semibold transition-all duration-300 hover:scale-105"
             >
-              <MessageCircle className="w-4 h-4 mr-2" />
-              Chat
+              Contactez-nous
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-white"
+            className="lg:hidden text-white hover:text-gold-primary transition-colors duration-300"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -97,57 +67,22 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-white/10">
-            <div className="flex flex-col space-y-4 pt-4">
-              <button
-                onClick={() => scrollToSection("accueil")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
-              >
-                Accueil
-              </button>
-              <button
-                onClick={() => scrollToSection("apropos")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
-              >
-                À propos
-              </button>
-              <button
-                onClick={() => scrollToSection("competences")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
-              >
-                Compétences
-              </button>
-              <button
-                onClick={() => scrollToSection("realisations")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
-              >
-                Réalisations
-              </button>
-              <button
-                onClick={() => scrollToSection("projets")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
-              >
-                Projets
-              </button>
-              <button
-                onClick={() => scrollToSection("faq")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
-              >
-                FAQ
-              </button>
-              <button
-                onClick={() => scrollToSection("contact")}
-                className="text-white hover:text-cyan-electric transition-colors duration-300 text-left"
-              >
-                Contact
-              </button>
+          <div className="lg:hidden mt-6 pb-6 border-t border-white/10 animate-fade-in">
+            <div className="flex flex-col space-y-4 pt-6">
+              {["Accueil", "À propos", "Compétences", "Réalisations", "Projets", "FAQ", "Contact"].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase().replace("à propos", "apropos").replace("compétences", "competences").replace("réalisations", "realisations"))}
+                  className="text-white/90 hover:text-gold-primary transition-colors duration-300 text-left font-medium"
+                >
+                  {item}
+                </button>
+              ))}
               <Button
-                variant="outline"
-                size="sm"
-                className="bg-transparent border-cyan-electric text-cyan-electric hover:bg-cyan-electric hover:text-white transition-all duration-300 w-fit"
+                onClick={() => window.open("https://wa.me/2250778023331", "_blank")}
+                className="bg-gradient-gold text-navy-dark hover:shadow-glow font-semibold w-fit"
               >
-                <MessageCircle className="w-4 h-4 mr-2" />
-                Chat
+                Contactez-nous
               </Button>
             </div>
           </div>
