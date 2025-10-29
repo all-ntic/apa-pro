@@ -7,36 +7,32 @@ All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* Base palette - Premium Professional Theme */
+    /* Base palette - Navy blue professional theme */
     --background: 0 0% 100%;
-    --foreground: 225 15% 10%;
+    --foreground: 220 15% 15%;
     
-    /* Navy blue premium system - Based on #0b132b */
-    --navy-dark: 225 60% 10%;
-    --navy-primary: 225 55% 15%; 
-    --navy-medium: 225 45% 22%;
-    --navy-light: 225 35% 30%;
+    /* Navy blue gradient system */
+    --navy-dark: 220 50% 12%;
+    --navy-primary: 220 65% 18%; 
+    --navy-medium: 220 45% 25%;
+    --navy-light: 220 35% 35%;
     
-    /* Gold accent system - Based on #f5b700 */
-    --gold-primary: 43 100% 48%;
-    --gold-light: 43 100% 55%;
-    --gold-dark: 43 100% 40%;
-    
-    /* Secondary accents */
+    /* Accent colors */
     --cyan-electric: 190 95% 50%;
     --cyan-glow: 190 85% 60%;
+    --orange-accent: 25 95% 60%;
     
-    /* Grays - Premium contrast */
-    --gray-900: 225 20% 8%;
-    --gray-800: 225 15% 18%;
-    --gray-700: 225 12% 28%;
-    --gray-600: 225 10% 40%;
-    --gray-500: 225 8% 52%;
-    --gray-400: 225 6% 64%;
-    --gray-300: 225 4% 76%;
-    --gray-200: 225 3% 88%;
-    --gray-100: 225 2% 95%;
-    --gray-50: 225 1% 98%;
+    /* Grays - Enhanced contrast */
+    --gray-900: 220 20% 8%;
+    --gray-800: 220 15% 18%;
+    --gray-700: 220 12% 28%;
+    --gray-600: 220 10% 40%;
+    --gray-500: 220 8% 52%;
+    --gray-400: 220 6% 64%;
+    --gray-300: 220 4% 76%;
+    --gray-200: 220 3% 88%;
+    --gray-100: 220 2% 95%;
+    --gray-50: 220 1% 98%;
 
     /* Semantic tokens */
     --card: 0 0% 100%;
@@ -47,7 +43,7 @@ All colors MUST be HSL. */
 
     --primary: var(--navy-primary);
     --primary-foreground: 0 0% 98%;
-    --primary-glow: var(--gold-primary);
+    --primary-glow: var(--cyan-electric);
 
     --secondary: var(--gray-100);
     --secondary-foreground: var(--gray-900);
@@ -55,8 +51,8 @@ All colors MUST be HSL. */
     --muted: var(--gray-100);
     --muted-foreground: var(--gray-600);
 
-    --accent: var(--gold-primary);
-    --accent-foreground: var(--navy-dark);
+    --accent: var(--cyan-electric);
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
@@ -67,19 +63,18 @@ All colors MUST be HSL. */
 
     --radius: 0.75rem;
     
-    /* Premium Gradients */
+    /* Gradients */
     --gradient-hero: linear-gradient(135deg, hsl(var(--navy-dark)) 0%, hsl(var(--navy-primary)) 50%, hsl(var(--navy-medium)) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-dark)) 0%, hsl(var(--gold-primary)) 50%, hsl(var(--gold-light)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--gold-primary)) 0%, hsl(var(--gold-light)) 100%);
-    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--navy-dark) / 0.9) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(var(--gray-50)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--cyan-electric)) 0%, hsl(var(--cyan-glow)) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--navy-dark) / 0.8) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.9) 0%, hsl(0 0% 100% / 0.7) 100%);
     
-    /* Premium Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--gold-primary) / 0.3), 0 0 80px hsl(var(--gold-primary) / 0.15);
-    --shadow-elegant: 0 20px 60px -12px hsl(var(--navy-primary) / 0.25), 0 0 0 1px hsl(var(--gold-primary) / 0.1);
-    --shadow-card: 0 10px 30px -5px hsl(var(--gray-900) / 0.1), 0 0 0 1px hsl(var(--gray-200));
-    --shadow-floating: 0 25px 50px -10px hsl(var(--navy-primary) / 0.4), 0 0 60px hsl(var(--gold-primary) / 0.2);
-    --shadow-mega: 0 40px 80px -15px hsl(var(--navy-primary) / 0.5), 0 0 100px hsl(var(--gold-primary) / 0.3);
+    /* Shadows - Enhanced for WOW effect */
+    --shadow-glow: 0 0 60px hsl(var(--cyan-electric) / 0.4), 0 0 100px hsl(var(--cyan-electric) / 0.2);
+    --shadow-elegant: 0 25px 80px -15px hsl(var(--navy-primary) / 0.3), 0 0 0 1px hsl(var(--cyan-electric) / 0.1);
+    --shadow-card: 0 15px 40px -8px hsl(var(--gray-900) / 0.15), 0 0 0 1px hsl(var(--gray-200));
+    --shadow-floating: 0 35px 70px -15px hsl(var(--navy-primary) / 0.5), 0 0 100px hsl(var(--cyan-electric) / 0.3);
+    --shadow-mega: 0 50px 100px -20px hsl(var(--navy-primary) / 0.6), 0 0 150px hsl(var(--cyan-electric) / 0.4);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -146,11 +141,11 @@ All colors MUST be HSL. */
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
-    font-family: 'Poppins', 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-semibold tracking-tight;
+    @apply font-semibold tracking-tight;
   }
 
   .font-mono {

@@ -16,7 +16,6 @@ export default {
       fontFamily: {
         sans: ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
         serif: ['Playfair Display', 'Georgia', 'serif'],
-        display: ['Montserrat Alternates', 'Poppins', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'Consolas', 'monospace'],
       },
       colors: {
@@ -31,12 +30,6 @@ export default {
           primary: "hsl(var(--navy-primary))",
           medium: "hsl(var(--navy-medium))",
           light: "hsl(var(--navy-light))",
-        },
-        
-        gold: {
-          primary: "hsl(var(--gold-primary))",
-          light: "hsl(var(--gold-light))",
-          dark: "hsl(var(--gold-dark))",
         },
         
         cyan: {
@@ -108,7 +101,6 @@ export default {
       },
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
-        'gradient-gold': 'var(--gradient-gold)',
         'gradient-accent': 'var(--gradient-accent)',
         'gradient-overlay': 'var(--gradient-overlay)',
         'gradient-card': 'var(--gradient-card)',
