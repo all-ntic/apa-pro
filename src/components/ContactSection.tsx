@@ -8,6 +8,31 @@ import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useMutation } from "@tanstack/react-query";
+import { z } from "zod";
+
+const contactSchema = z.object({
+  name: z.string()
+    .trim()
+    .min(2, "Le nom doit contenir au moins 2 caractères")
+    .max(100, "Le nom ne peut pas dépasser 100 caractères"),
+  email: z.string()
+    .trim()
+    .email("Adresse email invalide")
+    .max(255, "L'email ne peut pas dépasser 255 caractères"),
+  phone: z.string()
+    .trim()
+    .max(20, "Le numéro de téléphone ne peut pas dépasser 20 caractères")
+    .optional()
+    .or(z.literal("")),
+  service: z.string()
+    .max(100, "Le nom du service ne peut pas dépasser 100 caractères")
+    .optional()
+    .or(z.literal("")),
+  message: z.string()
+    .trim()
+    .min(10, "Le message doit contenir au moins 10 caractères")
+    .max(2000, "Le message ne peut pas dépasser 2000 caractères")
+});
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -63,6 +88,20 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form data with zod
+    const result = contactSchema.safeParse(formData);
+    
+    if (!result.success) {
+      const firstError = result.error.errors[0];
+      toast({
+        title: "Erreur de validation",
+        description: firstError.message,
+        variant: "destructive"
+      });
+      return;
+    }
+    
     submitMutation.mutate(formData);
   };
 
