@@ -32,13 +32,15 @@ export default {
           light: "hsl(var(--navy-light))",
         },
         
+        gold: {
+          primary: "hsl(var(--gold-primary))",
+          light: "hsl(var(--gold-light))",
+          glow: "hsl(var(--gold-glow))",
+        },
+        
         cyan: {
           electric: "hsl(var(--cyan-electric))",
           glow: "hsl(var(--cyan-glow))",
-        },
-        
-        orange: {
-          accent: "hsl(var(--orange-accent))",
         },
         
         gray: {
@@ -102,6 +104,7 @@ export default {
       backgroundImage: {
         'gradient-hero': 'var(--gradient-hero)',
         'gradient-accent': 'var(--gradient-accent)',
+        'gradient-gold': 'var(--gradient-gold)',
         'gradient-overlay': 'var(--gradient-overlay)',
         'gradient-card': 'var(--gradient-card)',
       },
