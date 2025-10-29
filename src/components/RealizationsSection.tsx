@@ -34,48 +34,48 @@ const RealizationsSection = () => {
       icon: <Globe className="w-8 h-8" />,
       title: "APA Pro - Portfolio Professionnel",
       description: "Portfolio IT & Web",
-      details: "Portfolio professionnel complet avec design moderne, animations, chatbot intelligent et formulaire de contact",
-      tags: ["React", "Portfolio", "Responsive", "Chatbot"],
+      details: "Portfolio professionnel complet présentant expertise en systèmes informatiques, réseaux, développement web et sécurité électronique avec chatbot intelligent",
+      tags: ["React", "Portfolio", "Responsive", "Chatbot IA"],
       link: "https://apa-pro.allntic.com"
     },
     {
       icon: <Church className="w-8 h-8" />,
       title: "Ivoire Église+",
-      description: "Plateforme Multi-Église",
-      details: "Solution cloud complète : gestion membres, événements, dons en ligne, chatbot spirituel IA",
-      tags: ["Cloud", "Multi-tenant", "IA", "Paystack"],
+      description: "Plateforme Multi-Église Cloud",
+      details: "Solution SaaS complète pour églises : gestion membres, événements, messagerie, dons en ligne Paystack et assistant spirituel IA",
+      tags: ["Cloud", "Multi-tenant", "Paystack", "IA Spirituelle"],
       link: "https://ivoire-eglise.allntic.com"
     },
     {
       icon: <Heart className="w-8 h-8" />,
       title: "OLCAP-CI",
       description: "ONG Santé & Solidarité",
-      details: "Site institutionnel pour ONG de lutte contre l'anémie et sensibilisation aux cancers féminins",
-      tags: ["NGO", "Impact", "Responsive", "Dons"],
+      details: "Site institutionnel pour ONG de lutte contre l'anémie falciforme et sensibilisation aux cancers féminins en Côte d'Ivoire",
+      tags: ["NGO", "Santé", "Impact Social", "Dons"],
       link: "https://olcap-ci.allntic.com"
     },
     {
       icon: <Palette className="w-8 h-8" />,
       title: "Atisso Goha",
       description: "Portfolio Artiste Sculpteur",
-      details: "Portfolio artistique immersif pour sculpteur monumental - galerie, parcours et exposition virtuelle",
-      tags: ["Art", "Portfolio", "Galerie", "Immersif"],
+      details: "Galerie en ligne immersive pour sculpteur monumental ivoirien - exposition virtuelle d'œuvres monumentales et parcours artistique",
+      tags: ["Art", "Galerie", "Portfolio", "Culture"],
       link: "https://atisso-goha.lovable.app"
     },
     {
       icon: <Truck className="w-8 h-8" />,
-      title: "TradLog",
-      description: "Solution Logistique",
-      details: "Plateforme de gestion logistique et transport pour optimisation des opérations commerciales",
-      tags: ["Logistique", "SaaS", "Gestion", "Transport"],
+      title: "TradLog Côte d'Ivoire",
+      description: "Logistique & Matériaux BTP",
+      details: "Plateforme logistique professionnelle : transport routier, distribution ciment, acier et granulats avec couverture nationale",
+      tags: ["Logistique", "BTP", "Transport", "E-commerce"],
       link: "https://tradlog.lovable.app"
     },
     {
       icon: <PartyPopper className="w-8 h-8" />,
-      title: "Chill Party",
-      description: "Plateforme Événementiel",
-      details: "Application web pour organisation et gestion d'événements festifs et sociaux",
-      tags: ["Événementiel", "Social", "Web App", "Planning"],
+      title: "Chill Side Party",
+      description: "Événement Pool Party",
+      details: "Site événementiel pour soirée festive à Abidjan : billetterie en ligne, compte à rebours, DJ live et pool party aux Résidences Saint Jérôme",
+      tags: ["Événement", "Billetterie", "Landing Page", "Festif"],
       link: "https://chill-party.lovable.app"
     }
   ];
