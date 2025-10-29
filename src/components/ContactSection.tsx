@@ -26,28 +26,15 @@ const ContactSection = () => {
     });
   };
 
-  // Mutation pour sauvegarder le message et envoyer l'email
+  // Mutation pour envoyer le message via edge function
   const submitMutation = useMutation({
     mutationFn: async (data: typeof formData) => {
-      // 1. Sauvegarder le message dans la base de données
-      const { error: dbError } = await supabase
-        .from('contact_messages')
-        .insert([{
-          name: data.name,
-          email: data.email,
-          phone: data.phone || null,
-          message: `${data.service ? `Service: ${data.service}\n\n` : ''}${data.message}`,
-          status: 'new'
-        }]);
-
-      if (dbError) throw dbError;
-
-      // 2. Envoyer l'email via edge function
-      const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+      // L'edge function gère à la fois l'insertion DB et l'envoi d'email
+      const { error } = await supabase.functions.invoke('send-contact-email', {
         body: data
       });
 
-      if (emailError) throw emailError;
+      if (error) throw error;
 
       return data;
     },
