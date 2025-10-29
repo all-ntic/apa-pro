@@ -102,39 +102,29 @@ const Footer = () => {
 
         <hr className="border-white/10 my-8" />
 
-        {/* Bottom section */}
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="text-gray-400 text-sm mb-4 md:mb-0">
-            © {currentYear} APA - Agnidom Pygnali Aboubakar. Tous droits réservés.
-          </div>
-          
-          <div className="flex items-center space-x-4">
-            <a
-              href="https://wa.me/+2250778023331"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full transition-all duration-300 hover:shadow-glow group"
-              aria-label="WhatsApp"
-            >
-              <MessageCircle className="w-5 h-5 group-hover:animate-pulse" />
-            </a>
-            <a
-              href="mailto:all.ntic225@gmail.com"
-              className="bg-cyan-electric/10 hover:bg-cyan-electric hover:text-white text-cyan-electric p-3 rounded-full transition-all duration-300"
-              aria-label="Email"
-            >
-              <Mail className="w-5 h-5" />
-            </a>
-          </div>
-        </div>
-
         {/* Social Media Links */}
-        <div className="mt-8 pt-6 border-t border-white/10">
+        <div className="mb-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-400 text-sm mb-4 md:mb-0">
               Suivez-nous sur les réseaux sociaux
             </p>
             <div className="flex items-center space-x-3">
+              <a
+                href="https://wa.me/+2250778023331"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-green-600 hover:bg-green-700 text-white p-3 rounded-full transition-all duration-300 hover:shadow-glow group"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle className="w-5 h-5 group-hover:animate-pulse" />
+              </a>
+              <a
+                href="mailto:all.ntic225@gmail.com"
+                className="bg-cyan-electric/10 hover:bg-cyan-electric hover:text-white text-cyan-electric p-3 rounded-full transition-all duration-300"
+                aria-label="Email"
+              >
+                <Mail className="w-5 h-5" />
+              </a>
               <a
                 href="https://www.facebook.com/apa"
                 target="_blank"
@@ -183,6 +173,13 @@ const Footer = () => {
                 <Youtube className="w-5 h-5" />
               </a>
             </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className="pt-6 border-t border-white/10">
+          <div className="text-gray-400 text-sm text-center">
+            © {currentYear} APA - Agnidom Pygnali Aboubakar. Tous droits réservés.
           </div>
         </div>
 

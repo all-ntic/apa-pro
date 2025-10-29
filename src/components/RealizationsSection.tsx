@@ -1,33 +1,8 @@
 import { Monitor, Network, Globe, Shield, Zap, Brain, Lock, Cog, Church, Heart, Palette, Truck, PartyPopper } from "lucide-react";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { useQuery } from "@tanstack/react-query";
-import { supabase } from "@/integrations/supabase/client";
 
 const RealizationsSection = () => {
-  // Charger les projets depuis Supabase
-  const { data: projects, isLoading } = useQuery({
-    queryKey: ['projects'],
-    queryFn: async () => {
-      const { data, error } = await supabase
-        .from('projects')
-        .select('*')
-        .order('display_order', { ascending: true });
-      
-      if (error) throw error;
-      return data;
-    }
-  });
-
-  // Icônes statiques pour les projets (mapping par catégorie)
-  const iconMap: { [key: string]: JSX.Element } = {
-    "Web": <Globe className="w-8 h-8" />,
-    "Mobile": <Monitor className="w-8 h-8" />,
-    "Network": <Network className="w-8 h-8" />,
-    "Security": <Shield className="w-8 h-8" />,
-    "AI": <Brain className="w-8 h-8" />,
-    "Automation": <Cog className="w-8 h-8" />
-  };
 
   const pastRealizations = [
     {
