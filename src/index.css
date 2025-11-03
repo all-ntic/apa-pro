@@ -7,22 +7,21 @@ All colors MUST be HSL. */
 
 @layer base {
   :root {
-    /* ALLNTIC Premium Design System - Nouvelle palette élégante */
-    --background: 210 20% 98%;  /* #f9f9fb */
-    --foreground: 0 0% 12%;     /* #1e1e1e */
+    /* ALLNTIC Professional Design System - Bleu Roi Premium */
+    --background: 0 0% 100%;        /* #ffffff */
+    --foreground: 0 0% 10%;         /* #1a1a1a */
     
-    /* Bleu pétrole principal */
-    --navy-dark: 210 40% 15%;      /* #1a2639 foncé */
-    --navy-primary: 210 35% 17%;   /* #1a2639 */
-    --navy-medium: 210 30% 25%;    /* bleu pétrole moyen */
-    --navy-light: 210 25% 35%;     /* bleu pétrole clair */
+    /* Bleu Roi - Couleur principale */
+    --royal-blue: 217 100% 35%;     /* #0047AB Bleu Roi principal */
+    --royal-blue-dark: 217 100% 25%; /* #003D7A Bleu Roi foncé */
+    --royal-blue-light: 217 90% 55%; /* #1E6FD9 Bleu Roi clair */
+    --royal-blue-glow: 217 85% 70%;  /* #5C9FFF Bleu Roi lumineux */
     
-    /* Or doux accent */
-    --gold-primary: 45 65% 52%;    /* #d4af37 */
-    --gold-light: 45 70% 65%;      /* or clair */
-    --gold-glow: 45 75% 70%;       /* or lumineux */
+    /* Accents complémentaires */
+    --accent-gold: 43 100% 50%;      /* #FFB800 Or brillant */
+    --accent-silver: 0 0% 75%;       /* #BFBFBF Argent */
     
-    /* Cyan électrique (conservé pour certains effets) */
+    /* Palette Cyan secondaire */
     --cyan-electric: 190 95% 50%;
     --cyan-glow: 190 85% 60%;
     
@@ -45,9 +44,9 @@ All colors MUST be HSL. */
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 12%;
 
-    --primary: var(--navy-primary);
+    --primary: var(--royal-blue);
     --primary-foreground: 0 0% 100%;
-    --primary-glow: var(--gold-primary);
+    --primary-glow: var(--royal-blue-glow);
 
     --secondary: var(--gray-100);
     --secondary-foreground: var(--gray-900);
@@ -55,31 +54,31 @@ All colors MUST be HSL. */
     --muted: var(--gray-200);
     --muted-foreground: var(--gray-800);
 
-    --accent: var(--gold-primary);
-    --accent-foreground: 0 0% 100%;
+    --accent: var(--accent-gold);
+    --accent-foreground: 0 0% 10%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
 
     --border: var(--gray-200);
     --input: var(--gray-200);
-    --ring: var(--navy-primary);
+    --ring: var(--royal-blue);
 
     --radius: 0.75rem;
     
-    /* Gradients élégants */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-dark)) 0%, hsl(var(--navy-primary)) 50%, hsl(var(--navy-medium)) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(var(--gold-primary)) 0%, hsl(var(--gold-light)) 100%);
-    --gradient-gold: linear-gradient(135deg, hsl(var(--gold-primary)) 0%, hsl(var(--gold-glow)) 100%);
-    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--navy-dark) / 0.85) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100% / 0.95) 0%, hsl(var(--gray-100)) 100%);
+    /* Gradients Bleu Roi élégants */
+    --gradient-hero: linear-gradient(135deg, hsl(var(--royal-blue-dark)) 0%, hsl(var(--royal-blue)) 50%, hsl(var(--royal-blue-light)) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(var(--royal-blue)) 0%, hsl(var(--royal-blue-light)) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(var(--accent-gold)) 0%, hsl(43 100% 60%) 100%);
+    --gradient-overlay: linear-gradient(180deg, transparent 0%, hsl(var(--royal-blue-dark) / 0.9) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(217 100% 98%) 100%);
     
-    /* Shadows - Doux et élégants */
-    --shadow-glow: 0 0 40px hsl(var(--gold-primary) / 0.25), 0 0 80px hsl(var(--gold-primary) / 0.15);
-    --shadow-elegant: 0 20px 60px -12px hsl(var(--navy-primary) / 0.2), 0 0 0 1px hsl(var(--gray-200));
-    --shadow-card: 0 4px 12px -2px hsl(var(--gray-900) / 0.08);
-    --shadow-floating: 0 20px 50px -10px hsl(var(--navy-primary) / 0.3), 0 0 60px hsl(var(--gold-primary) / 0.2);
-    --shadow-mega: 0 30px 80px -15px hsl(var(--navy-primary) / 0.4), 0 0 100px hsl(var(--gold-primary) / 0.25);
+    /* Shadows - Bleu Roi professionnel */
+    --shadow-glow: 0 0 40px hsl(var(--royal-blue) / 0.3), 0 0 80px hsl(var(--royal-blue-glow) / 0.2);
+    --shadow-elegant: 0 20px 60px -12px hsl(var(--royal-blue) / 0.25), 0 0 0 1px hsl(var(--gray-200));
+    --shadow-card: 0 4px 12px -2px hsl(217 20% 20% / 0.08);
+    --shadow-floating: 0 20px 50px -10px hsl(var(--royal-blue) / 0.35), 0 0 60px hsl(var(--accent-gold) / 0.2);
+    --shadow-mega: 0 30px 80px -15px hsl(var(--royal-blue) / 0.45), 0 0 100px hsl(var(--accent-gold) / 0.25);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -104,38 +103,38 @@ All colors MUST be HSL. */
   }
 
   .dark {
-    /* Dark mode - Enhanced navy theme */
-    --background: var(--navy-dark);
-    --foreground: var(--gray-50);
+    /* Dark mode - Bleu Roi professionnel */
+    --background: 217 100% 8%;      /* Bleu très foncé */
+    --foreground: 0 0% 98%;
 
-    --card: var(--navy-medium);
-    --card-foreground: var(--gray-50);
+    --card: 217 80% 15%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: var(--navy-medium);
-    --popover-foreground: var(--gray-50);
+    --popover: 217 80% 15%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: var(--cyan-electric);
-    --primary-foreground: var(--navy-dark);
+    --primary: var(--royal-blue-light);
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: var(--navy-light);
-    --secondary-foreground: var(--gray-50);
+    --secondary: 217 50% 25%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: var(--navy-light);
-    --muted-foreground: var(--gray-400);
+    --muted: 217 40% 30%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: var(--cyan-glow);
-    --accent-foreground: var(--navy-dark);
+    --accent: var(--accent-gold);
+    --accent-foreground: 0 0% 10%;
 
-    --border: var(--navy-light);
-    --input: var(--navy-light);
-    --ring: var(--cyan-electric);
+    --border: 217 40% 25%;
+    --input: 217 40% 25%;
+    --ring: var(--royal-blue-light);
     
     /* Dark gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(var(--navy-dark)) 0%, hsl(220 80% 8%) 50%, hsl(220 90% 5%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(var(--navy-medium) / 0.9) 0%, hsl(var(--navy-light) / 0.7) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(217 100% 10%) 0%, hsl(217 100% 15%) 50%, hsl(217 80% 20%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(217 60% 18%) 0%, hsl(217 50% 25%) 100%);
     
-    --shadow-glow: 0 0 60px hsl(var(--cyan-electric) / 0.4);
-    --shadow-elegant: 0 20px 60px -12px hsl(220 100% 5% / 0.8);
+    --shadow-glow: 0 0 60px hsl(var(--royal-blue-light) / 0.4);
+    --shadow-elegant: 0 20px 60px -12px hsl(217 100% 5% / 0.8);
   }
 }
 

@@ -153,10 +153,10 @@ Merci !`);
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <Badge className="bg-cyan-electric/10 text-cyan-electric px-4 py-2 mb-6">
+          <Badge className="bg-royal-blue/10 text-royal-blue px-4 py-2 mb-6">
             Contactez-nous
           </Badge>
-          <h2 className="text-4xl lg:text-5xl font-bold text-navy-dark mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Démarrons Votre <span className="gradient-text">Projet Ensemble</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -169,23 +169,23 @@ Merci !`);
           <div className="lg:col-span-1 space-y-6">
             <Card className="glass-card border-0 shadow-elegant hover-lift">
               <CardHeader>
-                <CardTitle className="text-navy-dark flex items-center">
-                  <MessageCircle className="w-6 h-6 text-cyan-electric mr-3" />
+                <CardTitle className="text-foreground flex items-center">
+                  <MessageCircle className="w-6 h-6 text-royal-blue mr-3" />
                   Contact Direct
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 {contactInfo.map((info, index) => (
                   <div key={index} className="flex items-start space-x-4 group">
-                    <div className="p-3 bg-cyan-electric/10 text-cyan-electric rounded-lg group-hover:bg-cyan-electric group-hover:text-white transition-all duration-300">
+                    <div className="p-3 bg-royal-blue/10 text-royal-blue rounded-lg group-hover:bg-royal-blue group-hover:text-white transition-all duration-300">
                       {info.icon}
                     </div>
                     <div>
-                      <h4 className="font-semibold text-navy-dark">{info.title}</h4>
+                      <h4 className="font-semibold text-foreground">{info.title}</h4>
                       {info.action ? (
                         <a 
                           href={info.action}
-                          className="text-gray-600 hover:text-cyan-electric transition-colors duration-300"
+                          className="text-gray-600 hover:text-royal-blue transition-colors duration-300"
                         >
                           {info.value}
                         </a>
@@ -203,15 +203,15 @@ Merci !`);
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   <div className="flex items-center space-x-3">
-                    <Clock className="w-5 h-5 text-orange-accent" />
+                    <Clock className="w-5 h-5 text-accent-gold" />
                     <span className="text-sm text-gray-600">Réponse sous 24h garantie</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Shield className="w-5 h-5 text-cyan-electric" />
+                    <Shield className="w-5 h-5 text-royal-blue" />
                     <span className="text-sm text-gray-600">Intervention sécurisée et certifiée</span>
                   </div>
                   <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-navy-primary" />
+                    <Phone className="w-5 h-5 text-royal-blue" />
                     <span className="text-sm text-gray-600">Support technique inclus</span>
                   </div>
                 </div>
@@ -223,7 +223,7 @@ Merci !`);
           <div className="lg:col-span-2">
             <Card className="glass-card border-0 shadow-elegant">
               <CardHeader>
-                <CardTitle className="text-navy-dark text-2xl">
+                <CardTitle className="text-foreground text-2xl">
                   Formulaire de Contact Rapide
                 </CardTitle>
                 <p className="text-gray-600">
@@ -234,7 +234,7 @@ Merci !`);
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-navy-dark mb-2">
+                      <label className="block text-sm font-medium text-foreground mb-2">
                         Nom complet *
                       </label>
                       <Input
@@ -247,7 +247,7 @@ Merci !`);
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy-dark mb-2">
+                      <label className="block text-sm font-medium text-foreground mb-2">
                         Email *
                       </label>
                       <Input
@@ -264,7 +264,7 @@ Merci !`);
 
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-navy-dark mb-2">
+                      <label className="block text-sm font-medium text-foreground mb-2">
                         Téléphone
                       </label>
                       <Input
@@ -277,14 +277,14 @@ Merci !`);
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-navy-dark mb-2">
+                      <label className="block text-sm font-medium text-foreground mb-2">
                         Service souhaité
                       </label>
                       <select
                         name="service"
                         value={formData.service}
                         onChange={handleInputChange}
-                        className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-cyan-electric focus:border-transparent bg-white"
+                        className="w-full px-3 py-2 border border-gray-200 rounded-lg focus:ring-2 focus:ring-royal-blue focus:border-transparent bg-white"
                       >
                         <option value="">Sélectionnez un service</option>
                         {services.map((service, index) => (
@@ -295,7 +295,7 @@ Merci !`);
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-navy-dark mb-2">
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Description du projet *
                     </label>
                     <Textarea

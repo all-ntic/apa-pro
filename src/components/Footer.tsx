@@ -27,7 +27,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-navy-dark text-white relative overflow-hidden">
+    <footer className="bg-royal-blue-dark text-white relative overflow-hidden">
       {/* Éléments de fond */}
       <div className="absolute inset-0">
         <div className="absolute top-10 left-10 w-64 h-64 bg-cyan-electric/5 rounded-full blur-3xl" />
@@ -40,7 +40,7 @@ const Footer = () => {
           <div className="lg:col-span-2">
             <div className="mb-6">
               <h3 className="text-2xl font-bold">APA</h3>
-              <p className="text-cyan-electric">Agnidom Pygnali Aboubakar</p>
+              <p className="text-accent-gold">Agnidom Pygnali Aboubakar</p>
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">

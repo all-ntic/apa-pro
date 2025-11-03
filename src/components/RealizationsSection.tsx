@@ -72,7 +72,7 @@ const RealizationsSection = () => {
     <section id="realisations" className="py-20 bg-gray-50">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-navy-dark mb-6">
+          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Mes <span className="gradient-text">Réalisations</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -82,8 +82,8 @@ const RealizationsSection = () => {
 
         <div>
           <div className="flex items-center mb-8">
-            <Zap className="w-6 h-6 text-cyan-electric mr-3" />
-            <h3 className="text-3xl font-bold text-navy-dark">Réalisations Accomplies</h3>
+            <Zap className="w-6 h-6 text-royal-blue mr-3" />
+            <h3 className="text-3xl font-bold text-foreground">Réalisations Accomplies</h3>
           </div>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -93,14 +93,14 @@ const RealizationsSection = () => {
                   <div className="mx-auto mb-4 p-4 bg-gradient-accent rounded-2xl text-white w-fit group-hover:animate-glow-pulse">
                     {project.icon}
                   </div>
-                  <CardTitle className="text-navy-dark text-xl">{project.title}</CardTitle>
-                  <CardDescription className="text-cyan-electric font-medium">{project.description}</CardDescription>
+                  <CardTitle className="text-foreground text-xl">{project.title}</CardTitle>
+                  <CardDescription className="text-royal-blue font-medium">{project.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-gray-600 mb-4 text-sm leading-relaxed">{project.details}</p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags.map((tag, tagIndex) => (
-                      <Badge key={tagIndex} variant="secondary" className="text-xs bg-navy-primary/10 text-navy-primary">
+                      <Badge key={tagIndex} variant="secondary" className="text-xs bg-royal-blue/10 text-royal-blue">
                         {tag}
                       </Badge>
                     ))}
@@ -111,7 +111,7 @@ const RealizationsSection = () => {
                         href={project.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-cyan-electric hover:text-cyan-glow transition-colors duration-300 font-medium text-sm"
+                        className="inline-flex items-center gap-2 text-royal-blue hover:text-royal-blue-light transition-colors duration-300 font-medium text-sm"
                       >
                         <Globe className="w-4 h-4" />
                         Démo Live
@@ -122,7 +122,7 @@ const RealizationsSection = () => {
                         href={project.github} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-navy-dark hover:text-cyan-electric transition-colors duration-300 font-medium text-sm"
+                        className="inline-flex items-center gap-2 text-foreground hover:text-royal-blue transition-colors duration-300 font-medium text-sm"
                       >
                         <Github className="w-4 h-4" />
                         Code Source
@@ -133,7 +133,7 @@ const RealizationsSection = () => {
                         href={project.youtube} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-orange-accent hover:text-orange-accent/80 transition-colors duration-300 font-medium text-sm"
+                        className="inline-flex items-center gap-2 text-accent-gold hover:text-accent-gold/80 transition-colors duration-300 font-medium text-sm"
                       >
                         <Youtube className="w-4 h-4" />
                         Vidéo

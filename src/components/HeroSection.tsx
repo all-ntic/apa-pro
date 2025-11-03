@@ -39,11 +39,12 @@ const HeroSection = () => {
               <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 hover-mega">
                 <img
                   src={agnidomPhoto}
-                  alt="Agnidom Pygnali Aboubakar - Technicien APA"
+                  alt="Agnidom Pygnali Aboubakar - Technicien expert IT, réseaux, développement web et sécurité électronique à Abidjan, Côte d'Ivoire"
                   className="w-full aspect-[4/5] object-cover rounded-xl shadow-floating glow-accent"
+                  loading="eager"
                 />
-                <div className="absolute -bottom-3 -right-3 bg-white text-navy-dark px-3 py-2 rounded-lg font-bold shadow-mega border border-cyan-electric/30">
-                  <span className="text-cyan-electric text-sm">Expert IT</span>
+                <div className="absolute -bottom-3 -right-3 bg-white text-gray-900 px-3 py-2 rounded-lg font-bold shadow-mega border border-royal-blue/30">
+                  <span className="text-royal-blue text-sm">Expert IT</span>
                 </div>
               </div>
             </div>
@@ -58,12 +59,12 @@ const HeroSection = () => {
                 <span className="text-white block">Aboubakar</span>
               </h1>
               
-              <h2 className="text-xl lg:text-2xl font-medium text-cyan-electric">
+              <h2 className="text-xl lg:text-2xl font-medium text-royal-blue-light">
                 Technicien Systèmes, Réseaux, Développement Web & Sécurité Électronique
               </h2>
               
               {/* Citation/slogan */}
-              <blockquote className="text-lg lg:text-xl font-medium italic text-orange-accent border-l-4 border-orange-accent pl-4">
+              <blockquote className="text-lg lg:text-xl font-medium italic text-accent-gold border-l-4 border-accent-gold pl-4">
                 « Fiabilité, performance et sécurité au service du numérique africain. »
               </blockquote>
             </div>
@@ -71,11 +72,11 @@ const HeroSection = () => {
             {/* Description */}
             <div className="space-y-4 animate-slide-in-right" style={{ animationDelay: "0.3s" }}>
               <p className="text-base lg:text-lg leading-relaxed text-white/90">
-                Technicien ivoirien expérimenté dans les domaines de la <strong className="text-cyan-glow">maintenance informatique</strong>, des <strong className="text-cyan-glow">réseaux</strong>, du <strong className="text-cyan-glow">développement web</strong> et de la <strong className="text-cyan-glow">sécurité électronique</strong>.
+                Technicien ivoirien expérimenté dans les domaines de la <strong className="text-royal-blue-glow">maintenance informatique</strong>, des <strong className="text-royal-blue-glow">réseaux</strong>, du <strong className="text-royal-blue-glow">développement web</strong> et de la <strong className="text-royal-blue-glow">sécurité électronique</strong>.
               </p>
               
               <p className="text-base lg:text-lg leading-relaxed text-white/90">
-                Fort d'une approche <strong className="text-orange-accent">pragmatique</strong> et d'une vision orientée <strong className="text-orange-accent">performance</strong>, je conçois et déploie des solutions durables adaptées aux besoins des entreprises et particuliers.
+                Fort d'une approche <strong className="text-accent-gold">pragmatique</strong> et d'une vision orientée <strong className="text-accent-gold">performance</strong>, je conçois et déploie des solutions durables adaptées aux besoins des entreprises et particuliers en Côte d'Ivoire.
               </p>
             </div>
 
@@ -96,7 +97,7 @@ const HeroSection = () => {
 
       {/* Scroll indicator mobile */}
       <div className="lg:hidden absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-        <ArrowDown className="w-6 h-6 text-cyan-electric" />
+        <ArrowDown className="w-6 h-6 text-royal-blue-glow" />
       </div>
     </section>
   );

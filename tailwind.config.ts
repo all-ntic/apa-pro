@@ -25,18 +25,30 @@ export default {
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
         
+        'royal-blue': {
+          DEFAULT: "hsl(var(--royal-blue))",
+          dark: "hsl(var(--royal-blue-dark))",
+          light: "hsl(var(--royal-blue-light))",
+          glow: "hsl(var(--royal-blue-glow))",
+        },
+        
+        'accent-gold': "hsl(var(--accent-gold))",
+        'accent-silver': "hsl(var(--accent-silver))",
+        
         navy: {
-          dark: "hsl(var(--navy-dark))",
-          primary: "hsl(var(--navy-primary))",
-          medium: "hsl(var(--navy-medium))",
-          light: "hsl(var(--navy-light))",
+          dark: "hsl(var(--royal-blue-dark))",
+          primary: "hsl(var(--royal-blue))",
+          medium: "hsl(217 80% 45%)",
+          light: "hsl(var(--royal-blue-light))",
         },
         
         gold: {
-          primary: "hsl(var(--gold-primary))",
-          light: "hsl(var(--gold-light))",
-          glow: "hsl(var(--gold-glow))",
+          primary: "hsl(var(--accent-gold))",
+          light: "hsl(43 100% 60%)",
+          glow: "hsl(43 100% 70%)",
         },
+        
+        'orange-accent': "hsl(var(--accent-gold))",
         
         cyan: {
           electric: "hsl(var(--cyan-electric))",
