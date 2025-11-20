@@ -51,7 +51,7 @@ const HeroSection = () => {
           </div>
 
           {/* Contenu textuel */}
-          <div className="flex-1 lg:w-3/5 text-white space-y-6">
+          <div className="flex-1 lg:w-3/5 text-white space-y-6" role="main" aria-label="Présentation principale">
             {/* Nom et titre */}
             <div className="space-y-4 animate-fade-in">
               <h1 className="text-4xl lg:text-6xl font-bold leading-tight font-serif">
@@ -59,9 +59,9 @@ const HeroSection = () => {
                 <span className="text-white block">Aboubakar</span>
               </h1>
               
-              <h2 className="text-xl lg:text-2xl font-medium text-royal-blue-light">
+              <p className="text-xl lg:text-2xl font-medium text-royal-blue-light" role="doc-subtitle">
                 Technicien Systèmes, Réseaux, Développement Web & Sécurité Électronique
-              </h2>
+              </p>
               
               {/* Citation/slogan */}
               <blockquote className="text-lg lg:text-xl font-medium italic text-accent-gold border-l-4 border-accent-gold pl-4">
@@ -81,13 +81,13 @@ const HeroSection = () => {
             </div>
 
             {/* Boutons d'action */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-scale-in" style={{ animationDelay: "0.6s" }}>
-              <HeroButton onClick={scrollToRealisations} className="group">
-                <Download className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-scale-in" style={{ animationDelay: "0.6s" }} role="navigation" aria-label="Actions principales">
+              <HeroButton onClick={scrollToRealisations} className="group" aria-label="Voir mes réalisations professionnelles">
+                <Download className="w-5 h-5 mr-2 group-hover:animate-pulse" aria-hidden="true" />
                 Voir mes Réalisations
               </HeroButton>
-              <HeroButton variant="secondary" onClick={scrollToContact}>
-                <MessageCircle className="w-5 h-5 mr-2" />
+              <HeroButton variant="secondary" onClick={scrollToContact} aria-label="Me contacter pour vos projets">
+                <MessageCircle className="w-5 h-5 mr-2" aria-hidden="true" />
                 Me Contacter
               </HeroButton>
             </div>

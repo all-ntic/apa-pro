@@ -14,64 +14,202 @@ export type Database = {
   }
   public: {
     Tables: {
-      chatbot_rate_limits: {
+      al_order_items: {
         Row: {
           created_at: string
           id: string
-          identifier: string
-          request_count: number
-          window_start: string
+          order_id: string
+          product_id: string
+          product_price: number
+          product_title: string
+          quantity: number
         }
         Insert: {
           created_at?: string
           id?: string
-          identifier: string
-          request_count?: number
-          window_start?: string
+          order_id: string
+          product_id: string
+          product_price: number
+          product_title: string
+          quantity?: number
         }
         Update: {
           created_at?: string
           id?: string
-          identifier?: string
-          request_count?: number
-          window_start?: string
+          order_id?: string
+          product_id?: string
+          product_price?: number
+          product_title?: string
+          quantity?: number
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "al_order_items_order_id_fkey"
+            columns: ["order_id"]
+            isOneToOne: false
+            referencedRelation: "al_orders"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "al_order_items_product_id_fkey"
+            columns: ["product_id"]
+            isOneToOne: false
+            referencedRelation: "al_products"
+            referencedColumns: ["id"]
+          },
+        ]
       }
-      contact_messages: {
+      al_orders: {
         Row: {
+          buyer_email: string
+          buyer_id: string
+          buyer_name: string | null
           created_at: string
-          email: string
+          currency: string
           id: string
-          message: string
-          name: string
-          phone: string | null
-          status: string | null
+          payment_method: string | null
+          payment_reference: string | null
+          payment_status: string
+          total_amount: number
           updated_at: string
         }
         Insert: {
+          buyer_email: string
+          buyer_id: string
+          buyer_name?: string | null
           created_at?: string
-          email: string
+          currency?: string
           id?: string
-          message: string
-          name: string
-          phone?: string | null
-          status?: string | null
+          payment_method?: string | null
+          payment_reference?: string | null
+          payment_status?: string
+          total_amount: number
           updated_at?: string
         }
         Update: {
+          buyer_email?: string
+          buyer_id?: string
+          buyer_name?: string | null
           created_at?: string
-          email?: string
+          currency?: string
           id?: string
-          message?: string
-          name?: string
-          phone?: string | null
-          status?: string | null
+          payment_method?: string | null
+          payment_reference?: string | null
+          payment_status?: string
+          total_amount?: number
           updated_at?: string
         }
         Relationships: []
       }
-      eglise_announcements: {
+      al_products: {
+        Row: {
+          category: string
+          created_at: string
+          description: string | null
+          download_count: number | null
+          file_size_mb: number | null
+          file_url: string | null
+          id: string
+          is_active: boolean | null
+          preview_url: string | null
+          price: number
+          seller_id: string
+          slug: string
+          thumbnail_url: string | null
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description?: string | null
+          download_count?: number | null
+          file_size_mb?: number | null
+          file_url?: string | null
+          id?: string
+          is_active?: boolean | null
+          preview_url?: string | null
+          price: number
+          seller_id: string
+          slug: string
+          thumbnail_url?: string | null
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string | null
+          download_count?: number | null
+          file_size_mb?: number | null
+          file_url?: string | null
+          id?: string
+          is_active?: boolean | null
+          preview_url?: string | null
+          price?: number
+          seller_id?: string
+          slug?: string
+          thumbnail_url?: string | null
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      al_profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          created_at: string
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          created_at?: string
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      al_user_roles: {
+        Row: {
+          created_at: string
+          id: string
+          role: Database["public"]["Enums"]["al_role"]
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          role: Database["public"]["Enums"]["al_role"]
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          role?: Database["public"]["Enums"]["al_role"]
+          user_id?: string
+        }
+        Relationships: []
+      }
+      announcements: {
         Row: {
           announcement_type: string
           author_id: string
@@ -83,7 +221,7 @@ export type Database = {
           updated_at: string
         }
         Insert: {
-          announcement_type?: string
+          announcement_type: string
           author_id: string
           church_id: string
           content: string
@@ -102,99 +240,82 @@ export type Database = {
           title?: string
           updated_at?: string
         }
-        Relationships: []
-      }
-      eglise_chat_conversations: {
-        Row: {
-          created_at: string
-          id: string
-          session_id: string
-          user_id: string | null
-        }
-        Insert: {
-          created_at?: string
-          id?: string
-          session_id: string
-          user_id?: string | null
-        }
-        Update: {
-          created_at?: string
-          id?: string
-          session_id?: string
-          user_id?: string | null
-        }
-        Relationships: []
-      }
-      eglise_chat_messages: {
-        Row: {
-          content: string
-          conversation_id: string
-          created_at: string
-          id: string
-          role: string
-        }
-        Insert: {
-          content: string
-          conversation_id: string
-          created_at?: string
-          id?: string
-          role: string
-        }
-        Update: {
-          content?: string
-          conversation_id?: string
-          created_at?: string
-          id?: string
-          role?: string
-        }
         Relationships: [
           {
-            foreignKeyName: "chat_messages_conversation_id_fkey"
-            columns: ["conversation_id"]
+            foreignKeyName: "announcements_church_id_fkey"
+            columns: ["church_id"]
             isOneToOne: false
-            referencedRelation: "eglise_chat_conversations"
+            referencedRelation: "churches"
             referencedColumns: ["id"]
           },
         ]
       }
-      eglise_chatbot_rate_limits: {
+      churches: {
         Row: {
           created_at: string
           id: string
-          identifier: string
-          request_count: number
-          window_start: string
+          name: string
+          updated_at: string
         }
         Insert: {
           created_at?: string
           id?: string
-          identifier: string
-          request_count?: number
-          window_start?: string
+          name: string
+          updated_at?: string
         }
         Update: {
           created_at?: string
           id?: string
-          identifier?: string
-          request_count?: number
-          window_start?: string
+          name?: string
+          updated_at?: string
         }
         Relationships: []
       }
-      eglise_church_donations: {
+      contact_messages: {
+        Row: {
+          company: string | null
+          created_at: string
+          email: string
+          id: string
+          message: string
+          name: string
+          read: boolean | null
+          subject: string
+        }
+        Insert: {
+          company?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          message: string
+          name: string
+          read?: boolean | null
+          subject: string
+        }
+        Update: {
+          company?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          message?: string
+          name?: string
+          read?: boolean | null
+          subject?: string
+        }
+        Relationships: []
+      }
+      donations: {
         Row: {
           amount: number
           church_id: string
           created_at: string
-          currency: string | null
-          donation_type: string | null
+          currency: string
+          donation_type: string
           donor_email: string | null
           donor_name: string
-          donor_phone: string | null
+          donor_phone: string
           id: string
           notes: string | null
-          payment_method: string | null
-          payment_reference: string | null
           payment_status: string | null
           updated_at: string
         }
@@ -202,15 +323,13 @@ export type Database = {
           amount: number
           church_id: string
           created_at?: string
-          currency?: string | null
-          donation_type?: string | null
+          currency?: string
+          donation_type: string
           donor_email?: string | null
           donor_name: string
-          donor_phone?: string | null
+          donor_phone: string
           id?: string
           notes?: string | null
-          payment_method?: string | null
-          payment_reference?: string | null
           payment_status?: string | null
           updated_at?: string
         }
@@ -218,211 +337,95 @@ export type Database = {
           amount?: number
           church_id?: string
           created_at?: string
-          currency?: string | null
-          donation_type?: string | null
+          currency?: string
+          donation_type?: string
           donor_email?: string | null
           donor_name?: string
-          donor_phone?: string | null
+          donor_phone?: string
           id?: string
           notes?: string | null
-          payment_method?: string | null
-          payment_reference?: string | null
           payment_status?: string | null
           updated_at?: string
         }
         Relationships: [
           {
-            foreignKeyName: "church_donations_church_id_fkey"
+            foreignKeyName: "donations_church_id_fkey"
             columns: ["church_id"]
             isOneToOne: false
-            referencedRelation: "eglise_churches"
+            referencedRelation: "churches"
             referencedColumns: ["id"]
           },
         ]
       }
-      eglise_churches: {
+      eburnie_contact_submissions: {
         Row: {
-          address: string | null
           created_at: string
-          description: string | null
-          email: string | null
-          id: string
-          logo_url: string | null
-          name: string
-          phone: string | null
-          slug: string
-          updated_at: string
-        }
-        Insert: {
-          address?: string | null
-          created_at?: string
-          description?: string | null
-          email?: string | null
-          id?: string
-          logo_url?: string | null
-          name: string
-          phone?: string | null
-          slug: string
-          updated_at?: string
-        }
-        Update: {
-          address?: string | null
-          created_at?: string
-          description?: string | null
-          email?: string | null
-          id?: string
-          logo_url?: string | null
-          name?: string
-          phone?: string | null
-          slug?: string
-          updated_at?: string
-        }
-        Relationships: []
-      }
-      eglise_contact_messages: {
-        Row: {
-          appointment_date: string | null
-          company: string | null
-          contact_type: string | null
-          created_at: string
-          email: string | null
+          email: string
           id: string
           message: string
           name: string
-          phone: string | null
-          preferred_contact: string | null
+          notes: string | null
+          phone: string
           status: string | null
-          subject: string | null
         }
         Insert: {
-          appointment_date?: string | null
-          company?: string | null
-          contact_type?: string | null
           created_at?: string
-          email?: string | null
+          email: string
           id?: string
           message: string
           name: string
-          phone?: string | null
-          preferred_contact?: string | null
+          notes?: string | null
+          phone: string
           status?: string | null
-          subject?: string | null
         }
         Update: {
-          appointment_date?: string | null
-          company?: string | null
-          contact_type?: string | null
           created_at?: string
-          email?: string | null
+          email?: string
           id?: string
           message?: string
           name?: string
-          phone?: string | null
-          preferred_contact?: string | null
+          notes?: string | null
+          phone?: string
           status?: string | null
-          subject?: string | null
         }
         Relationships: []
       }
-      eglise_donations: {
+      espace_luielle_contacts: {
         Row: {
-          amount: number
-          campaign: string | null
           created_at: string
-          currency: string | null
-          donor_email: string
-          donor_name: string
-          donor_phone: string | null
+          email: string
           id: string
-          message: string | null
-          payment_method: string | null
-          payment_status: string | null
-          paystack_reference: string
-          paystack_transaction_id: string | null
-          updated_at: string
+          message: string
+          name: string
+          read: boolean | null
         }
         Insert: {
-          amount: number
-          campaign?: string | null
           created_at?: string
-          currency?: string | null
-          donor_email: string
-          donor_name: string
-          donor_phone?: string | null
+          email: string
           id?: string
-          message?: string | null
-          payment_method?: string | null
-          payment_status?: string | null
-          paystack_reference: string
-          paystack_transaction_id?: string | null
-          updated_at?: string
+          message: string
+          name: string
+          read?: boolean | null
         }
         Update: {
-          amount?: number
-          campaign?: string | null
           created_at?: string
-          currency?: string | null
-          donor_email?: string
-          donor_name?: string
-          donor_phone?: string | null
+          email?: string
           id?: string
-          message?: string | null
-          payment_method?: string | null
-          payment_status?: string | null
-          paystack_reference?: string
-          paystack_transaction_id?: string | null
-          updated_at?: string
+          message?: string
+          name?: string
+          read?: boolean | null
         }
         Relationships: []
       }
-      eglise_event_participants: {
-        Row: {
-          attendance_status: string | null
-          event_id: string
-          id: string
-          participant_email: string | null
-          participant_name: string
-          participant_phone: string
-          registration_date: string
-        }
-        Insert: {
-          attendance_status?: string | null
-          event_id: string
-          id?: string
-          participant_email?: string | null
-          participant_name: string
-          participant_phone: string
-          registration_date?: string
-        }
-        Update: {
-          attendance_status?: string | null
-          event_id?: string
-          id?: string
-          participant_email?: string | null
-          participant_name?: string
-          participant_phone?: string
-          registration_date?: string
-        }
-        Relationships: [
-          {
-            foreignKeyName: "event_participants_event_id_fkey"
-            columns: ["event_id"]
-            isOneToOne: false
-            referencedRelation: "eglise_events"
-            referencedColumns: ["id"]
-          },
-        ]
-      }
-      eglise_events: {
+      events: {
         Row: {
           church_id: string
           created_at: string
           description: string | null
           end_date: string | null
-          event_type: string | null
+          event_type: string
           id: string
           location: string | null
-          max_participants: number | null
           start_date: string
           title: string
           updated_at: string
@@ -432,10 +435,9 @@ export type Database = {
           created_at?: string
           description?: string | null
           end_date?: string | null
-          event_type?: string | null
+          event_type: string
           id?: string
           location?: string | null
-          max_participants?: number | null
           start_date: string
           title: string
           updated_at?: string
@@ -445,10 +447,9 @@ export type Database = {
           created_at?: string
           description?: string | null
           end_date?: string | null
-          event_type?: string | null
+          event_type?: string
           id?: string
           location?: string | null
-          max_participants?: number | null
           start_date?: string
           title?: string
           updated_at?: string
@@ -458,12 +459,12 @@ export type Database = {
             foreignKeyName: "events_church_id_fkey"
             columns: ["church_id"]
             isOneToOne: false
-            referencedRelation: "eglise_churches"
+            referencedRelation: "churches"
             referencedColumns: ["id"]
           },
         ]
       }
-      eglise_group_messages: {
+      group_messages: {
         Row: {
           church_id: string
           created_at: string
@@ -485,75 +486,47 @@ export type Database = {
           message?: string
           sender_id?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "group_messages_church_id_fkey"
+            columns: ["church_id"]
+            isOneToOne: false
+            referencedRelation: "churches"
+            referencedColumns: ["id"]
+          },
+        ]
       }
-      eglise_knowledge_base: {
-        Row: {
-          content: string
-          created_at: string
-          entry_type: string
-          id: string
-          tags: string[] | null
-          title: string
-        }
-        Insert: {
-          content: string
-          created_at?: string
-          entry_type: string
-          id?: string
-          tags?: string[] | null
-          title: string
-        }
-        Update: {
-          content?: string
-          created_at?: string
-          entry_type?: string
-          id?: string
-          tags?: string[] | null
-          title?: string
-        }
-        Relationships: []
-      }
-      eglise_members: {
+      members: {
         Row: {
           address: string | null
-          baptism_date: string | null
-          birth_date: string | null
           church_id: string
           created_at: string
           email: string | null
           full_name: string
           id: string
           membership_status: string | null
-          notes: string | null
           phone: string
           updated_at: string
         }
         Insert: {
           address?: string | null
-          baptism_date?: string | null
-          birth_date?: string | null
           church_id: string
           created_at?: string
           email?: string | null
           full_name: string
           id?: string
           membership_status?: string | null
-          notes?: string | null
           phone: string
           updated_at?: string
         }
         Update: {
           address?: string | null
-          baptism_date?: string | null
-          birth_date?: string | null
           church_id?: string
           created_at?: string
           email?: string | null
           full_name?: string
           id?: string
           membership_status?: string | null
-          notes?: string | null
           phone?: string
           updated_at?: string
         }
@@ -562,12 +535,12 @@ export type Database = {
             foreignKeyName: "members_church_id_fkey"
             columns: ["church_id"]
             isOneToOne: false
-            referencedRelation: "eglise_churches"
+            referencedRelation: "churches"
             referencedColumns: ["id"]
           },
         ]
       }
-      eglise_messages: {
+      messages: {
         Row: {
           created_at: string
           id: string
@@ -594,118 +567,45 @@ export type Database = {
         }
         Relationships: []
       }
-      "eglise_OLCAP-CI_message": {
+      profiles: {
         Row: {
-          appointment_date: string | null
-          company: string | null
-          contact_type: string | null
-          created_at: string
-          email: string | null
-          id: string
-          message: string
-          name: string
-          phone: string | null
-          preferred_contact: string | null
-          status: string | null
-          subject: string | null
-        }
-        Insert: {
-          appointment_date?: string | null
-          company?: string | null
-          contact_type?: string | null
-          created_at?: string
-          email?: string | null
-          id?: string
-          message: string
-          name: string
-          phone?: string | null
-          preferred_contact?: string | null
-          status?: string | null
-          subject?: string | null
-        }
-        Update: {
-          appointment_date?: string | null
-          company?: string | null
-          contact_type?: string | null
-          created_at?: string
-          email?: string | null
-          id?: string
-          message?: string
-          name?: string
-          phone?: string | null
-          preferred_contact?: string | null
-          status?: string | null
-          subject?: string | null
-        }
-        Relationships: []
-      }
-      eglise_participants_secure: {
-        Row: {
-          created_at: string | null
-          email: string
-          id: string
-          name: string
-          phone: string
-        }
-        Insert: {
-          created_at?: string | null
-          email: string
-          id?: string
-          name: string
-          phone: string
-        }
-        Update: {
-          created_at?: string | null
-          email?: string
-          id?: string
-          name?: string
-          phone?: string
-        }
-        Relationships: []
-      }
-      eglise_profiles: {
-        Row: {
-          avatar_url: string | null
           church_id: string | null
           created_at: string
-          full_name: string
+          full_name: string | null
           id: string
-          phone: string | null
           updated_at: string
+          user_id: string
         }
         Insert: {
-          avatar_url?: string | null
           church_id?: string | null
           created_at?: string
-          full_name: string
-          id: string
-          phone?: string | null
+          full_name?: string | null
+          id?: string
           updated_at?: string
+          user_id: string
         }
         Update: {
-          avatar_url?: string | null
           church_id?: string | null
           created_at?: string
-          full_name?: string
+          full_name?: string | null
           id?: string
-          phone?: string | null
           updated_at?: string
+          user_id?: string
         }
         Relationships: [
           {
             foreignKeyName: "profiles_church_id_fkey"
             columns: ["church_id"]
             isOneToOne: false
-            referencedRelation: "eglise_churches"
+            referencedRelation: "churches"
             referencedColumns: ["id"]
           },
         ]
       }
-      eglise_tradlog_contacts: {
+      rayonne_kelly_contacts: {
         Row: {
-          company: string | null
           created_at: string
-          email: string | null
+          email: string
           id: string
           message: string
           name: string
@@ -714,9 +614,8 @@ export type Database = {
           subject: string | null
         }
         Insert: {
-          company?: string | null
           created_at?: string
-          email?: string | null
+          email: string
           id?: string
           message: string
           name: string
@@ -725,9 +624,8 @@ export type Database = {
           subject?: string | null
         }
         Update: {
-          company?: string | null
           created_at?: string
-          email?: string | null
+          email?: string
           id?: string
           message?: string
           name?: string
@@ -737,7 +635,7 @@ export type Database = {
         }
         Relationships: []
       }
-      eglise_user_roles: {
+      user_roles: {
         Row: {
           created_at: string
           id: string
@@ -763,8 +661,21 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      cleanup_old_rate_limits: { Args: never; Returns: undefined }
-      get_user_church: { Args: { _user_id: string }; Returns: string }
+      assign_user_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: undefined
+      }
+      get_user_church_id: { Args: { _user_id: string }; Returns: string }
+      has_al_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["al_role"]
+          _user_id: string
+        }
+        Returns: boolean
+      }
       has_role: {
         Args: {
           _role: Database["public"]["Enums"]["app_role"]
@@ -772,9 +683,17 @@ export type Database = {
         }
         Returns: boolean
       }
+      remove_user_role: {
+        Args: {
+          _role: Database["public"]["Enums"]["app_role"]
+          _user_id: string
+        }
+        Returns: undefined
+      }
     }
     Enums: {
-      app_role: "admin" | "moderator" | "user"
+      al_role: "admin" | "vendeur" | "client"
+      app_role: "pastor" | "member" | "admin"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -902,7 +821,8 @@ export type CompositeTypes<
 export const Constants = {
   public: {
     Enums: {
-      app_role: ["admin", "moderator", "user"],
+      al_role: ["admin", "vendeur", "client"],
+      app_role: ["pastor", "member", "admin"],
     },
   },
 } as const

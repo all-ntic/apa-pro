@@ -69,10 +69,10 @@ const RealizationsSection = () => {
 
 
   return (
-    <section id="realisations" className="py-20 bg-gray-50">
+    <section id="realisations" className="py-20 bg-gray-50" aria-labelledby="realizations-title">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 id="realizations-title" className="text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Mes <span className="gradient-text">Réalisations</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">

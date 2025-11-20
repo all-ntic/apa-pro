@@ -29,14 +29,14 @@ const SkillsSection = () => {
   ];
 
   return (
-    <section id="competences" className="py-20 bg-gradient-to-b from-white to-gray-50">
+    <section id="competences" className="py-20 bg-gradient-to-b from-white to-gray-50" aria-labelledby="skills-title">
       <div className="container mx-auto px-6">
         {/* Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          <h2 id="skills-title" className="text-4xl lg:text-5xl font-bold text-foreground mb-4">
             Mes <span className="gradient-text">Compétences</span>
           </h2>
-          <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6" role="presentation" aria-hidden="true"></div>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Une expertise technique complète au service de vos besoins numériques
           </p>
@@ -50,7 +50,7 @@ const SkillsSection = () => {
               className="group bg-white rounded-2xl p-8 hover-lift shadow-card-soft border border-gray-100 animate-scale-in"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-royal-blue/10 mb-6 group-hover:bg-royal-blue/20 transition-all duration-300 group-hover:scale-110`}>
+              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-royal-blue/10 mb-6 group-hover:bg-royal-blue/20 transition-all duration-300 group-hover:scale-110`} role="presentation" aria-hidden="true">
                 <skill.icon className={`w-8 h-8 text-royal-blue`} />
               </div>
               
