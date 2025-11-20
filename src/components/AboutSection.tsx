@@ -9,15 +9,15 @@ const AboutSection = () => {
   ];
 
   return (
-    <section id="apropos" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+    <section id="apropos" className="py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="about-title">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className="text-4xl lg:text-5xl font-bold text-foreground mb-4 font-serif">
+            <h2 id="about-title" className="text-4xl lg:text-5xl font-bold text-foreground mb-4 font-serif">
               À propos de <span className="gradient-text">APA</span>
             </h2>
-            <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6"></div>
+            <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6" role="presentation" aria-hidden="true"></div>
           </div>
 
           {/* Biography */}
@@ -39,7 +39,7 @@ const AboutSection = () => {
 
           {/* Values */}
           <div className="animate-scale-in">
-            <h3 className="text-2xl lg:text-3xl font-bold text-foreground text-center mb-10 font-serif">
+            <h3 id="values-title" className="text-2xl lg:text-3xl font-bold text-foreground text-center mb-10 font-serif">
               Mes Valeurs
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
