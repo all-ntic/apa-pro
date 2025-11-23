@@ -14,7 +14,7 @@ const FloatingWhatsApp = () => {
   return (
     <>
       {isOpen && (
-        <div className="fixed bottom-24 right-6 bg-background border border-border rounded-2xl shadow-2xl p-4 w-72 z-50 animate-in slide-in-from-bottom-5">
+        <div className="fixed bottom-32 right-6 bg-background border border-border rounded-2xl shadow-2xl p-4 w-72 z-50 animate-in slide-in-from-bottom-5">
           <button
             onClick={() => setIsOpen(false)}
             className="absolute top-2 right-2 text-muted-foreground hover:text-foreground transition-colors"
@@ -46,7 +46,7 @@ const FloatingWhatsApp = () => {
 
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="fixed bottom-6 right-6 w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all z-50 flex items-center justify-center group"
+        className="fixed bottom-24 right-6 w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all z-50 flex items-center justify-center group"
         aria-label="Contacter sur WhatsApp"
       >
         <MessageCircle className="w-6 h-6 group-hover:scale-110 transition-transform" />
