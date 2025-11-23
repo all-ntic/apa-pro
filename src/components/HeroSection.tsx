@@ -42,6 +42,8 @@ const HeroSection = () => {
                   alt="Agnidom Pygnali Aboubakar - Technicien expert IT, réseaux, développement web et sécurité électronique à Abidjan, Côte d'Ivoire"
                   className="w-full aspect-[4/5] object-cover rounded-xl shadow-floating glow-accent"
                   loading="eager"
+                  width="400"
+                  height="500"
                 />
                 <div className="absolute -bottom-3 -right-3 bg-white text-gray-900 px-3 py-2 rounded-lg font-bold shadow-mega border border-royal-blue/30">
                   <span className="text-royal-blue text-sm">Expert IT</span>
