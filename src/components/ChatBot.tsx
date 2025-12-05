@@ -3,6 +3,7 @@ import { MessageCircle, X, Send, Bot, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Card } from "@/components/ui/card";
+import { analytics } from "@/lib/analytics";
 
 interface Message {
   id: number;
@@ -264,6 +265,9 @@ const ChatBot = () => {
   const handleSendMessage = async () => {
     if (!inputMessage.trim()) return;
 
+    // Track chatbot message
+    analytics.chatbotMessage();
+
     // Ajouter message utilisateur
     const userMessage: Message = {
       id: Date.now(),
@@ -296,12 +300,17 @@ const ChatBot = () => {
     }
   };
 
+  const handleOpenChat = () => {
+    analytics.chatbotOpen();
+    setIsOpen(true);
+  };
+
   return (
     <>
       {/* Floating Chat Button */}
       {!isOpen && (
         <Button
-          onClick={() => setIsOpen(true)}
+          onClick={handleOpenChat}
           className="fixed bottom-6 right-6 z-50 w-16 h-16 rounded-full btn-hero shadow-floating animate-glow-pulse"
           size="lg"
         >

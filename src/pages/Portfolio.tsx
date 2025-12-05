@@ -8,8 +8,18 @@ import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
 import ChatBot from "@/components/ChatBot";
 import Footer from "@/components/Footer";
+import { useAnalytics, useScrollDepth, useTimeOnPage } from "@/hooks/useAnalytics";
 
 const Portfolio = () => {
+  // Initialize analytics and track page views
+  useAnalytics();
+  
+  // Track scroll depth engagement
+  useScrollDepth();
+  
+  // Track time on page
+  useTimeOnPage();
+
   return (
     <div className="min-h-screen bg-background">
       <Navigation />

@@ -9,6 +9,7 @@ import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { useMutation } from "@tanstack/react-query";
 import { z } from "zod";
+import { analytics } from "@/lib/analytics";
 
 const contactSchema = z.object({
   name: z.string()
@@ -63,7 +64,10 @@ const ContactSection = () => {
 
       return data;
     },
-    onSuccess: () => {
+    onSuccess: (data) => {
+      // Track successful form submission
+      analytics.contactFormSubmit(data.service);
+      
       toast({
         title: "Message envoyé !",
         description: "Votre demande a été envoyée avec succès. Nous vous contacterons bientôt.",
@@ -77,6 +81,9 @@ const ContactSection = () => {
       });
     },
     onError: (error) => {
+      // Track form error
+      analytics.contactFormError(error instanceof Error ? error.message : 'Unknown error');
+      
       console.error('Error sending email:', error);
       toast({
         title: "Erreur",
@@ -94,6 +101,7 @@ const ContactSection = () => {
     
     if (!result.success) {
       const firstError = result.error.errors[0];
+      analytics.contactFormError(firstError.message);
       toast({
         title: "Erreur de validation",
         description: firstError.message,
@@ -106,6 +114,8 @@ const ContactSection = () => {
   };
 
   const handleWhatsAppContact = () => {
+    analytics.whatsAppClick('contact_form');
+    
     const message = encodeURIComponent(`Bonjour APA,
 
 Je souhaite obtenir des informations sur vos services :
@@ -117,24 +127,35 @@ Merci !`);
     window.open(`https://wa.me/+2250778023331?text=${message}`, "_blank");
   };
 
+  const handlePhoneClick = () => {
+    analytics.phoneClick();
+  };
+
+  const handleEmailClick = () => {
+    analytics.emailClick();
+  };
+
   const contactInfo = [
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Téléphone",
       value: "+225 07 78 02 33 31",
-      action: "tel:+2250778023331"
+      action: "tel:+2250778023331",
+      onClick: handlePhoneClick
     },
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Principal",
       value: "all.ntic225@gmail.com",
-      action: "mailto:all.ntic225@gmail.com"
+      action: "mailto:all.ntic225@gmail.com",
+      onClick: handleEmailClick
     },
     {
       icon: <MapPin className="w-6 h-6" />,
       title: "Localisation",
       value: "Abidjan, Côte d'Ivoire",
-      action: null
+      action: null,
+      onClick: undefined
     }
   ];
 
@@ -185,6 +206,7 @@ Merci !`);
                       {info.action ? (
                         <a 
                           href={info.action}
+                          onClick={info.onClick}
                           className="text-gray-600 hover:text-royal-blue transition-colors duration-300"
                         >
                           {info.value}
