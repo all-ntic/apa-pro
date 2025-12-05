@@ -1,14 +1,23 @@
 import { MessageCircle, X } from "lucide-react";
 import { useState } from "react";
+import { analytics } from "@/lib/analytics";
 
 const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleWhatsAppClick = () => {
+    analytics.whatsAppClick('floating_button');
     const message = encodeURIComponent(
       "Bonjour ALLNTIC, je souhaite obtenir plus d'informations sur vos services."
     );
     window.open(`https://wa.me/2250778023331?text=${message}`, "_blank");
+  };
+
+  const handleToggle = () => {
+    if (!isOpen) {
+      analytics.ctaClick('whatsapp_widget_open', 'floating');
+    }
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -45,7 +54,7 @@ const FloatingWhatsApp = () => {
       )}
 
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={handleToggle}
         className="fixed bottom-24 right-6 w-14 h-14 bg-[#25D366] hover:bg-[#20BA5A] text-white rounded-full shadow-lg hover:shadow-xl transition-all z-50 flex items-center justify-center group"
         aria-label="Contacter sur WhatsApp"
       >
