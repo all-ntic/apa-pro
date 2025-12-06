@@ -41,7 +41,9 @@ const ContactSection = () => {
     email: "",
     phone: "",
     service: "",
-    message: ""
+    message: "",
+    // Honeypot field - should remain empty
+    website: ""
   });
   const { toast } = useToast();
 
@@ -77,7 +79,8 @@ const ContactSection = () => {
         email: "",
         phone: "",
         service: "",
-        message: ""
+        message: "",
+        website: ""
       });
     },
     onError: (error) => {
@@ -95,6 +98,16 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Honeypot anti-spam check - if filled, it's a bot
+    if (formData.website) {
+      // Silently reject without alerting the bot
+      toast({
+        title: "Message envoyé !",
+        description: "Votre demande a été envoyée avec succès.",
+      });
+      return;
+    }
     
     // Validate form data with zod
     const result = contactSchema.safeParse(formData);
@@ -328,6 +341,24 @@ Merci !`);
                       rows={4}
                       className="w-full resize-none"
                       placeholder="Décrivez votre besoin, votre environnement technique actuel, et vos objectifs..."
+                    />
+                  </div>
+
+                  {/* Honeypot field - hidden from users, visible to bots */}
+                  <div 
+                    className="absolute -left-[9999px] opacity-0 h-0 overflow-hidden"
+                    aria-hidden="true"
+                    tabIndex={-1}
+                  >
+                    <label htmlFor="website">Website</label>
+                    <Input
+                      type="text"
+                      id="website"
+                      name="website"
+                      value={formData.website}
+                      onChange={handleInputChange}
+                      autoComplete="off"
+                      tabIndex={-1}
                     />
                   </div>
 
