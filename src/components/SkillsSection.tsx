@@ -43,15 +43,15 @@ const SkillsSection = () => {
         </div>
 
         {/* Skills Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" role="list" aria-label="Liste des compétences">
           {skills.map((skill, index) => (
-            <div
+            <li
               key={index}
-              className="group bg-white rounded-2xl p-8 hover-lift shadow-card-soft border border-gray-100 animate-scale-in"
+              className="group bg-white rounded-2xl p-8 hover-lift shadow-card-soft border border-gray-100 animate-scale-in focus-within:ring-2 focus-within:ring-royal-blue"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className={`inline-flex items-center justify-center w-16 h-16 rounded-full bg-royal-blue/10 mb-6 group-hover:bg-royal-blue/20 transition-all duration-300 group-hover:scale-110`} role="presentation" aria-hidden="true">
-                <skill.icon className={`w-8 h-8 text-royal-blue`} />
+              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-royal-blue/10 mb-6 group-hover:bg-royal-blue/20 transition-all duration-300 group-hover:scale-110" aria-hidden="true">
+                <skill.icon className="w-8 h-8 text-royal-blue" aria-hidden="true" />
               </div>
               
               <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-royal-blue transition-colors duration-300">
@@ -61,9 +61,9 @@ const SkillsSection = () => {
               <p className="text-gray-600 leading-relaxed">
                 {skill.description}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );
