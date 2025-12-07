@@ -1,4 +1,5 @@
 import { MessageCircle, Phone, MapPin, Shield, Monitor, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -179,8 +180,14 @@ const Footer = () => {
 
         {/* Copyright */}
         <div className="pt-6 border-t border-white/10">
-          <div className="text-gray-400 text-sm text-center">
-            © {currentYear} APA - Agnidom Pygnali Aboubakar. Tous droits réservés.
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
+            <p>© {currentYear} APA - Agnidom Pygnali Aboubakar. Tous droits réservés.</p>
+            <Link 
+              to="/mentions-legales" 
+              className="hover:text-cyan-electric transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-electric rounded"
+            >
+              Mentions légales & Confidentialité
+            </Link>
           </div>
         </div>
 
