@@ -113,9 +113,9 @@ const FAQSection = () => {
 
 
   return (
-    <section id="faq" className="py-16 lg:py-20 bg-background relative overflow-hidden">
+    <section id="faq" className="py-16 lg:py-20 bg-background relative overflow-hidden" aria-labelledby="faq-title">
       {/* Éléments de fond subtils */}
-      <div className="absolute inset-0 opacity-30">
+      <div className="absolute inset-0 opacity-30" aria-hidden="true" role="presentation">
         <div className="absolute top-10 right-10 w-64 h-64 bg-royal-blue/10 rounded-full blur-3xl" />
         <div className="absolute bottom-10 left-10 w-96 h-96 bg-accent-gold/10 rounded-full blur-3xl" />
       </div>
@@ -123,11 +123,11 @@ const FAQSection = () => {
       <div className="container mx-auto px-6 relative z-10">
         <div className="text-center mb-12 lg:mb-16">
           <div className="inline-flex items-center bg-muted backdrop-blur-sm px-6 py-3 rounded-full mb-6 shadow-sm">
-            <HelpCircle className="w-5 h-5 text-royal-blue mr-3" />
+            <HelpCircle className="w-5 h-5 text-royal-blue mr-3" aria-hidden="true" />
             <span className="text-royal-blue font-semibold text-sm lg:text-base">Questions Fréquentes</span>
           </div>
           
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 id="faq-title" className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
             Des Questions ? <span className="text-royal-blue">Nous Avons les Réponses</span>
           </h2>
           <p className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -178,21 +178,23 @@ const FAQSection = () => {
             <p className="text-muted-foreground mb-8 leading-relaxed">
               Notre équipe est disponible pour répondre à toutes vos questions spécifiques et vous accompagner dans vos projets IT.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center" role="group" aria-label="Options de contact">
               <a 
                 href="https://wa.me/2250778023331" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-royal-blue hover:bg-accent-gold text-white px-6 py-3.5 rounded-xl font-semibold hover:shadow-glow transition-all duration-300 flex items-center justify-center"
+                className="bg-royal-blue hover:bg-accent-gold text-white px-6 py-3.5 rounded-xl font-semibold hover:shadow-glow transition-all duration-300 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-royal-blue focus-visible:ring-offset-2"
+                aria-label="Nous contacter via WhatsApp"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
+                <MessageCircle className="w-5 h-5 mr-2" aria-hidden="true" />
                 WhatsApp Direct
               </a>
               <a 
                 href="#contact"
-                className="bg-white border-2 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center"
+                className="bg-white border-2 border-royal-blue text-royal-blue hover:bg-royal-blue hover:text-white px-6 py-3.5 rounded-xl font-semibold transition-all duration-300 flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-royal-blue focus-visible:ring-offset-2"
+                aria-label="Aller au formulaire de contact pour prendre rendez-vous"
               >
-                <Phone className="w-5 h-5 mr-2" />
+                <Phone className="w-5 h-5 mr-2" aria-hidden="true" />
                 Prendre RDV
               </a>
             </div>

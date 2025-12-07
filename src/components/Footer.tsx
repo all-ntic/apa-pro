@@ -54,8 +54,12 @@ const Footer = () => {
                 <span>Abidjan, Côte d'Ivoire</span>
               </div>
               <div className="flex items-center text-gray-300">
-                <Phone className="w-5 h-5 text-cyan-electric mr-3" />
-                <a href="tel:+2250778023331" className="hover:text-cyan-electric transition-colors duration-300">
+                <Phone className="w-5 h-5 text-cyan-electric mr-3" aria-hidden="true" />
+                <a 
+                  href="tel:+2250778023331" 
+                  className="hover:text-cyan-electric transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-electric rounded"
+                  aria-label="Appeler le +225 07 78 02 33 31"
+                >
                   +225 07 78 02 33 31
                 </a>
               </div>
@@ -63,29 +67,29 @@ const Footer = () => {
           </div>
 
           {/* Liens rapides */}
-          <div>
-            <h4 className="text-lg font-semibold mb-4 text-cyan-electric">Navigation</h4>
-            <ul className="space-y-2">
+          <nav aria-label="Liens rapides">
+            <h4 className="text-lg font-semibold mb-4 text-cyan-electric" id="footer-nav-title">Navigation</h4>
+            <ul className="space-y-2" aria-labelledby="footer-nav-title">
               {quickLinks.map((link, index) => (
                 <li key={index}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-gray-300 hover:text-cyan-electric transition-colors duration-300 text-left"
+                    className="text-gray-300 hover:text-cyan-electric transition-colors duration-300 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-electric rounded"
                   >
                     {link.name}
                   </button>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Services */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-cyan-electric">Services</h4>
-            <ul className="space-y-2">
+            <h4 className="text-lg font-semibold mb-4 text-cyan-electric" id="footer-services-title">Services</h4>
+            <ul className="space-y-2" aria-labelledby="footer-services-title">
               {services.map((service, index) => (
                 <li key={index} className="flex items-center text-gray-300">
-                  <span className="text-cyan-electric mr-2">{service.icon}</span>
+                  <span className="text-cyan-electric mr-2" aria-hidden="true">{service.icon}</span>
                   {service.name}
                 </li>
               ))}

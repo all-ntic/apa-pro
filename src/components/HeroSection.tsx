@@ -98,7 +98,11 @@ const HeroSection = () => {
       </div>
 
       {/* Scroll indicator mobile */}
-      <div className="lg:hidden absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div 
+        className="lg:hidden absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
+        aria-hidden="true"
+        role="presentation"
+      >
         <ArrowDown className="w-6 h-6 text-royal-blue-glow" />
       </div>
     </section>
