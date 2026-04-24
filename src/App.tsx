@@ -16,6 +16,8 @@ const MaintenanceInformatique = lazy(() => import("./pages/Services/MaintenanceI
 const ReseauxInformatiques = lazy(() => import("./pages/Services/ReseauxInformatiques"));
 const DeveloppementWeb = lazy(() => import("./pages/Services/DeveloppementWeb"));
 const SecuriteElectronique = lazy(() => import("./pages/Services/SecuriteElectronique"));
+const AdminLogin = lazy(() => import("./pages/admin/AdminLogin"));
+const AdminDashboard = lazy(() => import("./pages/admin/AdminDashboard"));
 
 const queryClient = new QueryClient();
 
@@ -45,6 +47,8 @@ const App = () => (
               <Route path="/services/reseaux-informatiques" element={<ReseauxInformatiques />} />
               <Route path="/services/developpement-web" element={<DeveloppementWeb />} />
               <Route path="/services/securite-electronique" element={<SecuriteElectronique />} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin" element={<AdminDashboard />} />
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
             </Routes>
