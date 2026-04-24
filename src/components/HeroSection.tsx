@@ -39,36 +39,30 @@ const HeroSection = () => {
           {/* Photo professionnelle */}
           <div className="flex-shrink-0 lg:w-2/5">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-accent rounded-2xl blur-2xl opacity-40 mega-glow" />
-              <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 hover-mega">
-                {imgError ? (
-                  <div
-                    className="w-full aspect-[4/5] rounded-xl shadow-floating glow-accent bg-gradient-accent flex items-center justify-center"
-                    role="img"
-                    aria-label="Photo d'Agnidom Pygnali Aboubakar indisponible"
-                  >
-                    <User className="w-24 h-24 text-white/80" aria-hidden="true" />
-                  </div>
-                ) : (
-                  <picture>
-                    <source srcSet={agnidomPhotoWebp} type="image/webp" />
-                    <img
-                      src={agnidomPhoto}
-                      alt="Portrait professionnel d'Agnidom Pygnali Aboubakar (ALLNTIC), technicien expert en systèmes, réseaux, développement web et sécurité électronique à Abidjan, Côte d'Ivoire"
-                      className="w-full aspect-[4/5] object-cover rounded-xl shadow-floating glow-accent"
-                      loading="eager"
-                      fetchPriority="high"
-                      decoding="async"
-                      width="800"
-                      height="1000"
-                      onError={() => setImgError(true)}
-                    />
-                  </picture>
-                )}
-                <div className="absolute -bottom-3 -right-3 bg-white text-gray-900 px-3 py-2 rounded-lg font-bold shadow-mega border border-royal-blue/30">
-                  <span className="text-royal-blue text-sm">Expert IT</span>
+              {imgError ? (
+                <div
+                  className="w-full aspect-[4/5] rounded-xl bg-muted flex items-center justify-center"
+                  role="img"
+                  aria-label="Photo d'Agnidom Pygnali Aboubakar indisponible"
+                >
+                  <User className="w-24 h-24 text-white/80" aria-hidden="true" />
                 </div>
-              </div>
+              ) : (
+                <picture>
+                  <source srcSet={agnidomPhotoWebp} type="image/webp" />
+                  <img
+                    src={agnidomPhoto}
+                    alt="Portrait professionnel d'Agnidom Pygnali Aboubakar (ALLNTIC), technicien expert en systèmes, réseaux, développement web et sécurité électronique à Abidjan, Côte d'Ivoire"
+                    className="w-full aspect-[4/5] object-cover rounded-xl"
+                    loading="eager"
+                    fetchPriority="high"
+                    decoding="async"
+                    width="800"
+                    height="1000"
+                    onError={() => setImgError(true)}
+                  />
+                </picture>
+              )}
             </div>
           </div>
 
