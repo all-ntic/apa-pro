@@ -833,6 +833,57 @@ export type Database = {
         }
         Relationships: []
       }
+      realizations: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          details: string
+          display_order: number
+          github: string | null
+          id: string
+          image_url: string | null
+          is_published: boolean
+          link: string | null
+          tags: string[]
+          title: string
+          updated_at: string
+          youtube: string | null
+        }
+        Insert: {
+          category: string
+          created_at?: string
+          description: string
+          details: string
+          display_order?: number
+          github?: string | null
+          id?: string
+          image_url?: string | null
+          is_published?: boolean
+          link?: string | null
+          tags?: string[]
+          title: string
+          updated_at?: string
+          youtube?: string | null
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          details?: string
+          display_order?: number
+          github?: string | null
+          id?: string
+          image_url?: string | null
+          is_published?: boolean
+          link?: string | null
+          tags?: string[]
+          title?: string
+          updated_at?: string
+          youtube?: string | null
+        }
+        Relationships: []
+      }
       user_roles: {
         Row: {
           created_at: string
