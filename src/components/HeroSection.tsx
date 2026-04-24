@@ -5,6 +5,8 @@ import agnidomPhoto from "@/assets/agnidom-photo.jpg";
 import agnidomPhotoWebp from "@/assets/agnidom-photo.webp";
 
 const HeroSection = () => {
+  const [imgError, setImgError] = useState(false);
+
   const handleWhatsAppContact = () => {
     window.open("https://wa.me/+2250778023331?text=Bonjour%20APA,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services.", "_blank");
   };
