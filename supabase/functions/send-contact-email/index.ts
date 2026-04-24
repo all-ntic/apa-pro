@@ -103,14 +103,14 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Sending contact email for:", { name: sanitizedName, email: sanitizedEmail, service: sanitizedService });
 
-    // Save to database with sanitized data
+    // Save to database with sanitized data (match actual contact_messages schema)
     const { error: dbError } = await supabaseClient
       .from('contact_messages')
       .insert({
         name: sanitizedName,
         email: sanitizedEmail,
-        phone: sanitizedPhone || null,
-        message: `${sanitizedService ? `Service: ${sanitizedService}\n\n` : ''}${sanitizedMessage}`
+        subject: sanitizedService || 'Demande de contact',
+        message: `${sanitizedPhone ? `Téléphone: ${sanitizedPhone}\n\n` : ''}${sanitizedMessage}`
       });
 
     if (dbError) {
