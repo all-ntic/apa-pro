@@ -304,6 +304,204 @@ export type Database = {
         }
         Relationships: []
       }
+      cv_contact_messages: {
+        Row: {
+          category: string | null
+          created_at: string
+          email: string
+          id: string
+          is_read: boolean | null
+          message: string
+          name: string
+          subject: string
+        }
+        Insert: {
+          category?: string | null
+          created_at?: string
+          email: string
+          id?: string
+          is_read?: boolean | null
+          message: string
+          name: string
+          subject: string
+        }
+        Update: {
+          category?: string | null
+          created_at?: string
+          email?: string
+          id?: string
+          is_read?: boolean | null
+          message?: string
+          name?: string
+          subject?: string
+        }
+        Relationships: []
+      }
+      cv_cover_letters: {
+        Row: {
+          company: string | null
+          content: string
+          created_at: string
+          id: string
+          job_title: string | null
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          company?: string | null
+          content?: string
+          created_at?: string
+          id?: string
+          job_title?: string | null
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          company?: string | null
+          content?: string
+          created_at?: string
+          id?: string
+          job_title?: string | null
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      cv_documents: {
+        Row: {
+          created_at: string
+          data: Json
+          id: string
+          score: number | null
+          template: string
+          title: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          data?: Json
+          id?: string
+          score?: number | null
+          template?: string
+          title?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          data?: Json
+          id?: string
+          score?: number | null
+          template?: string
+          title?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      cv_payments: {
+        Row: {
+          amount: number
+          created_at: string
+          currency: string
+          id: string
+          payment_reference: string | null
+          payment_status: string
+          payment_type: string
+          paystack_reference: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          amount: number
+          created_at?: string
+          currency?: string
+          id?: string
+          payment_reference?: string | null
+          payment_status?: string
+          payment_type?: string
+          paystack_reference?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          amount?: number
+          created_at?: string
+          currency?: string
+          id?: string
+          payment_reference?: string | null
+          payment_status?: string
+          payment_type?: string
+          paystack_reference?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      cv_profiles: {
+        Row: {
+          created_at: string
+          email: string | null
+          full_name: string | null
+          id: string
+          phone: string | null
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          email?: string | null
+          full_name?: string | null
+          id?: string
+          phone?: string | null
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
+      cv_subscriptions: {
+        Row: {
+          created_at: string
+          ends_at: string | null
+          id: string
+          plan: Database["public"]["Enums"]["cv_plan"]
+          starts_at: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          ends_at?: string | null
+          id?: string
+          plan?: Database["public"]["Enums"]["cv_plan"]
+          starts_at?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          ends_at?: string | null
+          id?: string
+          plan?: Database["public"]["Enums"]["cv_plan"]
+          starts_at?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       donations: {
         Row: {
           amount: number
@@ -668,6 +866,7 @@ export type Database = {
         }
         Returns: undefined
       }
+      cv_is_premium: { Args: { _user_id: string }; Returns: boolean }
       get_user_church_id: { Args: { _user_id: string }; Returns: string }
       has_al_role: {
         Args: {
@@ -694,6 +893,7 @@ export type Database = {
     Enums: {
       al_role: "admin" | "vendeur" | "client"
       app_role: "pastor" | "member" | "admin"
+      cv_plan: "free" | "premium"
     }
     CompositeTypes: {
       [_ in never]: never
@@ -823,6 +1023,7 @@ export const Constants = {
     Enums: {
       al_role: ["admin", "vendeur", "client"],
       app_role: ["pastor", "member", "admin"],
+      cv_plan: ["free", "premium"],
     },
   },
 } as const
