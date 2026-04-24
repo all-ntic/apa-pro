@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Globe, Zap, Github, Youtube, ExternalLink } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,6 +10,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
 import imgSecurite from "@/assets/realisation-securite.jpg";
 import imgReseau from "@/assets/realisation-reseau.jpg";
 import imgWeb from "@/assets/realisation-web.jpg";
@@ -26,12 +27,12 @@ type Project = {
   description: string;
   details: string;
   tags: string[];
-  link?: string;
-  github?: string;
-  youtube?: string;
+  link?: string | null;
+  github?: string | null;
+  youtube?: string | null;
 };
 
-const projects: Project[] = [
+const fallbackProjects: Project[] = [
   {
     image: imgSecurite,
     category: "Sécurité Électronique",
@@ -116,7 +117,35 @@ const projects: Project[] = [
 ];
 
 const RealizationsSection = () => {
+  const [projects, setProjects] = useState<Project[]>(fallbackProjects);
   const [selected, setSelected] = useState<Project | null>(null);
+
+  useEffect(() => {
+    const load = async () => {
+      const { data, error } = await supabase
+        .from("realizations")
+        .select("*")
+        .eq("is_published", true)
+        .order("display_order", { ascending: true })
+        .order("created_at", { ascending: false });
+      if (!error && data && data.length > 0) {
+        setProjects(
+          data.map((r) => ({
+            image: r.image_url || imgWeb,
+            category: r.category,
+            title: r.title,
+            description: r.description,
+            details: r.details,
+            tags: r.tags || [],
+            link: r.link,
+            github: r.github,
+            youtube: r.youtube,
+          }))
+        );
+      }
+    };
+    load();
+  }, []);
 
   return (
     <section
