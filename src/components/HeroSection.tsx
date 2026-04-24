@@ -1,6 +1,8 @@
-import { ArrowDown, Download, MessageCircle, Phone } from "lucide-react";
+import { useState } from "react";
+import { ArrowDown, Download, MessageCircle, User } from "lucide-react";
 import { HeroButton } from "@/components/ui/button-variants";
 import agnidomPhoto from "@/assets/agnidom-photo.jpg";
+import agnidomPhotoWebp from "@/assets/agnidom-photo.webp";
 
 const HeroSection = () => {
   const handleWhatsAppContact = () => {
