@@ -1,4 +1,8 @@
 import { Monitor, Network, Code, Shield } from "lucide-react";
+import serviceMaintenance from "@/assets/service-maintenance.jpg";
+import serviceReseaux from "@/assets/service-reseaux.jpg";
+import serviceWeb from "@/assets/service-web.jpg";
+import serviceSecurite from "@/assets/service-securite.jpg";
 
 const SkillsSection = () => {
   const skills = [
@@ -6,26 +10,30 @@ const SkillsSection = () => {
       icon: Monitor,
       title: "Maintenance Informatique",
       description: "Hardware et software, diagnostic, réparation postes et serveurs",
-      color: "royal-blue"
+      image: serviceMaintenance,
+      alt: "Technicien réparant une carte mère avec ordinateur portable affichant du code",
     },
     {
       icon: Network,
       title: "Administration Réseaux",
       description: "LAN/WAN, Wi-Fi, routeurs, switches, sécurité réseau et routage",
-      color: "royal-blue-light"
+      image: serviceReseaux,
+      alt: "Baie de serveurs avec câbles réseau RJ45 et LED bleues dans un datacenter",
     },
     {
       icon: Code,
       title: "Développement Web",
       description: "Sites vitrines, HTML5, CSS3, JavaScript, WordPress, optimisation SEO",
-      color: "accent-gold"
+      image: serviceWeb,
+      alt: "Sites web responsive affichés sur ordinateur, tablette et smartphone",
     },
     {
       icon: Shield,
       title: "Sécurité Électronique",
       description: "Vidéosurveillance IP/analogique, alarmes, contrôle d'accès, DVR/NVR",
-      color: "royal-blue"
-    }
+      image: serviceSecurite,
+      alt: "Caméra de vidéosurveillance IP dôme professionnelle installée sur mur",
+    },
   ];
 
   return (
@@ -42,25 +50,51 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        {/* Skills Grid */}
-        <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto" role="list" aria-label="Liste des compétences">
+        {/* Skills Grid with visuals */}
+        <ul
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto"
+          role="list"
+          aria-label="Liste des compétences"
+        >
           {skills.map((skill, index) => (
             <li
               key={index}
-              className="group bg-white rounded-2xl p-8 hover-lift shadow-card-soft border border-gray-100 animate-scale-in focus-within:ring-2 focus-within:ring-royal-blue"
+              className="group relative overflow-hidden rounded-2xl shadow-card-soft border border-gray-100 bg-white hover-lift animate-scale-in focus-within:ring-2 focus-within:ring-royal-blue"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-royal-blue/10 mb-6 group-hover:bg-royal-blue/20 transition-all duration-300 group-hover:scale-110" aria-hidden="true">
-                <skill.icon className="w-8 h-8 text-royal-blue" aria-hidden="true" />
+              {/* Image */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={skill.image}
+                  alt={skill.alt}
+                  loading="lazy"
+                  decoding="async"
+                  width={1024}
+                  height={768}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                {/* Gradient overlay */}
+                <div
+                  className="absolute inset-0 bg-gradient-to-t from-royal-blue/90 via-royal-blue/40 to-transparent"
+                  aria-hidden="true"
+                />
+                {/* Icon badge */}
+                <div
+                  className="absolute top-4 left-4 inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/95 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-300"
+                  aria-hidden="true"
+                >
+                  <skill.icon className="w-6 h-6 text-royal-blue" aria-hidden="true" />
+                </div>
+                {/* Title over image */}
+                <h3 className="absolute bottom-4 left-4 right-4 text-white text-lg font-bold drop-shadow-lg">
+                  {skill.title}
+                </h3>
               </div>
-              
-              <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-royal-blue transition-colors duration-300">
-                {skill.title}
-              </h3>
-              
-              <p className="text-gray-600 leading-relaxed">
-                {skill.description}
-              </p>
+
+              {/* Description */}
+              <div className="p-5">
+                <p className="text-gray-600 text-sm leading-relaxed">{skill.description}</p>
+              </div>
             </li>
           ))}
         </ul>
