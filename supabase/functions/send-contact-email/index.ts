@@ -165,7 +165,7 @@ const handler = async (req: Request): Promise<Response> => {
   } catch (error: any) {
     console.error("Error in send-contact-email function:", error);
     return new Response(
-      JSON.stringify({ error: "Erreur lors de l'envoi de l'email", details: error.message }),
+      JSON.stringify({ error: "Une erreur s'est produite lors de l'envoi. Veuillez réessayer plus tard." }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
