@@ -1,8 +1,12 @@
-import { ArrowDown, Download, MessageCircle, Phone } from "lucide-react";
+import { useState } from "react";
+import { ArrowDown, Download, MessageCircle, User } from "lucide-react";
 import { HeroButton } from "@/components/ui/button-variants";
 import agnidomPhoto from "@/assets/agnidom-photo.jpg";
+import agnidomPhotoWebp from "@/assets/agnidom-photo.webp";
 
 const HeroSection = () => {
+  const [imgError, setImgError] = useState(false);
+
   const handleWhatsAppContact = () => {
     window.open("https://wa.me/+2250778023331?text=Bonjour%20APA,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services.", "_blank");
   };
@@ -37,14 +41,30 @@ const HeroSection = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-accent rounded-2xl blur-2xl opacity-40 mega-glow" />
               <div className="relative bg-white/10 backdrop-blur-sm p-4 rounded-2xl border border-white/20 hover-mega">
-                <img
-                  src={agnidomPhoto}
-                  alt="Agnidom Pygnali Aboubakar - Technicien expert IT, réseaux, développement web et sécurité électronique à Abidjan, Côte d'Ivoire"
-                  className="w-full aspect-[4/5] object-cover rounded-xl shadow-floating glow-accent"
-                  loading="eager"
-                  width="400"
-                  height="500"
-                />
+                {imgError ? (
+                  <div
+                    className="w-full aspect-[4/5] rounded-xl shadow-floating glow-accent bg-gradient-accent flex items-center justify-center"
+                    role="img"
+                    aria-label="Photo d'Agnidom Pygnali Aboubakar indisponible"
+                  >
+                    <User className="w-24 h-24 text-white/80" aria-hidden="true" />
+                  </div>
+                ) : (
+                  <picture>
+                    <source srcSet={agnidomPhotoWebp} type="image/webp" />
+                    <img
+                      src={agnidomPhoto}
+                      alt="Portrait professionnel d'Agnidom Pygnali Aboubakar (ALLNTIC), technicien expert en systèmes, réseaux, développement web et sécurité électronique à Abidjan, Côte d'Ivoire"
+                      className="w-full aspect-[4/5] object-cover rounded-xl shadow-floating glow-accent"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      width="800"
+                      height="1000"
+                      onError={() => setImgError(true)}
+                    />
+                  </picture>
+                )}
                 <div className="absolute -bottom-3 -right-3 bg-white text-gray-900 px-3 py-2 rounded-lg font-bold shadow-mega border border-royal-blue/30">
                   <span className="text-royal-blue text-sm">Expert IT</span>
                 </div>
