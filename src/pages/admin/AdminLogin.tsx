@@ -10,9 +10,12 @@ import { toast } from "sonner";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
-  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
+
+  // Domaine interne — non envoyé par email, sert juste à satisfaire Supabase Auth
+  const INTERNAL_DOMAIN = "allntic.local";
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -23,6 +26,8 @@ const AdminLogin = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
+    const cleanUsername = username.trim().toLowerCase().replace(/[^a-z0-9._-]/g, "");
+    const email = `${cleanUsername}@${INTERNAL_DOMAIN}`;
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
     if (error) {
