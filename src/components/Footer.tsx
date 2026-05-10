@@ -94,12 +94,21 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-cyan-electric" id="footer-services-title">Services</h4>
             <ul className="space-y-2" aria-labelledby="footer-services-title">
-              {services.map((service, index) => (
-                <li key={index} className="flex items-center text-gray-300">
-                  <span className="text-cyan-electric mr-2" aria-hidden="true">{service.icon}</span>
-                  {service.name}
+              {services.map((service) => (
+                <li key={service.name}>
+                  <Link
+                    to={service.slug ? `/services/${service.slug}` : "/services"}
+                    className="text-gray-300 hover:text-cyan-electric transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-electric rounded"
+                  >
+                    {service.name}
+                  </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/blog" className="text-gray-300 hover:text-cyan-electric transition-colors duration-300">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
