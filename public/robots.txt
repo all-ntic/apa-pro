@@ -4,7 +4,7 @@ Allow: /
 Disallow: /admin
 Disallow: /admin/
 
-Sitemap: https://apa-pro.allntic.com/sitemap.xml
+Sitemap: https://allntic.com/sitemap.xml
 Crawl-delay: 1
 
 User-agent: Googlebot

@@ -10,7 +10,7 @@ type SEOProps = {
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
 };
 
-const SITE_URL = "https://apa-pro.allntic.com";
+const SITE_URL = "https://allntic.com";
 const DEFAULT_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/SAdL5uQGe2W7X7Gb6JNrzFaXgY02/social-images/social-1760095751167-ALLNTIC-removebg-preview.png";
 

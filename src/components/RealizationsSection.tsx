@@ -54,12 +54,12 @@ const fallbackProjects: Project[] = [
   {
     image: imgWeb,
     category: "Développement Web",
-    title: "APA Pro - Portfolio",
+    title: "ALLNTIC - Portfolio",
     description: "Portfolio IT & Web",
     details:
       "Portfolio professionnel complet : expertise systèmes, réseaux, développement web et sécurité électronique avec chatbot intelligent et SEO avancé.",
     tags: ["React", "Supabase", "Chatbot IA", "SEO"],
-    link: "https://apa-pro.allntic.com",
+    link: "https://allntic.com",
     github: "https://github.com/all-ntic",
     youtube: "https://www.youtube.com/@allntic",
   },

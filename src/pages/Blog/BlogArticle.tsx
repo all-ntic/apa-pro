@@ -29,7 +29,7 @@ const BlogArticle = () => {
       author: {
         "@type": "Person",
         name: "Agnidom Pygnali Aboubakar",
-        url: "https://apa-pro.allntic.com",
+        url: "https://allntic.com",
       },
       publisher: {
         "@type": "Organization",
@@ -39,16 +39,16 @@ const BlogArticle = () => {
           url: "https://storage.googleapis.com/gpt-engineer-file-uploads/SAdL5uQGe2W7X7Gb6JNrzFaXgY02/social-images/social-1760095751167-ALLNTIC-removebg-preview.png",
         },
       },
-      mainEntityOfPage: `https://apa-pro.allntic.com${canonical}`,
+      mainEntityOfPage: `https://allntic.com${canonical}`,
       keywords: article.tags.join(", "),
     },
     {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Accueil", item: "https://apa-pro.allntic.com/" },
-        { "@type": "ListItem", position: 2, name: "Blog", item: "https://apa-pro.allntic.com/blog" },
-        { "@type": "ListItem", position: 3, name: article.title, item: `https://apa-pro.allntic.com${canonical}` },
+        { "@type": "ListItem", position: 1, name: "Accueil", item: "https://allntic.com/" },
+        { "@type": "ListItem", position: 2, name: "Blog", item: "https://allntic.com/blog" },
+        { "@type": "ListItem", position: 3, name: article.title, item: `https://allntic.com${canonical}` },
       ],
     },
   ];

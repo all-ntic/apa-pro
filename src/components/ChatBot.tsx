@@ -131,7 +131,7 @@ const ChatBot = () => {
     
     // Contact et réseaux sociaux
     if (message.includes("contact") || message.includes("joindre") || message.includes("appeler") || message.includes("email") || message.includes("whatsapp")) {
-      return "Contact : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://apa-pro.allntic.com. Suivez-moi sur LinkedIn, GitHub, Instagram, YouTube, Facebook, TikTok @allntic. Réponse sous 24h garantie.";
+      return "Contact : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://allntic.com. Suivez-moi sur LinkedIn, GitHub, Instagram, YouTube, Facebook, TikTok @allntic. Réponse sous 24h garantie.";
     }
     
     if (message.includes("linkedin") || message.includes("github") || message.includes("instagram") || message.includes("facebook") || message.includes("youtube") || message.includes("tiktok") || message.includes("réseau social")) {
@@ -259,7 +259,7 @@ const ChatBot = () => {
     }
     
     // Réponse par défaut enrichie
-    return "Je n'ai pas cette information précise dans ma base actuellement. Pour une réponse détaillée et personnalisée, contactez ALLNTIC directement : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://apa-pro.allntic.com. Je serai ravi de vous aider !";
+    return "Je n'ai pas cette information précise dans ma base actuellement. Pour une réponse détaillée et personnalisée, contactez ALLNTIC directement : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://allntic.com. Je serai ravi de vous aider !";
   };
 
   const handleSendMessage = async () => {
