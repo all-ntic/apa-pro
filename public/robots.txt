@@ -1,18 +1,15 @@
-# Robots.txt for ALLNTIC Portfolio - apa-pro.allntic.com
-# Autoriser tous les robots à indexer le site
-
+# Robots.txt - ALLNTIC
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /admin/
 
-# Sitemap
 Sitemap: https://apa-pro.allntic.com/sitemap.xml
-
-# Optimisations crawl
 Crawl-delay: 1
 
-# Règles spécifiques pour améliorer le référencement
 User-agent: Googlebot
 Allow: /
+Disallow: /admin
 
 User-agent: Googlebot-Image
 Allow: /
