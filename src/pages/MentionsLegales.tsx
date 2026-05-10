@@ -8,13 +8,13 @@ const MentionsLegales = () => {
   return (
     <>
       <Helmet>
-        <title>Mentions Légales & Politique de Confidentialité | ALLNTIC - APA-PRO</title>
+        <title>Mentions Légales & Politique de Confidentialité | ALLNTIC - ALLNTIC</title>
         <meta 
           name="description" 
-          content="Consultez les mentions légales et la politique de confidentialité du site APA-PRO par ALLNTIC. Protection des données personnelles et informations légales." 
+          content="Consultez les mentions légales et la politique de confidentialité du site ALLNTIC par ALLNTIC. Protection des données personnelles et informations légales." 
         />
         <meta name="robots" content="noindex, follow" />
-        <link rel="canonical" href="https://apa-pro.allntic.com/mentions-legales" />
+        <link rel="canonical" href="https://allntic.com/mentions-legales" />
       </Helmet>
 
       <Navigation />

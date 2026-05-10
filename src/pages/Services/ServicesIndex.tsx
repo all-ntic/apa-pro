@@ -43,7 +43,7 @@ const ServicesIndex = () => {
       "@type": "ListItem",
       position: i + 1,
       name: s.shortName,
-      url: `https://apa-pro.allntic.com/services/${s.slug}`,
+      url: `https://allntic.com/services/${s.slug}`,
     })),
   };
 

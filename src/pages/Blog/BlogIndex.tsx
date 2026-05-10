@@ -28,12 +28,12 @@ const BlogIndex = () => {
     "@context": "https://schema.org",
     "@type": "Blog",
     name: "Blog ALLNTIC",
-    url: "https://apa-pro.allntic.com/blog",
+    url: "https://allntic.com/blog",
     blogPost: ARTICLES.map((a) => ({
       "@type": "BlogPosting",
       headline: a.title,
       datePublished: a.date,
-      url: `https://apa-pro.allntic.com/blog/${a.slug}`,
+      url: `https://allntic.com/blog/${a.slug}`,
     })),
   };
 

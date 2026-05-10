@@ -41,9 +41,9 @@ const Navigation = () => {
           <Link 
             to="/" 
             className="flex items-center space-x-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-royal-blue-dark rounded-lg"
-            aria-label="APA-PRO - Retour à l'accueil"
+            aria-label="ALLNTIC - Retour à l'accueil"
           >
-            <span className="text-xl font-bold text-white">APA-PRO</span>
+            <span className="text-xl font-bold text-white">ALLNTIC</span>
           </Link>
 
           {/* Desktop Navigation */}
