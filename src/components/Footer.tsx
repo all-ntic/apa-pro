@@ -14,10 +14,16 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: "Maintenance IT", icon: <Monitor className="w-4 h-4" /> },
-    { name: "Réseaux LAN/WAN", icon: <Shield className="w-4 h-4" /> },
-    { name: "Développement Web", icon: <Monitor className="w-4 h-4" /> },
-    { name: "Sécurité Électronique", icon: <Shield className="w-4 h-4" /> }
+    { name: "Installation Caméras", slug: "installation-cameras" },
+    { name: "Vidéosurveillance", slug: "videosurveillance" },
+    { name: "Réseaux Informatiques", slug: "reseaux-informatiques" },
+    { name: "Maintenance IT", slug: "maintenance-informatique" },
+    { name: "Contrôle d'Accès", slug: "controle-acces" },
+    { name: "IPBX / VoIP", slug: "ipbx-voip" },
+    { name: "WiFi Professionnel", slug: "wifi-professionnel" },
+    { name: "Cybersécurité", slug: "cybersecurite" },
+    { name: "Développement Web", slug: "developpement-web" },
+    { name: "Tous les services", slug: "" },
   ];
 
   const scrollToSection = (sectionId: string) => {

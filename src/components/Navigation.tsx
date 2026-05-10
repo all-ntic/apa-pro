@@ -180,41 +180,43 @@ const Navigation = () => {
               >
                 À propos
               </button>
-              <div className="flex flex-col space-y-2" role="group" aria-label="Services">
-                <span className="text-white font-semibold text-sm" id="services-mobile-label">Services</span>
-                <Link 
-                  to="/services/maintenance-informatique"
-                  onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-accent-gold transition-colors duration-300 text-left pl-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg py-1"
-                  role="menuitem"
-                >
-                  Maintenance Informatique
+              <div className="flex flex-col space-y-1" role="group" aria-label="Services">
+                <Link to="/services" onClick={() => setIsOpen(false)} className="text-accent-gold font-semibold text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg py-1">
+                  Tous les services →
                 </Link>
-                <Link 
-                  to="/services/reseaux-informatiques"
-                  onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-accent-gold transition-colors duration-300 text-left pl-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg py-1"
-                  role="menuitem"
-                >
-                  Réseaux Informatiques
-                </Link>
-                <Link 
-                  to="/services/developpement-web"
-                  onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-accent-gold transition-colors duration-300 text-left pl-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg py-1"
-                  role="menuitem"
-                >
-                  Développement Web
-                </Link>
-                <Link 
-                  to="/services/securite-electronique"
-                  onClick={() => setIsOpen(false)}
-                  className="text-white/80 hover:text-accent-gold transition-colors duration-300 text-left pl-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg py-1"
-                  role="menuitem"
-                >
-                  Sécurité Électronique
-                </Link>
+                {[
+                  ["installation-cameras","Installation Caméras"],
+                  ["videosurveillance","Vidéosurveillance"],
+                  ["reseaux-informatiques","Réseaux Informatiques"],
+                  ["maintenance-informatique","Maintenance Informatique"],
+                  ["controle-acces","Contrôle d'Accès"],
+                  ["ipbx-voip","IPBX / VoIP"],
+                  ["securite-electronique","Sécurité Électronique"],
+                  ["developpement-web","Développement Web"],
+                  ["support-entreprise","Support Entreprise"],
+                  ["wifi-professionnel","WiFi Professionnel"],
+                  ["installation-serveurs","Installation Serveurs"],
+                  ["cybersecurite","Cybersécurité"],
+                ].map(([slug, label]) => (
+                  <Link
+                    key={slug}
+                    to={`/services/${slug}`}
+                    onClick={() => setIsOpen(false)}
+                    className="text-white/80 hover:text-accent-gold transition-colors duration-300 text-left pl-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg py-1 text-sm"
+                    role="menuitem"
+                  >
+                    {label}
+                  </Link>
+                ))}
               </div>
+              <Link
+                to="/blog"
+                onClick={() => setIsOpen(false)}
+                className="text-white hover:text-accent-gold transition-colors duration-300 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg px-2 py-1"
+                role="menuitem"
+              >
+                Blog
+              </Link>
               <button
                 onClick={() => scrollToSection("realisations")}
                 className="text-white hover:text-accent-gold transition-colors duration-300 text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg px-2 py-1"
