@@ -392,6 +392,30 @@ Merci !`);
             </Card>
           </div>
         </div>
+
+        {/* Google Maps */}
+        <div className="mt-16 max-w-7xl mx-auto">
+          <div className="text-center mb-6">
+            <h3 className="font-serif text-2xl lg:text-3xl font-bold text-foreground mb-2">
+              Nous trouver à <span className="gradient-text">Abidjan</span>
+            </h3>
+            <p className="text-muted-foreground">
+              Intervention sur tout le district d'Abidjan et la Côte d'Ivoire
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-elegant border border-gray-100 aspect-[16/9] lg:aspect-[21/9]">
+            <iframe
+              title="ALLNTIC — Localisation Abidjan, Côte d'Ivoire"
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31814.123456!2d-3.987!3d5.359!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCocody%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1700000000000"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
