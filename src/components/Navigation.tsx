@@ -84,41 +84,35 @@ const Navigation = () => {
               </button>
               {servicesOpen && (
                 <div 
-                  className="absolute top-full left-0 mt-2 bg-royal-blue-dark/95 backdrop-blur-lg border border-white/10 rounded-lg shadow-elegant min-w-[250px] py-2"
+                  className="absolute top-full left-0 mt-2 bg-royal-blue-dark/95 backdrop-blur-lg border border-white/10 rounded-lg shadow-elegant min-w-[280px] py-2 max-h-[70vh] overflow-y-auto"
                   role="menu"
                   aria-label="Sous-menu Services"
                 >
-                  <Link 
-                    to="/services/maintenance-informatique"
-                    className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors focus:outline-none focus-visible:bg-white/10 focus-visible:text-accent-gold"
-                    role="menuitem"
-                  >
-                    Maintenance Informatique
+                  <Link to="/services" className="block px-4 py-2 text-accent-gold hover:bg-white/10 font-semibold border-b border-white/10" role="menuitem">
+                    Voir tous les services →
                   </Link>
-                  <Link 
-                    to="/services/reseaux-informatiques"
-                    className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors focus:outline-none focus-visible:bg-white/10 focus-visible:text-accent-gold"
-                    role="menuitem"
-                  >
-                    Réseaux Informatiques
-                  </Link>
-                  <Link 
-                    to="/services/developpement-web"
-                    className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors focus:outline-none focus-visible:bg-white/10 focus-visible:text-accent-gold"
-                    role="menuitem"
-                  >
-                    Développement Web
-                  </Link>
-                  <Link 
-                    to="/services/securite-electronique"
-                    className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors focus:outline-none focus-visible:bg-white/10 focus-visible:text-accent-gold"
-                    role="menuitem"
-                  >
-                    Sécurité Électronique
-                  </Link>
+                  <Link to="/services/installation-cameras" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Installation Caméras</Link>
+                  <Link to="/services/videosurveillance" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Vidéosurveillance</Link>
+                  <Link to="/services/reseaux-informatiques" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Réseaux Informatiques</Link>
+                  <Link to="/services/maintenance-informatique" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Maintenance Informatique</Link>
+                  <Link to="/services/controle-acces" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Contrôle d'Accès</Link>
+                  <Link to="/services/ipbx-voip" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">IPBX / VoIP</Link>
+                  <Link to="/services/securite-electronique" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Sécurité Électronique</Link>
+                  <Link to="/services/developpement-web" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Développement Web</Link>
+                  <Link to="/services/support-entreprise" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Support Entreprise</Link>
+                  <Link to="/services/wifi-professionnel" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">WiFi Professionnel</Link>
+                  <Link to="/services/installation-serveurs" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Installation Serveurs</Link>
+                  <Link to="/services/cybersecurite" className="block px-4 py-2 text-white hover:bg-white/10 hover:text-accent-gold transition-colors" role="menuitem">Cybersécurité</Link>
                 </div>
               )}
             </div>
+            <Link
+              to="/blog"
+              className="text-white hover:text-accent-gold transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg px-2 py-1"
+              role="menuitem"
+            >
+              Blog
+            </Link>
             <button
               onClick={() => scrollToSection("realisations")}
               className="text-white hover:text-accent-gold transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold rounded-lg px-2 py-1"
