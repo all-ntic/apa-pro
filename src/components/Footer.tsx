@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, MapPin, Shield, Monitor, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
@@ -14,10 +14,16 @@ const Footer = () => {
   ];
 
   const services = [
-    { name: "Maintenance IT", icon: <Monitor className="w-4 h-4" /> },
-    { name: "Réseaux LAN/WAN", icon: <Shield className="w-4 h-4" /> },
-    { name: "Développement Web", icon: <Monitor className="w-4 h-4" /> },
-    { name: "Sécurité Électronique", icon: <Shield className="w-4 h-4" /> }
+    { name: "Installation Caméras", slug: "installation-cameras" },
+    { name: "Vidéosurveillance", slug: "videosurveillance" },
+    { name: "Réseaux Informatiques", slug: "reseaux-informatiques" },
+    { name: "Maintenance IT", slug: "maintenance-informatique" },
+    { name: "Contrôle d'Accès", slug: "controle-acces" },
+    { name: "IPBX / VoIP", slug: "ipbx-voip" },
+    { name: "WiFi Professionnel", slug: "wifi-professionnel" },
+    { name: "Cybersécurité", slug: "cybersecurite" },
+    { name: "Développement Web", slug: "developpement-web" },
+    { name: "Tous les services", slug: "" },
   ];
 
   const scrollToSection = (sectionId: string) => {
@@ -88,12 +94,21 @@ const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold mb-4 text-cyan-electric" id="footer-services-title">Services</h4>
             <ul className="space-y-2" aria-labelledby="footer-services-title">
-              {services.map((service, index) => (
-                <li key={index} className="flex items-center text-gray-300">
-                  <span className="text-cyan-electric mr-2" aria-hidden="true">{service.icon}</span>
-                  {service.name}
+              {services.map((service) => (
+                <li key={service.name}>
+                  <Link
+                    to={service.slug ? `/services/${service.slug}` : "/services"}
+                    className="text-gray-300 hover:text-cyan-electric transition-colors duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-electric rounded"
+                  >
+                    {service.name}
+                  </Link>
                 </li>
               ))}
+              <li>
+                <Link to="/blog" className="text-gray-300 hover:text-cyan-electric transition-colors duration-300">
+                  Blog
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
