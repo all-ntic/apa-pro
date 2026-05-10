@@ -328,4 +328,41 @@ All colors MUST be HSL. */
     mask-composite: xor;
     -webkit-mask-composite: xor;
   }
+
+  /* Tech grid background — modern cyber/network feel */
+  .tech-grid {
+    background-image:
+      linear-gradient(hsl(var(--royal-blue-glow) / 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--royal-blue-glow) / 0.12) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .tech-grid-dark {
+    background-image:
+      linear-gradient(hsl(var(--cyan-glow) / 0.18) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--cyan-glow) / 0.18) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .tech-radial {
+    background:
+      radial-gradient(ellipse at top, hsl(var(--royal-blue) / 0.35), transparent 60%),
+      radial-gradient(ellipse at bottom right, hsl(var(--cyan-electric) / 0.25), transparent 60%),
+      hsl(217 100% 6%);
+  }
+
+  /* Glow ring for premium cards */
+  .ring-glow {
+    box-shadow:
+      0 0 0 1px hsl(var(--royal-blue) / 0.2),
+      0 10px 40px -12px hsl(var(--royal-blue) / 0.3);
+    transition: var(--transition-smooth);
+  }
+  .ring-glow:hover {
+    box-shadow:
+      0 0 0 1px hsl(var(--cyan-electric) / 0.4),
+      0 20px 60px -10px hsl(var(--royal-blue) / 0.45),
+      0 0 60px hsl(var(--cyan-electric) / 0.25);
+    transform: translateY(-4px);
+  }
 }

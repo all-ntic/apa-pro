@@ -7,7 +7,9 @@ const Footer = () => {
   const quickLinks = [
     { name: "Accueil", href: "#accueil" },
     { name: "À propos", href: "#apropos" },
-    { name: "Compétences", href: "#competences" },
+    { name: "ALLNTIC", href: "#allntic" },
+    { name: "Services", href: "#services" },
+    { name: "Projets", href: "#projets" },
     { name: "Réalisations", href: "#realisations" },
     { name: "FAQ", href: "#faq" },
     { name: "Contact", href: "#contact" }
