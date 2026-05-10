@@ -1,123 +1,172 @@
 import { useState } from "react";
-import { ArrowDown, Download, MessageCircle, User } from "lucide-react";
-import { HeroButton } from "@/components/ui/button-variants";
+import { ArrowRight, MessageCircle, FileText, User, ShieldCheck, Network, Award } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import TechBackground from "@/components/TechBackground";
 import agnidomPhoto from "@/assets/agnidom-photo.jpg";
 import agnidomPhotoWebp from "@/assets/agnidom-photo.webp";
 
 const HeroSection = () => {
   const [imgError, setImgError] = useState(false);
 
-  const handleWhatsAppContact = () => {
-    window.open("https://wa.me/+2250778023331?text=Bonjour%20APA,%20je%20souhaite%20obtenir%20des%20informations%20sur%20vos%20services.", "_blank");
+  const handleWhatsApp = () => {
+    window.open(
+      "https://wa.me/+2250778023331?text=Bonjour%20ALLNTIC,%20je%20souhaite%20obtenir%20un%20devis.",
+      "_blank"
+    );
   };
 
-  const scrollToRealisations = () => {
-    const element = document.getElementById("realisations");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const scrollToContact = () => {
-    const element = document.getElementById("contact");
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const stats = [
+    { icon: Award, value: "5+", label: "Ans d'expérience" },
+    { icon: Network, value: "30+", label: "Projets livrés" },
+    { icon: ShieldCheck, value: "10+", label: "Secteurs accompagnés" },
+  ];
 
   return (
-    <section id="accueil" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-hero">
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-64 h-64 bg-cyan-electric/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-glow/10 rounded-full blur-3xl animate-float" style={{ animationDelay: "2s" }} />
-        <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-orange-accent/10 rounded-full blur-2xl animate-float" style={{ animationDelay: "4s" }} />
-      </div>
+    <section
+      id="accueil"
+      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+    >
+      <TechBackground variant="dark" />
 
-      <div className="container mx-auto px-6 py-20 relative z-10">
-        <div className="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center">
-          {/* Photo professionnelle */}
-          <div className="flex-shrink-0 lg:w-2/5">
-            <div className="relative">
-              {imgError ? (
-                <div
-                  className="w-full aspect-[4/5] rounded-xl bg-muted flex items-center justify-center"
-                  role="img"
-                  aria-label="Photo d'Agnidom Pygnali Aboubakar indisponible"
-                >
-                  <User className="w-24 h-24 text-white/80" aria-hidden="true" />
+      <div className="container mx-auto px-6 py-12 lg:py-20 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          {/* Left — Content */}
+          <div className="lg:col-span-7 text-white space-y-6 lg:space-y-8">
+            {/* Brand chip */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-electric/40 bg-cyan-electric/10 backdrop-blur-sm animate-fade-in">
+              <span className="w-2 h-2 rounded-full bg-cyan-electric animate-glow-pulse" />
+              <span className="text-sm font-medium text-cyan-glow tracking-wide">
+                ALLNTIC — Solutions IT & Sécurité Électronique
+              </span>
+            </div>
+
+            <div className="space-y-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <h1 className="font-serif font-bold leading-[1.05] text-4xl sm:text-5xl lg:text-6xl xl:text-7xl">
+                <span className="block text-white">Agnidom Pygnali</span>
+                <span className="block bg-gradient-to-r from-cyan-glow via-white to-accent-gold bg-clip-text text-transparent">
+                  Aboubakar
+                </span>
+              </h1>
+
+              <p className="text-lg lg:text-xl font-medium text-white/85">
+                Fondateur d'<strong className="text-cyan-glow">ALLNTIC</strong> · Créateur de{" "}
+                <strong className="text-cyan-glow">LesCVPro</strong> · Entrepreneur & Technicien IT
+              </p>
+            </div>
+
+            <p
+              className="text-base lg:text-lg leading-relaxed text-white/80 max-w-2xl animate-fade-in"
+              style={{ animationDelay: "0.2s" }}
+            >
+              Des solutions IT modernes, fiables et sécurisées pour entreprises et particuliers.
+              Infrastructures réseau, vidéosurveillance, développement web et cybersécurité —
+              pensés pour le contexte africain.
+            </p>
+
+            {/* CTAs */}
+            <div
+              className="flex flex-wrap gap-3 sm:gap-4 pt-2 animate-fade-in"
+              style={{ animationDelay: "0.3s" }}
+            >
+              <Button
+                size="lg"
+                onClick={handleWhatsApp}
+                className="bg-green-600 hover:bg-green-500 text-white shadow-lg shadow-green-500/30 group"
+              >
+                <MessageCircle className="w-5 h-5 mr-2 group-hover:animate-pulse" />
+                WhatsApp
+              </Button>
+              <Button
+                size="lg"
+                onClick={() => scrollTo("realisations")}
+                className="bg-white text-royal-blue-dark hover:bg-cyan-glow hover:text-white"
+              >
+                <FileText className="w-5 h-5 mr-2" />
+                Voir le portfolio
+              </Button>
+              <Button
+                size="lg"
+                variant="outline"
+                onClick={() => scrollTo("contact")}
+                className="border-cyan-electric/60 text-cyan-glow hover:bg-cyan-electric/15 hover:text-white bg-transparent group"
+              >
+                Demander un devis
+                <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+              </Button>
+            </div>
+
+            {/* Trust badges */}
+            <div
+              className="grid grid-cols-3 gap-3 sm:gap-6 pt-6 border-t border-white/10 animate-fade-in"
+              style={{ animationDelay: "0.4s" }}
+            >
+              {stats.map((s) => (
+                <div key={s.label} className="flex items-start gap-3">
+                  <div className="hidden sm:flex w-10 h-10 rounded-lg bg-cyan-electric/15 border border-cyan-electric/30 items-center justify-center flex-shrink-0">
+                    <s.icon className="w-5 h-5 text-cyan-glow" />
+                  </div>
+                  <div>
+                    <div className="text-2xl lg:text-3xl font-bold text-white font-serif">
+                      {s.value}
+                    </div>
+                    <div className="text-xs lg:text-sm text-white/60 leading-tight">
+                      {s.label}
+                    </div>
+                  </div>
                 </div>
-              ) : (
-                <picture>
-                  <source srcSet={agnidomPhotoWebp} type="image/webp" />
-                  <img
-                    src={agnidomPhoto}
-                    alt="Portrait professionnel d'Agnidom Pygnali Aboubakar (ALLNTIC), technicien expert en systèmes, réseaux, développement web et sécurité électronique à Abidjan, Côte d'Ivoire"
-                    className="w-full aspect-[4/5] object-cover rounded-xl"
-                    loading="eager"
-                    fetchPriority="high"
-                    decoding="async"
-                    width="800"
-                    height="1000"
-                    onError={() => setImgError(true)}
-                  />
-                </picture>
-              )}
+              ))}
             </div>
           </div>
 
-          {/* Contenu textuel */}
-          <div className="flex-1 lg:w-3/5 text-white space-y-6" role="main" aria-label="Présentation principale">
-            {/* Nom et titre */}
-            <div className="space-y-4 animate-fade-in">
-              <h1 className="text-4xl lg:text-6xl font-bold leading-tight font-serif">
-                <span className="text-white block">Agnidom Pygnali</span>
-                <span className="text-white block">Aboubakar</span>
-              </h1>
-              
-              <p className="text-xl lg:text-2xl font-medium text-royal-blue-light" role="doc-subtitle">
-                Technicien Systèmes, Réseaux, Développement Web & Sécurité Électronique
-              </p>
-              
-              {/* Citation/slogan */}
-              <blockquote className="text-lg lg:text-xl font-medium italic text-accent-gold border-l-4 border-accent-gold pl-4">
-                « Fiabilité, performance et sécurité au service du numérique africain. »
-              </blockquote>
-            </div>
+          {/* Right — Photo */}
+          <div className="lg:col-span-5 animate-scale-in" style={{ animationDelay: "0.2s" }}>
+            <div className="relative max-w-md mx-auto lg:max-w-none">
+              {/* Glow ring */}
+              <div className="absolute -inset-4 bg-gradient-to-br from-cyan-electric/40 via-royal-blue-glow/40 to-accent-gold/30 rounded-3xl blur-2xl opacity-60 animate-glow-pulse" />
 
-            {/* Description */}
-            <div className="space-y-4 animate-slide-in-right" style={{ animationDelay: "0.3s" }}>
-              <p className="text-base lg:text-lg leading-relaxed text-white/90">
-                Technicien ivoirien expérimenté dans les domaines de la <strong className="text-royal-blue-glow">maintenance informatique</strong>, des <strong className="text-royal-blue-glow">réseaux</strong>, du <strong className="text-royal-blue-glow">développement web</strong> et de la <strong className="text-royal-blue-glow">sécurité électronique</strong>.
-              </p>
-              
-              <p className="text-base lg:text-lg leading-relaxed text-white/90">
-                Fort d'une approche <strong className="text-accent-gold">pragmatique</strong> et d'une vision orientée <strong className="text-accent-gold">performance</strong>, je conçois et déploie des solutions durables adaptées aux besoins des entreprises et particuliers en Côte d'Ivoire.
-              </p>
-            </div>
+              <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-royal-blue-dark/40 backdrop-blur">
+                {imgError ? (
+                  <div
+                    className="w-full aspect-[4/5] flex items-center justify-center bg-gradient-to-br from-royal-blue-dark to-royal-blue"
+                    role="img"
+                    aria-label="Photo d'Agnidom Pygnali Aboubakar"
+                  >
+                    <User className="w-24 h-24 text-white/40" />
+                  </div>
+                ) : (
+                  <picture>
+                    <source srcSet={agnidomPhotoWebp} type="image/webp" />
+                    <img
+                      src={agnidomPhoto}
+                      alt="Agnidom Pygnali Aboubakar (APA), fondateur d'ALLNTIC, expert IT, réseaux et sécurité électronique à Abidjan"
+                      className="w-full aspect-[4/5] object-cover"
+                      loading="eager"
+                      fetchPriority="high"
+                      decoding="async"
+                      width="800"
+                      height="1000"
+                      onError={() => setImgError(true)}
+                    />
+                  </picture>
+                )}
 
-            {/* Boutons d'action */}
-            <div className="flex flex-col sm:flex-row gap-4 pt-4 animate-scale-in" style={{ animationDelay: "0.6s" }} role="navigation" aria-label="Actions principales">
-              <HeroButton onClick={scrollToRealisations} className="group" aria-label="Voir mes réalisations professionnelles">
-                <Download className="w-5 h-5 mr-2 group-hover:animate-pulse" aria-hidden="true" />
-                Voir mes Réalisations
-              </HeroButton>
-              <HeroButton variant="secondary" onClick={scrollToContact} aria-label="Me contacter pour vos projets">
-                <MessageCircle className="w-5 h-5 mr-2" aria-hidden="true" />
-                Me Contacter
-              </HeroButton>
+                {/* Floating badge */}
+                <div className="absolute bottom-4 left-4 right-4 px-4 py-3 rounded-xl bg-royal-blue-dark/80 backdrop-blur-md border border-cyan-electric/30">
+                  <div className="text-xs text-cyan-glow uppercase tracking-wider">
+                    Fondateur · APA
+                  </div>
+                  <div className="text-sm text-white font-medium">
+                    Abidjan · Côte d'Ivoire
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll indicator mobile */}
-      <div 
-        className="lg:hidden absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce"
-        aria-hidden="true"
-        role="presentation"
-      >
-        <ArrowDown className="w-6 h-6 text-royal-blue-glow" />
       </div>
     </section>
   );
