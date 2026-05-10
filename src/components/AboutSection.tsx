@@ -15,7 +15,7 @@ const AboutSection = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 id="about-title" className="text-4xl lg:text-5xl font-bold text-foreground mb-4 font-serif">
-              À propos de <span className="gradient-text">APA</span>
+              À propos d'<span className="gradient-text">APA</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6" role="presentation" aria-hidden="true"></div>
           </div>
@@ -24,16 +24,40 @@ const AboutSection = () => {
           <div className="mb-16 animate-slide-in-right">
             <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-elegant border border-gray-100">
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                <strong className="text-foreground">Agnidom Pygnali Aboubakar</strong>, alias <strong className="text-royal-blue">APA</strong>, est un technicien ivoirien expérimenté dans les domaines de la maintenance informatique, des réseaux, du développement web et de la sécurité électronique.
+                <strong className="text-foreground">Agnidom Pygnali Aboubakar</strong>, connu sous le nom de <strong className="text-royal-blue">APA</strong>, est un entrepreneur et technicien ivoirien spécialisé dans les infrastructures informatiques, les réseaux, le développement web et la sécurité électronique.
               </p>
-              
+
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                Fort d'une approche <strong className="text-accent-gold">pragmatique</strong> et d'une vision orientée <strong className="text-accent-gold">performance</strong>, il conçoit et déploie des solutions durables adaptées aux besoins des entreprises et particuliers en Côte d'Ivoire.
+                Fondateur de <strong className="text-royal-blue">ALLNTIC</strong> et créateur de la plateforme <strong className="text-royal-blue">LesCVPro</strong>, il développe des solutions technologiques modernes pensées pour répondre aux besoins réels des entreprises, des professionnels et des particuliers en Côte d'Ivoire.
               </p>
-              
-              <p className="text-lg leading-relaxed text-gray-700">
-                Son objectif : <strong className="text-royal-blue">rendre les technologies plus accessibles, fiables et sécurisées</strong>.
+
+              <p className="text-lg leading-relaxed text-gray-700 mb-6">
+                Grâce à une approche <strong className="text-accent-gold">pragmatique</strong>, orientée <strong className="text-accent-gold">performance</strong> et <strong className="text-accent-gold">fiabilité</strong>, il intervient dans la conception, le déploiement et l'optimisation de systèmes informatiques, réseaux, vidéosurveillance, solutions web et infrastructures numériques sécurisées.
               </p>
+
+              <p className="text-lg leading-relaxed text-gray-700 mb-8">
+                À travers <strong className="text-royal-blue">ALLNTIC</strong> et ses futurs projets technologiques, son ambition est de contribuer à la transformation numérique locale en rendant les technologies plus <strong className="text-royal-blue">accessibles, professionnelles, fiables et sécurisées</strong>.
+              </p>
+
+              <div className="border-t border-gray-100 pt-6">
+                <p className="text-lg leading-relaxed text-gray-700 mb-4">
+                  Son travail repose sur trois piliers :
+                </p>
+                <ul className="space-y-2 text-lg text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-royal-blue mt-2.5 flex-shrink-0" aria-hidden="true"></span>
+                    <span><strong className="text-foreground">Innovation utile</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-accent-gold mt-2.5 flex-shrink-0" aria-hidden="true"></span>
+                    <span><strong className="text-foreground">Qualité technique</strong></span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="w-2 h-2 rounded-full bg-royal-blue-light mt-2.5 flex-shrink-0" aria-hidden="true"></span>
+                    <span><strong className="text-foreground">Solutions durables</strong> adaptées au contexte africain</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
