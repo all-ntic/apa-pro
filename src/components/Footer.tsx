@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, MapPin, Shield, Monitor, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
