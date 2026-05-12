@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, MessageCircle, ChevronDown } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import allnticLogo from "@/assets/allntic-logo.png";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -43,7 +44,8 @@ const Navigation = () => {
             className="flex items-center space-x-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-royal-blue-dark rounded-lg"
             aria-label="ALLNTIC - Retour à l'accueil"
           >
-            <span className="text-xl font-bold text-white">ALLNTIC</span>
+            <img src={allnticLogo} alt="ALLNTIC logo" className="w-10 h-10 rounded-full object-cover ring-1 ring-white/20" width="40" height="40" />
+            <span className="text-xl font-bold text-white tracking-wide">ALLNTIC</span>
           </Link>
 
           {/* Desktop Navigation */}
