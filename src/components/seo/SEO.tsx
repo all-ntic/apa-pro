@@ -11,8 +11,7 @@ type SEOProps = {
 };
 
 const SITE_URL = "https://allntic.com";
-const DEFAULT_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/SAdL5uQGe2W7X7Gb6JNrzFaXgY02/social-images/social-1760095751167-ALLNTIC-removebg-preview.png";
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
 /**
  * Composant SEO réutilisable - meta tags, Open Graph, Twitter Card, canonical, JSON-LD.

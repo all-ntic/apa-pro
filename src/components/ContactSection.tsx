@@ -129,7 +129,7 @@ const ContactSection = () => {
   const handleWhatsAppContact = () => {
     analytics.whatsAppClick('contact_form');
     
-    const message = encodeURIComponent(`Bonjour APA,
+    const message = encodeURIComponent(`Bonjour ALLNTIC,
 
 Je souhaite obtenir des informations sur vos services :
 ${formData.service ? `Service : ${formData.service}` : ''}
@@ -194,7 +194,7 @@ Merci !`);
             Démarrons Votre <span className="gradient-text">Projet Ensemble</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Prêt à transformer vos systèmes IT ? Contactez APA pour une consultation personnalisée et un devis sur mesure.
+            Prêt à transformer vos systèmes IT ? Contactez ALLNTIC pour une consultation personnalisée et un devis sur mesure.
           </p>
         </div>
 
