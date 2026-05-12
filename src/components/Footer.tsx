@@ -1,5 +1,6 @@
 import { MessageCircle, Phone, MapPin, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
+import allnticLogo from "@/assets/allntic-logo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -47,9 +48,12 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Informations entreprise */}
           <div className="lg:col-span-2">
-            <div className="mb-6">
-              <h3 className="text-2xl font-bold">APA</h3>
-              <p className="text-accent-gold">Agnidom Pygnali Aboubakar</p>
+            <div className="mb-6 flex items-center gap-3">
+              <img src={allnticLogo} alt="ALLNTIC logo" className="w-12 h-12 rounded-full object-cover ring-1 ring-white/20" width="48" height="48" />
+              <div>
+                <h3 className="text-2xl font-bold">ALLNTIC</h3>
+                <p className="text-accent-gold text-sm">Agnidom Pygnali Aboubakar</p>
+              </div>
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
@@ -198,7 +202,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-400 text-sm">
-            <p>© {currentYear} APA - Agnidom Pygnali Aboubakar. Tous droits réservés.</p>
+            <p>© {currentYear} ALLNTIC - Agnidom Pygnali Aboubakar. Tous droits réservés.</p>
             <Link 
               to="/mentions-legales" 
               className="hover:text-cyan-electric transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-electric rounded"
