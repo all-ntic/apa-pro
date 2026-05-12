@@ -17,7 +17,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Je suis l'assistant virtuel d'APA. Comment puis-je vous aider avec vos besoins en informatique et sécurité électronique ?",
+      text: "Bonjour ! Je suis l'assistant virtuel d'ALLNTIC. Comment puis-je vous aider avec vos besoins en informatique et sécurité électronique ?",
       isUser: false,
       timestamp: new Date()
     }
@@ -328,7 +328,7 @@ const ChatBot = () => {
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold">Assistant APA</h3>
+                <h3 className="font-semibold">Assistant ALLNTIC</h3>
                 <p className="text-xs text-cyan-100">En ligne</p>
               </div>
             </div>
