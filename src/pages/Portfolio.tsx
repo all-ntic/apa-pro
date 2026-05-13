@@ -106,8 +106,8 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="ALLNTIC — Solutions IT, Réseaux, Vidéosurveillance & Sécurité Électronique à Abidjan"
-        description="ALLNTIC, fondée par Agnidom Pygnali Aboubakar (APA), conçoit et déploie des solutions IT, réseaux, vidéosurveillance, développement web et cybersécurité pour entreprises et particuliers à Abidjan, Côte d'Ivoire."
+        title="ALLNTIC — IT, Vidéosurveillance & Sécurité à Abidjan"
+        description="Solutions IT, réseaux, vidéosurveillance et cybersécurité pour entreprises et particuliers à Abidjan, Côte d'Ivoire. Par ALLNTIC (APA)."
         canonical="/"
         keywords={[
           "ALLNTIC", "APA", "installation caméra Abidjan", "maintenance informatique Abidjan",
