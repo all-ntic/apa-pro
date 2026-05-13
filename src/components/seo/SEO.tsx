@@ -26,6 +26,7 @@ const SEO = ({
   image = DEFAULT_IMAGE,
   type = "website",
   jsonLd,
+  noindex = false,
 }: SEOProps) => {
   const fullCanonical = canonical
     ? canonical.startsWith("http")
