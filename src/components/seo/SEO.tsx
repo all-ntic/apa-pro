@@ -8,6 +8,7 @@ type SEOProps = {
   image?: string;
   type?: "website" | "article";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
 };
 
 const SITE_URL = "https://allntic.com";
@@ -25,6 +26,7 @@ const SEO = ({
   image = DEFAULT_IMAGE,
   type = "website",
   jsonLd,
+  noindex = false,
 }: SEOProps) => {
   const fullCanonical = canonical
     ? canonical.startsWith("http")
@@ -42,6 +44,7 @@ const SEO = ({
     <Helmet>
       <title>{title}</title>
       <meta name="description" content={description} />
+      {noindex && <meta name="robots" content="noindex, nofollow" />}
       {keywords && keywords.length > 0 && (
         <meta name="keywords" content={keywords.join(", ")} />
       )}

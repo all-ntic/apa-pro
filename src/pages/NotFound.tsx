@@ -2,6 +2,7 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { Home, ArrowLeft, Search } from "lucide-react";
 import allnticLogo from "@/assets/allntic-logo.png";
+import SEO from "@/components/seo/SEO";
 
 const NotFound = () => {
   const location = useLocation();
@@ -11,6 +12,12 @@ const NotFound = () => {
   }, [location.pathname]);
 
   return (
+    <>
+      <SEO
+        title="Page introuvable (404) — ALLNTIC"
+        description="La page demandée n'existe pas ou a été déplacée. Retournez à l'accueil ALLNTIC."
+        noindex
+      />
     <div className="min-h-screen bg-gradient-to-br from-royal-blue-dark via-royal-blue to-royal-blue-light flex items-center justify-center px-6">
       <div className="text-center max-w-2xl">
         <div className="mb-8">
@@ -65,6 +72,7 @@ const NotFound = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

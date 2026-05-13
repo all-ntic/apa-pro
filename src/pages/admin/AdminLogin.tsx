@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Lock } from "lucide-react";
 import { toast } from "sonner";
+import SEO from "@/components/seo/SEO";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -39,6 +40,13 @@ const AdminLogin = () => {
   };
 
   return (
+    <>
+      <SEO
+        title="Connexion administrateur — ALLNTIC"
+        description="Espace de connexion réservé à l'administration ALLNTIC."
+        canonical="/admin/login"
+        noindex
+      />
     <div className="min-h-screen flex items-center justify-center bg-gray-50 px-4">
       <Card className="w-full max-w-md shadow-card-soft">
         <CardHeader className="text-center">
@@ -84,6 +92,7 @@ const AdminLogin = () => {
         </CardContent>
       </Card>
     </div>
+    </>
   );
 };
 
