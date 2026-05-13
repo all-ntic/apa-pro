@@ -21,5 +21,6 @@
   <url><loc>https://allntic.com/blog/reseau-entreprise-bonnes-pratiques</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://allntic.com/blog/cybersecurite-pme-cote-divoire</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://allntic.com/blog/maintenance-informatique-preventive</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://allntic.com/install</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
   <url><loc>https://allntic.com/mentions-legales</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>

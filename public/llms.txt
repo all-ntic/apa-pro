@@ -1,0 +1,34 @@
+# ALLNTIC
+
+> Solutions IT, réseaux, vidéosurveillance et sécurité électronique pour entreprises et particuliers à Abidjan, Côte d'Ivoire. Fondée par Agnidom Pygnali Aboubakar (APA).
+
+ALLNTIC conçoit, déploie et maintient des infrastructures numériques sécurisées : réseaux LAN/WAN, WiFi professionnel, serveurs, vidéosurveillance IP, contrôle d'accès, IPBX/VoIP, développement web et cybersécurité.
+
+## Pages
+
+- [Accueil](/): Présentation d'ALLNTIC, services, réalisations, contact.
+- [Services](/services): Catalogue complet des 12 services IT et sécurité.
+- [Blog](/blog): Articles techniques sur l'informatique, les réseaux et la sécurité électronique.
+- [Installer l'app](/install): Installation de l'application ALLNTIC en PWA.
+- [Mentions légales](/mentions-legales): Informations légales du site.
+
+## Services
+
+- [Installation caméras](/services/installation-cameras): Pose et configuration de caméras de vidéosurveillance.
+- [Vidéosurveillance](/services/videosurveillance): Systèmes complets de vidéosurveillance IP.
+- [Réseaux informatiques](/services/reseaux-informatiques): Conception et déploiement de réseaux d'entreprise.
+- [Maintenance informatique](/services/maintenance-informatique): Maintenance préventive et corrective.
+- [Contrôle d'accès](/services/controle-acces): Solutions de contrôle d'accès physique.
+- [IPBX VoIP](/services/ipbx-voip): Téléphonie IP professionnelle.
+- [Sécurité électronique](/services/securite-electronique): Alarmes et systèmes de sécurité connectés.
+- [Développement web](/services/developpement-web): Sites vitrines, portfolios et applications web.
+- [Support entreprise](/services/support-entreprise): Support IT à distance et sur site.
+- [WiFi professionnel](/services/wifi-professionnel): Déploiement de WiFi haut débit.
+- [Installation serveurs](/services/installation-serveurs): Serveurs Windows et Linux.
+- [Cybersécurité](/services/cybersecurite): Audits et protection des systèmes.
+
+## Contact
+
+- Email: all.ntic225@gmail.com
+- WhatsApp: +225 07 78 02 33 31
+- Localisation: Abidjan, Cocody, Côte d'Ivoire
