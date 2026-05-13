@@ -88,8 +88,14 @@ const handler = async (req: Request): Promise<Response> => {
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') as string;
     const supabaseClient = createClient(supabaseUrl, supabaseKey);
 
-    const clientIp = req.headers.get('x-forwarded-for') || 'unknown';
-    const rateLimitIdentifier = `${clientIp}_${sanitizedEmail}`;
+    // Use rightmost IP from x-forwarded-for (CDN-appended, cannot be spoofed by client),
+    // and key rate-limiting primarily on the validated email to prevent IP-rotation bypass.
+    const xff = req.headers.get('x-forwarded-for') || '';
+    const trustedIp = xff.split(',').map(s => s.trim()).filter(Boolean).pop()
+      || req.headers.get('cf-connecting-ip')
+      || req.headers.get('x-real-ip')
+      || 'unknown';
+    const rateLimitIdentifier = `email:${sanitizedEmail.toLowerCase()}|ip:${trustedIp}`;
     
     const isAllowed = await checkRateLimit(supabaseClient, rateLimitIdentifier, 5);
     
