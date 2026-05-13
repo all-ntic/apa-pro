@@ -8,6 +8,7 @@ type SEOProps = {
   image?: string;
   type?: "website" | "article";
   jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  noindex?: boolean;
 };
 
 const SITE_URL = "https://allntic.com";
