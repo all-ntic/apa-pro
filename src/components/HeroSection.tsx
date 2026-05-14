@@ -113,7 +113,7 @@ const HeroSection = () => {
                     <div className="text-2xl lg:text-3xl font-bold text-white font-serif">
                       {s.value}
                     </div>
-                    <div className="text-xs lg:text-sm text-white/60 leading-tight">
+                    <div className="text-xs lg:text-sm text-white/80 leading-tight">
                       {s.label}
                     </div>
                   </div>
