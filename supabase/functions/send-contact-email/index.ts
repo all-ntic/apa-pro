@@ -76,13 +76,22 @@ const handler = async (req: Request): Promise<Response> => {
       );
     }
 
-    // Sanitize inputs
-    const sanitizedName = sanitizeText(name, 100);
-    const sanitizedEmail = sanitizeText(email, 255);
-    const sanitizedPhone = phone ? sanitizeText(phone, 20) : '';
-    const sanitizedService = service ? sanitizeText(service, 100) : '';
-    const sanitizedMessage = sanitizeText(message, 2000);
+    // Basic input validation
+    if (!name || !email || !message) {
+      return new Response(
+        JSON.stringify({ error: "Missing required fields" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
 
+    // Server-side email format validation (prevents spamming arbitrary addresses)
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email) || email.length > 255) {
+      return new Response(
+        JSON.stringify({ error: "Invalid email format" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } }
+      );
+    }
     // Rate limiting check
     const supabaseUrl = Deno.env.get('SUPABASE_URL') as string;
     const supabaseKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY') as string;
