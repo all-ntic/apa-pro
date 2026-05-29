@@ -128,9 +128,9 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to the business with sanitized data
     const emailResponse = await resend.emails.send({
-      from: "Contact Form <onboarding@resend.dev>",
-      to: ["all.ntic225@gmail.com", "contact@allntic.info"],
-      subject: `Nouvelle demande de contact - ${sanitizedService}`,
+      from: "ALLNTIC Contact <infos@allntic.com>",
+      to: ["infos@allntic.com"],
+      reply_to: sanitizedEmail,
       html: `
         <h2>Nouvelle demande de contact</h2>
         <p><strong>Nom:</strong> ${sanitizedName}</p>
