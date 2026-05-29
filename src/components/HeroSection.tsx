@@ -142,7 +142,7 @@ const HeroSection = () => {
                     <source srcSet={agnidomPhotoWebp} type="image/webp" />
                     <img
                       src={agnidomPhoto}
-                      alt="Agnidom Pygnali Aboubakar (APA), fondateur d'ALLNTIC, expert IT, réseaux et sécurité électronique à Abidjan"
+                      alt="Agnidom Pygnali Aboubakar, fondateur d'ALLNTIC, expert IT, réseaux et sécurité électronique à Abidjan"
                       className="w-full aspect-[4/5] object-cover"
                       loading="eager"
                       fetchPriority="high"
@@ -157,7 +157,7 @@ const HeroSection = () => {
                 {/* Floating badge */}
                 <div className="absolute bottom-4 left-4 right-4 px-4 py-3 rounded-xl bg-royal-blue-dark/80 backdrop-blur-md border border-cyan-electric/30">
                   <div className="text-xs text-cyan-glow uppercase tracking-wider">
-                    Fondateur · APA
+                    Fondateur · ALLNTIC
                   </div>
                   <div className="text-sm text-white font-medium">
                     Abidjan · Côte d'Ivoire

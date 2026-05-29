@@ -67,7 +67,7 @@ const AllnticSection = () => {
             — Solutions IT & Sécurité Électronique
           </h2>
           <p className="text-lg text-white/75 leading-relaxed">
-            Marque technologique fondée par APA, dédiée à la transformation numérique des
+            Marque technologique fondée par Agnidom Pygnali Aboubakar, dédiée à la transformation numérique des
             entreprises et particuliers en Côte d'Ivoire.
           </p>
         </div>

@@ -1,6 +1,6 @@
 # ALLNTIC
 
-> Solutions IT, réseaux, vidéosurveillance et sécurité électronique pour entreprises et particuliers à Abidjan, Côte d'Ivoire. Fondée par Agnidom Pygnali Aboubakar (APA).
+> Solutions IT, réseaux, vidéosurveillance et sécurité électronique pour entreprises et particuliers à Abidjan, Côte d'Ivoire. Fondée par Agnidom Pygnali Aboubakar.
 
 ALLNTIC conçoit, déploie et maintient des infrastructures numériques sécurisées : réseaux LAN/WAN, WiFi professionnel, serveurs, vidéosurveillance IP, contrôle d'accès, IPBX/VoIP, développement web et cybersécurité.
 
