@@ -131,6 +131,7 @@ const handler = async (req: Request): Promise<Response> => {
       from: "ALLNTIC Contact <infos@allntic.com>",
       to: ["infos@allntic.com"],
       reply_to: sanitizedEmail,
+      subject: `Nouvelle demande de contact - ${sanitizedService}`,
       html: `
         <h2>Nouvelle demande de contact</h2>
         <p><strong>Nom:</strong> ${sanitizedName}</p>
