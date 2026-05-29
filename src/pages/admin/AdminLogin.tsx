@@ -11,12 +11,12 @@ import SEO from "@/components/seo/SEO";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
-  const [username, setUsername] = useState("");
+  const [identifier, setIdentifier] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Domaine interne — non envoyé par email, sert juste à satisfaire Supabase Auth
-  const INTERNAL_DOMAIN = "allntic.local";
+  // Domaine interne par défaut si l'utilisateur saisit juste un nom d'utilisateur
+  const DEFAULT_DOMAIN = "allntic.com";
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -27,8 +27,10 @@ const AdminLogin = () => {
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    const cleanUsername = username.trim().toLowerCase().replace(/[^a-z0-9._-]/g, "");
-    const email = `${cleanUsername}@${INTERNAL_DOMAIN}`;
+    const raw = identifier.trim().toLowerCase();
+    const email = raw.includes("@")
+      ? raw
+      : `${raw.replace(/[^a-z0-9._-]/g, "")}@${DEFAULT_DOMAIN}`;
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     setLoading(false);
     if (error) {
@@ -38,8 +40,6 @@ const AdminLogin = () => {
     toast.success("Connexion réussie");
     navigate("/admin", { replace: true });
   };
-
-  return (
     <>
       <SEO
         title="Connexion administrateur — ALLNTIC"
