@@ -80,7 +80,7 @@ const Portfolio = () => {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Agnidom Pygnali Aboubakar",
-      alternateName: "APA",
+      alternateName: "ALLNTIC",
       jobTitle: "Fondateur ALLNTIC — Technicien IT, Réseaux & Sécurité Électronique",
       worksFor: { "@type": "Organization", name: "ALLNTIC" },
       url: "https://allntic.com",
@@ -107,10 +107,10 @@ const Portfolio = () => {
     <div className="min-h-screen bg-background">
       <SEO
         title="ALLNTIC — IT, Vidéosurveillance & Sécurité à Abidjan"
-        description="Solutions IT, réseaux, vidéosurveillance et cybersécurité pour entreprises et particuliers à Abidjan, Côte d'Ivoire. Par ALLNTIC (APA)."
+        description="Solutions IT, réseaux, vidéosurveillance et cybersécurité pour entreprises et particuliers à Abidjan, Côte d'Ivoire. Par ALLNTIC."
         canonical="/"
         keywords={[
-          "ALLNTIC", "APA", "installation caméra Abidjan", "maintenance informatique Abidjan",
+          "ALLNTIC", "installation caméra Abidjan", "maintenance informatique Abidjan",
           "réseau informatique Côte d'Ivoire", "sécurité électronique Abidjan",
           "vidéosurveillance entreprise", "développement web Abidjan",
           "IPBX VoIP", "cybersécurité", "WiFi professionnel", "contrôle d'accès",

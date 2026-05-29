@@ -18,10 +18,10 @@ const ProjectsSection = () => {
             id="projects-title"
             className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-4"
           >
-            Les <span className="gradient-text">projets</span> portés par APA
+            Les <span className="gradient-text">projets</span> portés par ALLNTIC
           </h2>
-          <p className="text-lg text-muted-foreground">
-            ALLNTIC, LesCVPro, APA PRO et les futures solutions technologiques en construction.
+          <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
+            ALLNTIC, LesCVPro et les futures solutions technologiques en construction.
           </p>
         </div>
 

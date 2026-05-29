@@ -26,7 +26,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Responsable Marketing",
     company: "Agence Digitale CI",
     content:
-      "Site web moderne, responsive et parfaitement optimisé SEO. APA a su comprendre nos besoins et livrer un résultat au-delà de nos attentes.",
+      "Site web moderne, responsive et parfaitement optimisé SEO. ALLNTIC a su comprendre nos besoins et livrer un résultat au-delà de nos attentes.",
     rating: 5,
   },
   {

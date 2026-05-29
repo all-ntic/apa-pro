@@ -38,7 +38,7 @@ export const PROJECTS: ShowcaseProject[] = [
     name: "ALLNTIC",
     tagline: "Solutions IT & Sécurité Électronique",
     description:
-      "Marque technologique fondée par APA, regroupant l'ensemble des services IT, réseaux, vidéosurveillance, développement web et cybersécurité en Côte d'Ivoire.",
+      "Marque technologique fondée par Agnidom Pygnali Aboubakar, regroupant l'ensemble des services IT, réseaux, vidéosurveillance, développement web et cybersécurité en Côte d'Ivoire.",
     technologies: ["IT", "Réseaux", "Vidéosurveillance", "Web", "Cybersécurité"],
     objective:
       "Devenir une référence en ingénierie numérique et sécurité électronique en Afrique de l'Ouest.",
@@ -62,8 +62,8 @@ export const PROJECTS: ShowcaseProject[] = [
     category: "SaaS Web",
   },
   {
-    slug: "apa-pro",
-    name: "APA PRO",
+    slug: "allntic-portfolio",
+    name: "Portfolio ALLNTIC",
     tagline: "Portfolio professionnel du fondateur",
     description:
       "Portfolio personnel d'Agnidom Pygnali Aboubakar, présentant son parcours technique, ses réalisations et ses expertises en IT et sécurité électronique.",
@@ -72,7 +72,7 @@ export const PROJECTS: ShowcaseProject[] = [
       "Mettre en avant le parcours et l'expertise du fondateur d'ALLNTIC.",
     status: "actif",
     image: imgSecurite,
-    link: "https://apa-pro.allntic.com",
+    link: "https://allntic.com",
     category: "Portfolio",
   },
   {

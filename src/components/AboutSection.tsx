@@ -15,7 +15,7 @@ const AboutSection = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 id="about-title" className="text-4xl lg:text-5xl font-bold text-foreground mb-4 font-serif">
-              À propos d'<span className="gradient-text">APA</span>
+              À propos d'<span className="gradient-text">ALLNTIC</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6" role="presentation" aria-hidden="true"></div>
           </div>
@@ -24,7 +24,7 @@ const AboutSection = () => {
           <div className="mb-16 animate-slide-in-right">
             <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-elegant border border-gray-100">
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                <strong className="text-foreground">Agnidom Pygnali Aboubakar</strong>, connu sous le nom de <strong className="text-royal-blue">APA</strong>, est un entrepreneur et technicien ivoirien spécialisé dans les infrastructures informatiques, les réseaux, le développement web et la sécurité électronique.
+                <strong className="text-foreground">Agnidom Pygnali Aboubakar</strong>, fondateur d'<strong className="text-royal-blue">ALLNTIC</strong>, est un entrepreneur et technicien ivoirien spécialisé dans les infrastructures informatiques, les réseaux, le développement web et la sécurité électronique.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
