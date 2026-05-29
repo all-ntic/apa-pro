@@ -59,16 +59,17 @@ const AdminLogin = () => {
         <CardContent>
           <form onSubmit={handleLogin} className="space-y-4">
             <div>
-              <Label htmlFor="username">Identifiant</Label>
+              <Label htmlFor="identifier">Identifiant ou email</Label>
               <Input
-                id="username"
+                id="identifier"
                 type="text"
                 required
-                value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                value={identifier}
+                onChange={(e) => setIdentifier(e.target.value)}
                 autoComplete="username"
-                placeholder="admin"
+                placeholder="infos@allntic.com"
               />
+
             </div>
             <div>
               <Label htmlFor="password">Mot de passe</Label>
