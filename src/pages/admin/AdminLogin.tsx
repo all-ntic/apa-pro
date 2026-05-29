@@ -40,6 +40,8 @@ const AdminLogin = () => {
     toast.success("Connexion réussie");
     navigate("/admin", { replace: true });
   };
+
+  return (
     <>
       <SEO
         title="Connexion administrateur — ALLNTIC"
