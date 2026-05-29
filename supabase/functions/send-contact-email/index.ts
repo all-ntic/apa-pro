@@ -147,7 +147,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send confirmation email to the user with sanitized data
     await resend.emails.send({
-      from: "ALLNTIC <onboarding@resend.dev>",
+      from: "ALLNTIC <infos@allntic.com>",
       to: [sanitizedEmail],
       subject: "Confirmation de réception de votre demande",
       html: `
