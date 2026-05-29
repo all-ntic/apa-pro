@@ -71,6 +71,60 @@ export type Database = {
         }
         Relationships: []
       }
+      projects: {
+        Row: {
+          category: string
+          created_at: string
+          description: string
+          display_order: number
+          id: string
+          image_url: string
+          is_published: boolean
+          link: string
+          name: string
+          objective: string
+          slug: string
+          status: string
+          tagline: string
+          technologies: string[]
+          updated_at: string
+        }
+        Insert: {
+          category?: string
+          created_at?: string
+          description?: string
+          display_order?: number
+          id?: string
+          image_url?: string
+          is_published?: boolean
+          link?: string
+          name: string
+          objective?: string
+          slug: string
+          status?: string
+          tagline?: string
+          technologies?: string[]
+          updated_at?: string
+        }
+        Update: {
+          category?: string
+          created_at?: string
+          description?: string
+          display_order?: number
+          id?: string
+          image_url?: string
+          is_published?: boolean
+          link?: string
+          name?: string
+          objective?: string
+          slug?: string
+          status?: string
+          tagline?: string
+          technologies?: string[]
+          updated_at?: string
+        }
+        Relationships: []
+      }
       realizations: {
         Row: {
           category: string

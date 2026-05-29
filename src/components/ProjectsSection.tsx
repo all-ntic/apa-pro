@@ -1,7 +1,50 @@
+import { useEffect, useState } from "react";
 import { ExternalLink, Sparkles, ArrowRight } from "lucide-react";
-import { PROJECTS, STATUS_BADGE, statusLabel } from "@/data/projects";
+import {
+  PROJECTS as FALLBACK_PROJECTS,
+  STATUS_BADGE,
+  statusLabel,
+  type ProjectStatus,
+  type ShowcaseProject,
+} from "@/data/projects";
+import { supabase } from "@/integrations/supabase/client";
+import imgReseau from "@/assets/realisation-reseau.jpg";
 
 const ProjectsSection = () => {
+  const [projects, setProjects] = useState<ShowcaseProject[]>(FALLBACK_PROJECTS);
+
+  useEffect(() => {
+    let cancelled = false;
+    const load = async () => {
+      const { data, error } = await supabase
+        .from("projects")
+        .select(
+          "slug,name,tagline,description,technologies,objective,status,image_url,link,category",
+        )
+        .eq("is_published", true)
+        .order("display_order", { ascending: true });
+      if (cancelled || error || !data || data.length === 0) return;
+      setProjects(
+        data.map((p) => ({
+          slug: p.slug,
+          name: p.name,
+          tagline: p.tagline,
+          description: p.description,
+          technologies: p.technologies ?? [],
+          objective: p.objective,
+          status: (p.status as ProjectStatus) ?? "actif",
+          image: p.image_url || imgReseau,
+          link: p.link || undefined,
+          category: p.category,
+        })),
+      );
+    };
+    load();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
   return (
     <section
       id="projets"
@@ -26,7 +69,7 @@ const ProjectsSection = () => {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((p, i) => (
+          {projects.map((p, i) => (
             <article
               key={p.slug}
               className="group relative bg-white rounded-2xl overflow-hidden border border-gray-100 ring-glow flex flex-col animate-fade-in"

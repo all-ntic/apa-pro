@@ -4,6 +4,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Plus, Pencil, Trash2, LogOut, Eye, EyeOff } from "lucide-react";
 import { toast } from "sonner";
 import {
@@ -17,6 +18,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import RealizationForm from "@/components/admin/RealizationForm";
+import ProjectForm from "@/components/admin/ProjectForm";
 
 export type Realization = {
   id: string;
@@ -33,18 +35,44 @@ export type Realization = {
   is_published: boolean;
 };
 
+export type ProjectRow = {
+  id: string;
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  objective: string;
+  category: string;
+  status: string;
+  technologies: string[];
+  image_url: string;
+  link: string;
+  display_order: number;
+  is_published: boolean;
+};
+
+type DeleteTarget = { id: string; table: "realizations" | "projects" } | null;
+
 const AdminDashboard = () => {
   const navigate = useNavigate();
   const [isAdmin, setIsAdmin] = useState<boolean | null>(null);
-  const [items, setItems] = useState<Realization[]>([]);
+  const [realizations, setRealizations] = useState<Realization[]>([]);
+  const [projects, setProjects] = useState<ProjectRow[]>([]);
   const [loading, setLoading] = useState(true);
-  const [editing, setEditing] = useState<Realization | null>(null);
-  const [creating, setCreating] = useState(false);
-  const [deleteId, setDeleteId] = useState<string | null>(null);
+
+  const [editingReal, setEditingReal] = useState<Realization | null>(null);
+  const [creatingReal, setCreatingReal] = useState(false);
+
+  const [editingProj, setEditingProj] = useState<ProjectRow | null>(null);
+  const [creatingProj, setCreatingProj] = useState(false);
+
+  const [deleteTarget, setDeleteTarget] = useState<DeleteTarget>(null);
 
   useEffect(() => {
     const check = async () => {
-      const { data: { session } } = await supabase.auth.getSession();
+      const {
+        data: { session },
+      } = await supabase.auth.getSession();
       if (!session) {
         navigate("/admin/login", { replace: true });
         return;
@@ -61,7 +89,7 @@ const AdminDashboard = () => {
         return;
       }
       setIsAdmin(true);
-      loadItems();
+      loadAll();
     };
     check();
 
@@ -71,15 +99,24 @@ const AdminDashboard = () => {
     return () => listener.subscription.unsubscribe();
   }, [navigate]);
 
-  const loadItems = async () => {
+  const loadAll = async () => {
     setLoading(true);
-    const { data, error } = await supabase
-      .from("realizations")
-      .select("*")
-      .order("display_order", { ascending: true })
-      .order("created_at", { ascending: false });
-    if (error) toast.error(error.message);
-    else setItems((data || []) as Realization[]);
+    const [r, p] = await Promise.all([
+      supabase
+        .from("realizations")
+        .select("*")
+        .order("display_order", { ascending: true })
+        .order("created_at", { ascending: false }),
+      supabase
+        .from("projects")
+        .select("*")
+        .order("display_order", { ascending: true })
+        .order("created_at", { ascending: false }),
+    ]);
+    if (r.error) toast.error(r.error.message);
+    else setRealizations((r.data || []) as Realization[]);
+    if (p.error) toast.error(p.error.message);
+    else setProjects((p.data || []) as ProjectRow[]);
     setLoading(false);
   };
 
@@ -89,17 +126,20 @@ const AdminDashboard = () => {
   };
 
   const handleDelete = async () => {
-    if (!deleteId) return;
-    const { error } = await supabase.from("realizations").delete().eq("id", deleteId);
+    if (!deleteTarget) return;
+    const { error } = await supabase
+      .from(deleteTarget.table)
+      .delete()
+      .eq("id", deleteTarget.id);
     if (error) toast.error(error.message);
     else {
-      toast.success("Réalisation supprimée");
-      loadItems();
+      toast.success("Élément supprimé");
+      loadAll();
     }
-    setDeleteId(null);
+    setDeleteTarget(null);
   };
 
-  const togglePublish = async (item: Realization) => {
+  const togglePublishReal = async (item: Realization) => {
     const { error } = await supabase
       .from("realizations")
       .update({ is_published: !item.is_published })
@@ -107,7 +147,19 @@ const AdminDashboard = () => {
     if (error) toast.error(error.message);
     else {
       toast.success(item.is_published ? "Masquée" : "Publiée");
-      loadItems();
+      loadAll();
+    }
+  };
+
+  const togglePublishProj = async (item: ProjectRow) => {
+    const { error } = await supabase
+      .from("projects")
+      .update({ is_published: !item.is_published })
+      .eq("id", item.id);
+    if (error) toast.error(error.message);
+    else {
+      toast.success(item.is_published ? "Masqué" : "Publié");
+      loadAll();
     }
   };
 
@@ -125,7 +177,9 @@ const AdminDashboard = () => {
         <div className="container mx-auto px-6 py-4 flex items-center justify-between">
           <div>
             <h1 className="text-2xl font-bold text-foreground">Espace Admin</h1>
-            <p className="text-sm text-muted-foreground">Gestion des réalisations</p>
+            <p className="text-sm text-muted-foreground">
+              Gestion des projets et réalisations
+            </p>
           </div>
           <div className="flex gap-2">
             <Button variant="outline" onClick={() => navigate("/")}>
@@ -139,108 +193,245 @@ const AdminDashboard = () => {
       </header>
 
       <main className="container mx-auto px-6 py-8">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-xl font-bold text-foreground">
-            Réalisations ({items.length})
-          </h2>
-          <Button
-            onClick={() => setCreating(true)}
-            className="bg-royal-blue hover:bg-royal-blue-light text-white"
-          >
-            <Plus className="w-4 h-4 mr-2" /> Nouvelle réalisation
-          </Button>
-        </div>
+        <Tabs defaultValue="projects">
+          <TabsList className="mb-6">
+            <TabsTrigger value="projects">
+              Projets ({projects.length})
+            </TabsTrigger>
+            <TabsTrigger value="realizations">
+              Réalisations ({realizations.length})
+            </TabsTrigger>
+          </TabsList>
 
-        {loading ? (
-          <p className="text-muted-foreground">Chargement...</p>
-        ) : items.length === 0 ? (
-          <Card>
-            <CardContent className="py-12 text-center text-muted-foreground">
-              Aucune réalisation. Cliquez sur "Nouvelle réalisation" pour commencer.
-            </CardContent>
-          </Card>
-        ) : (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {items.map((item) => (
-              <Card key={item.id} className="overflow-hidden">
-                {item.image_url && (
-                  <div className="aspect-video overflow-hidden bg-muted">
-                    <img
-                      src={item.image_url}
-                      alt={item.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
-                <CardHeader className="pb-2">
-                  <div className="flex items-start justify-between gap-2">
-                    <CardTitle className="text-base">{item.title}</CardTitle>
-                    {!item.is_published && (
-                      <Badge variant="secondary" className="text-xs">
-                        Brouillon
-                      </Badge>
-                    )}
-                  </div>
-                  <p className="text-xs text-royal-blue font-medium">{item.category}</p>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
-                    {item.description}
-                  </p>
-                  <div className="flex gap-2 flex-wrap">
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => setEditing(item)}
-                    >
-                      <Pencil className="w-3 h-3 mr-1" /> Modifier
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => togglePublish(item)}
-                    >
-                      {item.is_published ? (
-                        <><EyeOff className="w-3 h-3 mr-1" /> Masquer</>
-                      ) : (
-                        <><Eye className="w-3 h-3 mr-1" /> Publier</>
-                      )}
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      onClick={() => setDeleteId(item.id)}
-                      className="text-destructive hover:text-destructive"
-                    >
-                      <Trash2 className="w-3 h-3" />
-                    </Button>
-                  </div>
+          {/* PROJECTS */}
+          <TabsContent value="projects">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl font-bold text-foreground">
+                Projets showcase
+              </h2>
+              <Button
+                onClick={() => setCreatingProj(true)}
+                className="bg-royal-blue hover:bg-royal-blue-light text-white"
+              >
+                <Plus className="w-4 h-4 mr-2" /> Nouveau projet
+              </Button>
+            </div>
+
+            {loading ? (
+              <p className="text-muted-foreground">Chargement...</p>
+            ) : projects.length === 0 ? (
+              <Card>
+                <CardContent className="py-12 text-center text-muted-foreground">
+                  Aucun projet. Cliquez sur "Nouveau projet" pour commencer.
                 </CardContent>
               </Card>
-            ))}
-          </div>
-        )}
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {projects.map((p) => (
+                  <Card key={p.id} className="overflow-hidden">
+                    {p.image_url && (
+                      <div className="aspect-video overflow-hidden bg-muted">
+                        <img
+                          src={p.image_url}
+                          alt={p.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <CardHeader className="pb-2">
+                      <div className="flex items-start justify-between gap-2">
+                        <CardTitle className="text-base">{p.name}</CardTitle>
+                        {!p.is_published && (
+                          <Badge variant="secondary" className="text-xs">
+                            Brouillon
+                          </Badge>
+                        )}
+                      </div>
+                      <p className="text-xs text-royal-blue font-medium">
+                        {p.category} · {p.status}
+                      </p>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                        {p.tagline}
+                      </p>
+                      <div className="flex gap-2 flex-wrap">
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => setEditingProj(p)}
+                        >
+                          <Pencil className="w-3 h-3 mr-1" /> Modifier
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => togglePublishProj(p)}
+                        >
+                          {p.is_published ? (
+                            <>
+                              <EyeOff className="w-3 h-3 mr-1" /> Masquer
+                            </>
+                          ) : (
+                            <>
+                              <Eye className="w-3 h-3 mr-1" /> Publier
+                            </>
+                          )}
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() =>
+                            setDeleteTarget({ id: p.id, table: "projects" })
+                          }
+                          className="text-destructive hover:text-destructive"
+                        >
+                          <Trash2 className="w-3 h-3" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </TabsContent>
+
+          {/* REALIZATIONS */}
+          <TabsContent value="realizations">
+            <div className="flex items-center justify-between mb-6">
+              <h2 className="text-xl font-bold text-foreground">Réalisations</h2>
+              <Button
+                onClick={() => setCreatingReal(true)}
+                className="bg-royal-blue hover:bg-royal-blue-light text-white"
+              >
+                <Plus className="w-4 h-4 mr-2" /> Nouvelle réalisation
+              </Button>
+            </div>
+
+            {loading ? (
+              <p className="text-muted-foreground">Chargement...</p>
+            ) : realizations.length === 0 ? (
+              <Card>
+                <CardContent className="py-12 text-center text-muted-foreground">
+                  Aucune réalisation. Cliquez sur "Nouvelle réalisation" pour
+                  commencer.
+                </CardContent>
+              </Card>
+            ) : (
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {realizations.map((item) => (
+                  <Card key={item.id} className="overflow-hidden">
+                    {item.image_url && (
+                      <div className="aspect-video overflow-hidden bg-muted">
+                        <img
+                          src={item.image_url}
+                          alt={item.title}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    )}
+                    <CardHeader className="pb-2">
+                      <div className="flex items-start justify-between gap-2">
+                        <CardTitle className="text-base">
+                          {item.title}
+                        </CardTitle>
+                        {!item.is_published && (
+                          <Badge variant="secondary" className="text-xs">
+                            Brouillon
+                          </Badge>
+                        )}
+                      </div>
+                      <p className="text-xs text-royal-blue font-medium">
+                        {item.category}
+                      </p>
+                    </CardHeader>
+                    <CardContent className="pt-0">
+                      <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
+                        {item.description}
+                      </p>
+                      <div className="flex gap-2 flex-wrap">
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => setEditingReal(item)}
+                        >
+                          <Pencil className="w-3 h-3 mr-1" /> Modifier
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() => togglePublishReal(item)}
+                        >
+                          {item.is_published ? (
+                            <>
+                              <EyeOff className="w-3 h-3 mr-1" /> Masquer
+                            </>
+                          ) : (
+                            <>
+                              <Eye className="w-3 h-3 mr-1" /> Publier
+                            </>
+                          )}
+                        </Button>
+                        <Button
+                          size="sm"
+                          variant="outline"
+                          onClick={() =>
+                            setDeleteTarget({
+                              id: item.id,
+                              table: "realizations",
+                            })
+                          }
+                          className="text-destructive hover:text-destructive"
+                        >
+                          <Trash2 className="w-3 h-3" />
+                        </Button>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
+              </div>
+            )}
+          </TabsContent>
+        </Tabs>
       </main>
 
-      {(creating || editing) && (
+      {(creatingReal || editingReal) && (
         <RealizationForm
-          item={editing}
+          item={editingReal}
           onClose={() => {
-            setCreating(false);
-            setEditing(null);
+            setCreatingReal(false);
+            setEditingReal(null);
           }}
           onSaved={() => {
-            setCreating(false);
-            setEditing(null);
-            loadItems();
+            setCreatingReal(false);
+            setEditingReal(null);
+            loadAll();
           }}
         />
       )}
 
-      <AlertDialog open={!!deleteId} onOpenChange={(o) => !o && setDeleteId(null)}>
+      {(creatingProj || editingProj) && (
+        <ProjectForm
+          item={editingProj}
+          onClose={() => {
+            setCreatingProj(false);
+            setEditingProj(null);
+          }}
+          onSaved={() => {
+            setCreatingProj(false);
+            setEditingProj(null);
+            loadAll();
+          }}
+        />
+      )}
+
+      <AlertDialog
+        open={!!deleteTarget}
+        onOpenChange={(o) => !o && setDeleteTarget(null)}
+      >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Supprimer cette réalisation ?</AlertDialogTitle>
+            <AlertDialogTitle>Supprimer cet élément ?</AlertDialogTitle>
             <AlertDialogDescription>
               Cette action est irréversible.
             </AlertDialogDescription>
