@@ -153,7 +153,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             <Input
               id="p-tagline"
               required
-              placeholder="Ex: Solutions IT & Sécurité"
               value={tagline}
               onChange={(e) => setTagline(e.target.value)}
             />
