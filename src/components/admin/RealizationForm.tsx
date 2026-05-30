@@ -175,7 +175,6 @@ const RealizationForm = ({ item, onClose, onSaved }: Props) => {
             <Label htmlFor="tags">Tags (séparés par des virgules)</Label>
             <Input
               id="tags"
-              placeholder="React, Supabase, SEO"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
             />
