@@ -45,14 +45,16 @@ const RealizationForm = ({ item, onClose, onSaved }: Props) => {
     const ext = file.name.split(".").pop();
     const fileName = `${crypto.randomUUID()}.${ext}`;
     const { error } = await supabase.storage
-      .from("realizations")
-      .upload(fileName, file, { upsert: false });
+      .from("project-images")
+      .upload(`realizations/${fileName}`, file, { upsert: false });
     if (error) {
       toast.error(error.message);
       setUploading(false);
       return;
     }
-    const { data } = supabase.storage.from("realizations").getPublicUrl(fileName);
+    const { data } = supabase.storage
+      .from("project-images")
+      .getPublicUrl(`realizations/${fileName}`);
     setImageUrl(data.publicUrl);
     toast.success("Image uploadée");
     setUploading(false);
