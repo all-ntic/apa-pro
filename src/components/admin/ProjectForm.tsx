@@ -54,6 +54,29 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
   const [displayOrder, setDisplayOrder] = useState(item?.display_order ?? 0);
   const [isPublished, setIsPublished] = useState(item?.is_published ?? true);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
+
+  const handleUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    const ext = file.name.split(".").pop();
+    const fileName = `${crypto.randomUUID()}.${ext}`;
+    const { error } = await supabase.storage
+      .from("project-images")
+      .upload(`projects/${fileName}`, file, { upsert: false });
+    if (error) {
+      toast.error(error.message);
+      setUploading(false);
+      return;
+    }
+    const { data } = supabase.storage
+      .from("project-images")
+      .getPublicUrl(`projects/${fileName}`);
+    setImageUrl(data.publicUrl);
+    toast.success("Image uploadée");
+    setUploading(false);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
