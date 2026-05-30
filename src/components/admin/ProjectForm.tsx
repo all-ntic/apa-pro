@@ -21,6 +21,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { toast } from "sonner";
+import { Upload, X } from "lucide-react";
 import type { ProjectRow } from "@/pages/admin/AdminDashboard";
 
 type Props = {
