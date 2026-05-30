@@ -221,7 +221,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             <Input
               id="p-image"
               type="url"
-              placeholder="https://... ou uploader ci-dessous"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             />
