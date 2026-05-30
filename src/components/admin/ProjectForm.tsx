@@ -219,36 +219,63 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             />
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="p-image">URL Image</Label>
-              <Input
-                id="p-image"
-                type="url"
-                placeholder="https://..."
-                value={imageUrl}
-                onChange={(e) => setImageUrl(e.target.value)}
-              />
-            </div>
-            <div>
-              <Label htmlFor="p-link">Lien du projet</Label>
-              <Input
-                id="p-link"
-                type="url"
-                placeholder="https://..."
-                value={link}
-                onChange={(e) => setLink(e.target.value)}
-              />
-            </div>
+          <div>
+            <Label htmlFor="p-image">URL Image (optionnel)</Label>
+            <Input
+              id="p-image"
+              type="url"
+              placeholder="https://... ou uploader ci-dessous"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            />
           </div>
 
-          {imageUrl && (
-            <img
-              src={imageUrl}
-              alt=""
-              className="w-full aspect-video object-cover rounded-lg border"
+          <div>
+            <Label>Image du projet</Label>
+            {imageUrl ? (
+              <div className="relative mt-2 rounded-lg overflow-hidden border">
+                <img
+                  src={imageUrl}
+                  alt=""
+                  className="w-full aspect-video object-cover"
+                />
+                <Button
+                  type="button"
+                  size="icon"
+                  variant="destructive"
+                  className="absolute top-2 right-2 h-8 w-8"
+                  onClick={() => setImageUrl("")}
+                >
+                  <X className="w-4 h-4" />
+                </Button>
+              </div>
+            ) : (
+              <label className="mt-2 flex flex-col items-center justify-center aspect-video border-2 border-dashed rounded-lg cursor-pointer hover:bg-muted/50 transition">
+                <Upload className="w-8 h-8 text-muted-foreground mb-2" />
+                <span className="text-sm text-muted-foreground">
+                  {uploading ? "Upload..." : "Cliquer pour uploader"}
+                </span>
+                <input
+                  type="file"
+                  accept="image/*"
+                  className="hidden"
+                  onChange={handleUpload}
+                  disabled={uploading}
+                />
+              </label>
+            )}
+          </div>
+
+          <div>
+            <Label htmlFor="p-link">Lien du projet</Label>
+            <Input
+              id="p-link"
+              type="url"
+              placeholder="https://..."
+              value={link}
+              onChange={(e) => setLink(e.target.value)}
             />
-          )}
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-4 items-end">
             <div>
