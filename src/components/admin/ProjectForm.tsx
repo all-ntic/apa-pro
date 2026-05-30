@@ -186,7 +186,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
               <Input
                 id="p-category"
                 required
-                placeholder="Ex: SaaS Web"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               />
