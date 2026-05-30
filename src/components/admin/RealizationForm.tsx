@@ -112,7 +112,6 @@ const RealizationForm = ({ item, onClose, onSaved }: Props) => {
               <Input
                 id="category"
                 required
-                placeholder="Ex: Sécurité Électronique"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               />
