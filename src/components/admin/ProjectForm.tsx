@@ -305,7 +305,7 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             </Button>
             <Button
               type="submit"
-              disabled={saving}
+              disabled={saving || uploading}
               className="bg-royal-blue hover:bg-royal-blue-light text-white"
             >
               {saving ? "Enregistrement..." : "Enregistrer"}
