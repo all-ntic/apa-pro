@@ -211,7 +211,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             <Label htmlFor="p-tech">Technologies (séparées par virgule)</Label>
             <Input
               id="p-tech"
-              placeholder="React, Supabase, Node.js"
               value={technologies}
               onChange={(e) => setTechnologies(e.target.value)}
             />
