@@ -267,7 +267,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             <Input
               id="p-link"
               type="url"
-              placeholder="https://..."
               value={link}
               onChange={(e) => setLink(e.target.value)}
             />
