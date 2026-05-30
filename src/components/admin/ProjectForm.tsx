@@ -153,7 +153,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             <Input
               id="p-tagline"
               required
-              placeholder="Ex: Solutions IT & Sécurité"
               value={tagline}
               onChange={(e) => setTagline(e.target.value)}
             />
@@ -187,7 +186,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
               <Input
                 id="p-category"
                 required
-                placeholder="Ex: SaaS Web"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               />
@@ -213,7 +211,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             <Label htmlFor="p-tech">Technologies (séparées par virgule)</Label>
             <Input
               id="p-tech"
-              placeholder="React, Supabase, Node.js"
               value={technologies}
               onChange={(e) => setTechnologies(e.target.value)}
             />
@@ -224,7 +221,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             <Input
               id="p-image"
               type="url"
-              placeholder="https://... ou uploader ci-dessous"
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             />
@@ -271,7 +267,6 @@ const ProjectForm = ({ item, onClose, onSaved }: Props) => {
             <Input
               id="p-link"
               type="url"
-              placeholder="https://..."
               value={link}
               onChange={(e) => setLink(e.target.value)}
             />

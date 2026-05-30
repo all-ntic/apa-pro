@@ -112,7 +112,6 @@ const RealizationForm = ({ item, onClose, onSaved }: Props) => {
               <Input
                 id="category"
                 required
-                placeholder="Ex: Sécurité Électronique"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
               />
@@ -176,7 +175,6 @@ const RealizationForm = ({ item, onClose, onSaved }: Props) => {
             <Label htmlFor="tags">Tags (séparés par des virgules)</Label>
             <Input
               id="tags"
-              placeholder="React, Supabase, SEO"
               value={tags}
               onChange={(e) => setTags(e.target.value)}
             />
