@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import TechBackground from "@/components/TechBackground";
 import agnidomPhoto from "@/assets/agnidom-photo.jpg";
 import agnidomPhotoWebp from "@/assets/agnidom-photo.webp";
+import allnticLogo from "@/assets/allntic-logo.png";
 
 const HeroSection = () => {
   const [imgError, setImgError] = useState(false);
@@ -37,10 +38,12 @@ const HeroSection = () => {
           {/* Left — Content */}
           <div className="lg:col-span-7 text-white space-y-6 lg:space-y-8">
             {/* Brand chip */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-electric/40 bg-gradient-to-r from-royal-blue/30 via-cyan-electric/15 to-accent-gold/15 backdrop-blur-sm animate-fade-in shadow-[0_0_30px_-5px_hsl(var(--cyan-electric)/0.5)]">
-              <span className="w-2 h-2 rounded-full bg-cyan-electric animate-glow-pulse" />
-              <span className="text-sm font-semibold tracking-wide bg-gradient-to-r from-cyan-glow via-white to-accent-gold bg-clip-text text-transparent">
-                ALLNTIC GROUP — IT · Sécurité Électronique · Web
+            <div className="inline-flex items-center gap-2.5 pl-1.5 pr-4 py-1.5 rounded-full border border-cyan-electric/40 bg-gradient-to-r from-royal-blue/30 via-cyan-electric/15 to-accent-gold/15 backdrop-blur-sm animate-fade-in shadow-[0_0_30px_-5px_hsl(var(--cyan-electric)/0.5)]">
+              <span className="relative inline-flex items-center justify-center w-7 h-7 rounded-full bg-white ring-1 ring-cyan-electric/50 overflow-hidden">
+                <img src={allnticLogo} alt="" aria-hidden="true" className="w-full h-full object-contain p-0.5" />
+              </span>
+              <span className="text-xs sm:text-sm font-semibold tracking-wide bg-gradient-to-r from-cyan-glow via-white to-accent-gold bg-clip-text text-transparent">
+                ALLNTIC GROUP — IT · Sécurité · Web
               </span>
             </div>
 
@@ -54,7 +57,7 @@ const HeroSection = () => {
 
               <p className="text-lg lg:text-xl font-medium text-white/85">
                 Fondateur d'<strong className="text-cyan-glow">ALLNTIC GROUP</strong> · Créateur de{" "}
-                <strong className="text-cyan-glow">LesCVPro</strong> · Entrepreneur & Technicien IT
+                <strong className="text-cyan-glow">LesCVPro</strong> · Entrepreneur & Expert IT
               </p>
             </div>
 
@@ -62,8 +65,8 @@ const HeroSection = () => {
               className="text-base lg:text-lg leading-relaxed text-white/80 max-w-2xl animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
-              Des solutions IT modernes, fiables et sécurisées pour entreprises et particuliers.
-              Infrastructures réseau, vidéosurveillance, développement web et cybersécurité —
+              <strong className="text-white">ALLNTIC GROUP</strong> conçoit, déploie et sécurise vos infrastructures numériques :
+              réseaux d'entreprise, vidéosurveillance IP, développement web et cybersécurité —
               pensés pour le contexte africain.
             </p>
 
