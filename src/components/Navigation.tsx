@@ -41,18 +41,30 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-royal-blue-dark rounded-xl"
+            className="group flex items-center gap-2.5 sm:gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-royal-blue-dark rounded-xl min-w-0"
             aria-label="ALLNTIC GROUP - Retour à l'accueil"
           >
-            <div className="relative">
+            <div className="relative shrink-0">
               <div className="absolute -inset-1 rounded-xl bg-gradient-to-br from-cyan-electric/40 via-royal-blue-light/30 to-accent-gold/30 blur-md opacity-70 group-hover:opacity-100 transition" />
-              <div className="relative w-11 h-11 rounded-xl bg-white flex items-center justify-center ring-1 ring-white/30 overflow-hidden">
-                <img src={allnticLogo} alt="ALLNTIC GROUP logo" className="w-full h-full object-contain p-0.5" width="44" height="44" />
+              <div className="relative w-10 h-10 sm:w-11 sm:h-11 lg:w-12 lg:h-12 rounded-xl bg-white flex items-center justify-center ring-1 ring-white/30 overflow-hidden">
+                <img
+                  src={allnticLogo}
+                  alt="ALLNTIC GROUP logo"
+                  className="w-full h-full object-contain p-0.5"
+                  width="48"
+                  height="48"
+                  loading="eager"
+                  decoding="async"
+                />
               </div>
             </div>
-            <div className="leading-none">
-              <span className="block text-lg font-bold text-white tracking-wide">ALLNTIC <span className="bg-gradient-to-r from-cyan-glow to-accent-gold bg-clip-text text-transparent">GROUP</span></span>
-              <span className="block text-[10px] uppercase tracking-[0.2em] text-cyan-glow/80 mt-0.5">IT · Sécurité · Web</span>
+            <div className="leading-none min-w-0">
+              <span className="block text-base sm:text-lg lg:text-xl font-bold text-white tracking-wide truncate">
+                ALLNTIC <span className="bg-gradient-to-r from-cyan-glow to-accent-gold bg-clip-text text-transparent">GROUP</span>
+              </span>
+              <span className="hidden sm:block text-[10px] uppercase tracking-[0.2em] text-cyan-glow/80 mt-0.5 truncate">
+                IT · Sécurité · Web
+              </span>
             </div>
           </Link>
 

@@ -49,21 +49,28 @@ const Footer = () => {
           {/* Informations entreprise */}
           <div className="lg:col-span-2">
             <div className="mb-6 flex items-center gap-4">
-              <div className="relative">
+              <div className="relative shrink-0">
                 <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-cyan-electric/40 via-royal-blue-light/40 to-accent-gold/30 blur-md opacity-70" />
-                <div className="relative w-14 h-14 rounded-2xl bg-white flex items-center justify-center ring-1 ring-white/20 overflow-hidden">
-                  <img src={allnticLogo} alt="ALLNTIC GROUP logo" className="w-full h-full object-contain p-1" width="56" height="56" />
+                <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white flex items-center justify-center ring-1 ring-white/20 overflow-hidden">
+                  <img
+                    src={allnticLogo}
+                    alt="ALLNTIC GROUP logo"
+                    className="w-full h-full object-contain p-1"
+                    width="64"
+                    height="64"
+                    loading="lazy"
+                    decoding="async"
+                  />
                 </div>
               </div>
-              <div>
-                <h3 className="text-2xl font-bold">ALLNTIC <span className="bg-gradient-to-r from-cyan-glow to-accent-gold bg-clip-text text-transparent">GROUP</span></h3>
-                <p className="text-accent-gold text-sm">Agnidom Pygnali Aboubakar</p>
+              <div className="min-w-0">
+                <h3 className="text-xl sm:text-2xl font-bold truncate">ALLNTIC <span className="bg-gradient-to-r from-cyan-glow to-accent-gold bg-clip-text text-transparent">GROUP</span></h3>
+                <p className="text-accent-gold text-sm">Agnidom Pygnali Aboubakar · Fondateur</p>
               </div>
             </div>
             
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              Technicien polyvalent en systèmes informatiques, réseaux, développement web et sécurité électronique. 
-              Des solutions intégrées, durables et pragmatiques pour vos besoins technologiques à Abidjan.
+              <strong className="text-white">ALLNTIC GROUP</strong> — pôle technique pluridisciplinaire spécialisé en IT, réseaux, vidéosurveillance, sécurité électronique et développement web. Des solutions intégrées, durables et pragmatiques pour les entreprises et institutions à Abidjan et en Afrique de l'Ouest.
             </p>
 
             <div className="space-y-3">

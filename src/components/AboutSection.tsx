@@ -24,19 +24,19 @@ const AboutSection = () => {
           <div className="mb-16 animate-slide-in-right">
             <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-elegant border border-gray-100">
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                <strong className="text-foreground">Agnidom Pygnali Aboubakar</strong>, fondateur d'<strong className="text-royal-blue">ALLNTIC GROUP</strong>, est un entrepreneur et technicien ivoirien spécialisé dans les infrastructures informatiques, les réseaux, le développement web et la sécurité électronique.
+                <strong className="text-foreground">ALLNTIC GROUP</strong> est un pôle technique pluridisciplinaire fondé par <strong className="text-royal-blue">Agnidom Pygnali Aboubakar</strong>, entrepreneur et technicien ivoirien spécialisé dans les infrastructures informatiques, les réseaux, le développement web et la sécurité électronique.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                Fondateur de <strong className="text-royal-blue">ALLNTIC GROUP</strong> et créateur de la plateforme <strong className="text-royal-blue">LesCVPro</strong>, il développe des solutions technologiques modernes pensées pour répondre aux besoins réels des entreprises, des professionnels et des particuliers en Côte d'Ivoire.
+                À travers <strong className="text-royal-blue">ALLNTIC GROUP</strong> et sa plateforme <strong className="text-royal-blue">LesCVPro</strong>, le groupe développe des solutions technologiques modernes pensées pour les entreprises, les institutions et les professionnels en Côte d'Ivoire et en Afrique de l'Ouest.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                Grâce à une approche <strong className="text-accent-gold">pragmatique</strong>, orientée <strong className="text-accent-gold">performance</strong> et <strong className="text-accent-gold">fiabilité</strong>, il intervient dans la conception, le déploiement et l'optimisation de systèmes informatiques, réseaux, vidéosurveillance, solutions web et infrastructures numériques sécurisées.
+                Notre approche est résolument <strong className="text-accent-gold">pragmatique</strong>, orientée <strong className="text-accent-gold">performance</strong> et <strong className="text-accent-gold">fiabilité</strong> : conception, déploiement et optimisation de systèmes informatiques, réseaux, vidéosurveillance, solutions web et infrastructures numériques sécurisées.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700 mb-8">
-                À travers <strong className="text-royal-blue">ALLNTIC GROUP</strong> et ses futurs projets technologiques, son ambition est de contribuer à la transformation numérique locale en rendant les technologies plus <strong className="text-royal-blue">accessibles, professionnelles, fiables et sécurisées</strong>.
+                L'ambition d'<strong className="text-royal-blue">ALLNTIC GROUP</strong> : contribuer à la transformation numérique africaine en rendant la technologie plus <strong className="text-royal-blue">accessible, professionnelle, fiable et sécurisée</strong>.
               </p>
 
               <div className="border-t border-gray-100 pt-6">
@@ -64,7 +64,7 @@ const AboutSection = () => {
           {/* Values */}
           <div className="animate-scale-in">
             <h3 id="values-title" className="text-2xl lg:text-3xl font-bold text-foreground text-center mb-10 font-serif">
-              Mes Valeurs
+              Nos Valeurs
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {values.map((value, index) => (
