@@ -8,10 +8,10 @@ const MentionsLegales = () => {
   return (
     <>
       <Helmet>
-        <title>Mentions Légales & Politique de Confidentialité | ALLNTIC - ALLNTIC</title>
+        <title>Mentions Légales & Politique de Confidentialité | ALLNTIC GROUP - ALLNTIC GROUP</title>
         <meta 
           name="description" 
-          content="Consultez les mentions légales et la politique de confidentialité du site ALLNTIC par ALLNTIC. Protection des données personnelles et informations légales." 
+          content="Consultez les mentions légales et la politique de confidentialité du site ALLNTIC GROUP par ALLNTIC GROUP. Protection des données personnelles et informations légales." 
         />
         <meta name="robots" content="noindex, follow" />
         <link rel="canonical" href="https://allntic.com/mentions-legales" />
@@ -57,7 +57,7 @@ const MentionsLegales = () => {
                   <h3 className="text-lg font-semibold text-foreground mb-2">1. Éditeur du site</h3>
                   <ul className="space-y-2">
                     <li><strong>Nom :</strong> Agnidom Pygnali Aboubakar</li>
-                    <li><strong>Nom commercial :</strong> ALLNTIC</li>
+                    <li><strong>Nom commercial :</strong> ALLNTIC GROUP</li>
                     <li><strong>Activité :</strong> Technicien Systèmes, Réseaux, Développement Web et Sécurité Électronique</li>
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-royal-blue" aria-hidden="true" />
@@ -84,21 +84,21 @@ const MentionsLegales = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">3. Propriété intellectuelle</h3>
                   <p>
-                    L'ensemble du contenu de ce site (textes, images, logos, vidéos, éléments graphiques) est la propriété exclusive d'ALLNTIC ou de ses partenaires et est protégé par les lois relatives à la propriété intellectuelle. Toute reproduction, distribution ou utilisation sans autorisation préalable est strictement interdite.
+                    L'ensemble du contenu de ce site (textes, images, logos, vidéos, éléments graphiques) est la propriété exclusive d'ALLNTIC GROUP ou de ses partenaires et est protégé par les lois relatives à la propriété intellectuelle. Toute reproduction, distribution ou utilisation sans autorisation préalable est strictement interdite.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">4. Responsabilité</h3>
                   <p>
-                    ALLNTIC s'efforce de fournir des informations exactes et à jour sur ce site. Cependant, nous ne pouvons garantir l'exactitude, la complétude ou l'actualité des informations diffusées. L'utilisation des informations présentes sur ce site se fait sous la seule responsabilité de l'utilisateur.
+                    ALLNTIC GROUP s'efforce de fournir des informations exactes et à jour sur ce site. Cependant, nous ne pouvons garantir l'exactitude, la complétude ou l'actualité des informations diffusées. L'utilisation des informations présentes sur ce site se fait sous la seule responsabilité de l'utilisateur.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">5. Liens externes</h3>
                   <p>
-                    Ce site peut contenir des liens vers des sites tiers. ALLNTIC n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou leurs pratiques en matière de confidentialité.
+                    Ce site peut contenir des liens vers des sites tiers. ALLNTIC GROUP n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou leurs pratiques en matière de confidentialité.
                   </p>
                 </div>
               </div>

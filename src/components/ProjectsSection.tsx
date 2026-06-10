@@ -61,10 +61,10 @@ const ProjectsSection = () => {
             id="projects-title"
             className="font-serif text-4xl lg:text-5xl font-bold text-foreground mb-4"
           >
-            Les <span className="gradient-text">projets</span> portés par ALLNTIC
+            Les <span className="gradient-text">projets</span> portés par ALLNTIC GROUP
           </h2>
           <p className="text-base sm:text-lg text-muted-foreground max-w-2xl mx-auto">
-            ALLNTIC, LesCVPro et les futures solutions technologiques en construction.
+            ALLNTIC GROUP, LesCVPro et les futures solutions technologiques en construction.
           </p>
         </div>
 

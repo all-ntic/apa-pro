@@ -40,7 +40,7 @@ const HeroSection = () => {
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-electric/40 bg-cyan-electric/10 backdrop-blur-sm animate-fade-in">
               <span className="w-2 h-2 rounded-full bg-cyan-electric animate-glow-pulse" />
               <span className="text-sm font-medium text-cyan-glow tracking-wide">
-                ALLNTIC — Solutions IT & Sécurité Électronique
+                ALLNTIC GROUP — Solutions IT & Sécurité Électronique
               </span>
             </div>
 
@@ -53,7 +53,7 @@ const HeroSection = () => {
               </h1>
 
               <p className="text-lg lg:text-xl font-medium text-white/85">
-                Fondateur d'<strong className="text-cyan-glow">ALLNTIC</strong> · Créateur de{" "}
+                Fondateur d'<strong className="text-cyan-glow">ALLNTIC GROUP</strong> · Créateur de{" "}
                 <strong className="text-cyan-glow">LesCVPro</strong> · Entrepreneur & Technicien IT
               </p>
             </div>
@@ -142,7 +142,7 @@ const HeroSection = () => {
                     <source srcSet={agnidomPhotoWebp} type="image/webp" />
                     <img
                       src={agnidomPhoto}
-                      alt="Agnidom Pygnali Aboubakar, fondateur d'ALLNTIC, expert IT, réseaux et sécurité électronique à Abidjan"
+                      alt="Agnidom Pygnali Aboubakar, fondateur d'ALLNTIC GROUP, expert IT, réseaux et sécurité électronique à Abidjan"
                       className="w-full aspect-[4/5] object-cover"
                       loading="eager"
                       fetchPriority="high"
@@ -157,7 +157,7 @@ const HeroSection = () => {
                 {/* Floating badge */}
                 <div className="absolute bottom-4 left-4 right-4 px-4 py-3 rounded-xl bg-royal-blue-dark/80 backdrop-blur-md border border-cyan-electric/30">
                   <div className="text-xs text-cyan-glow uppercase tracking-wider">
-                    Fondateur · ALLNTIC
+                    Fondateur · ALLNTIC GROUP
                   </div>
                   <div className="text-sm text-white font-medium">
                     Abidjan · Côte d'Ivoire

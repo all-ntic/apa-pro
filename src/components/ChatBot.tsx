@@ -17,7 +17,7 @@ const ChatBot = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: 1,
-      text: "Bonjour ! Je suis l'assistant virtuel d'ALLNTIC. Comment puis-je vous aider avec vos besoins en informatique et sécurité électronique ?",
+      text: "Bonjour ! Je suis l'assistant virtuel d'ALLNTIC GROUP. Comment puis-je vous aider avec vos besoins en informatique et sécurité électronique ?",
       isUser: false,
       timestamp: new Date()
     }
@@ -34,22 +34,22 @@ const ChatBot = () => {
     scrollToBottom();
   }, [messages]);
 
-  // Base de connaissances RAG enrichie avec informations ALLNTIC
+  // Base de connaissances RAG enrichie avec informations ALLNTIC GROUP
   const getAutomaticResponse = (userMessage: string): string => {
     const message = userMessage.toLowerCase();
     
     // Salutations
     if (message.match(/^(bonjour|salut|hello|hi|hey|bonsoir)$/i)) {
-      return "Bonjour et bienvenue ! Je suis le chatbot ALLNTIC, comment puis-je vous aider aujourd'hui ?";
+      return "Bonjour et bienvenue ! Je suis le chatbot ALLNTIC GROUP, comment puis-je vous aider aujourd'hui ?";
     }
     
     if (message.includes("comment") && (message.includes("vas") || message.includes("allez"))) {
       return "Je vais très bien, merci ! Et vous ? Comment puis-je vous assister dans vos projets techniques ?";
     }
     
-    // Identité et profil ALLNTIC
+    // Identité et profil ALLNTIC GROUP
     if (message.includes("qui") || message.includes("allntic") || message.includes("apa") || message.includes("aboubakar") || message.includes("pygnali") || message.includes("agnidom")) {
-      return "Je suis ALLNTIC (Agnidom Pygnali Aboubakar), technicien ivoirien expert en systèmes informatiques, réseaux, développement web et sécurité électronique basé à Abidjan, Cocody. Ma devise : Fiabilité, performance et sécurité au service du numérique africain.";
+      return "Je suis ALLNTIC GROUP (Agnidom Pygnali Aboubakar), technicien ivoirien expert en systèmes informatiques, réseaux, développement web et sécurité électronique basé à Abidjan, Cocody. Ma devise : Fiabilité, performance et sécurité au service du numérique africain.";
     }
     
     if (message.includes("mission") || message.includes("objectif")) {
@@ -92,12 +92,12 @@ const ChatBot = () => {
     
     // Réalisations
     if (message.includes("réalisation") || message.includes("projet réalisé") || message.includes("expérience") || message.includes("portfolio")) {
-      return "Principales réalisations : 1) Déploiement réseau sécurisé PME (Cisco, Ubiquiti, Windows Server) 2) Site institutionnel éducatif responsive SEO-optimisé 3) Système vidéosurveillance IP avec accès mobile 4) Tableau de bord technique React/Supabase 5) Refonte portail ALLNTIC avec Next.js/TailwindCSS.";
+      return "Principales réalisations : 1) Déploiement réseau sécurisé PME (Cisco, Ubiquiti, Windows Server) 2) Site institutionnel éducatif responsive SEO-optimisé 3) Système vidéosurveillance IP avec accès mobile 4) Tableau de bord technique React/Supabase 5) Refonte portail ALLNTIC GROUP avec Next.js/TailwindCSS.";
     }
     
     // Projets futurs
     if (message.includes("projet") || message.includes("innovation") || message.includes("avenir") || message.includes("développer")) {
-      return "Projets à venir : 1) Plateforme SaaS de gestion d'interventions techniques avec rapports dynamiques 2) Solution IoT de sécurité intelligente (vidéo + alarme + alertes mobiles) 3) Agence technique digitale ALLNTIC intégrant IT, web, sécurité et formation.";
+      return "Projets à venir : 1) Plateforme SaaS de gestion d'interventions techniques avec rapports dynamiques 2) Solution IoT de sécurité intelligente (vidéo + alarme + alertes mobiles) 3) Agence technique digitale ALLNTIC GROUP intégrant IT, web, sécurité et formation.";
     }
     
     // Délais et disponibilité
@@ -135,7 +135,7 @@ const ChatBot = () => {
     }
     
     if (message.includes("linkedin") || message.includes("github") || message.includes("instagram") || message.includes("facebook") || message.includes("youtube") || message.includes("tiktok") || message.includes("réseau social")) {
-      return "Mes réseaux : GitHub github.com/all-ntic, LinkedIn linkedin.com/in/pygnali-aboubakar-agnidom-2813b6188, Instagram/TikTok @allntic225, YouTube @allntic, Facebook ALLNTIC. Suivez mes actualités et projets techniques !";
+      return "Mes réseaux : GitHub github.com/all-ntic, LinkedIn linkedin.com/in/pygnali-aboubakar-agnidom-2813b6188, Instagram/TikTok @allntic225, YouTube @allntic, Facebook ALLNTIC GROUP. Suivez mes actualités et projets techniques !";
     }
     
     // Certifications et qualifications
@@ -259,7 +259,7 @@ const ChatBot = () => {
     }
     
     // Réponse par défaut enrichie
-    return "Je n'ai pas cette information précise dans ma base actuellement. Pour une réponse détaillée et personnalisée, contactez ALLNTIC directement : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://allntic.com. Je serai ravi de vous aider !";
+    return "Je n'ai pas cette information précise dans ma base actuellement. Pour une réponse détaillée et personnalisée, contactez ALLNTIC GROUP directement : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://allntic.com. Je serai ravi de vous aider !";
   };
 
   const handleSendMessage = async () => {
@@ -328,7 +328,7 @@ const ChatBot = () => {
                 <Bot className="w-5 h-5" />
               </div>
               <div>
-                <h3 className="font-semibold">Assistant ALLNTIC</h3>
+                <h3 className="font-semibold">Assistant ALLNTIC GROUP</h3>
                 <p className="text-xs text-cyan-100">En ligne</p>
               </div>
             </div>

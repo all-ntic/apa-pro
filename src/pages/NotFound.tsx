@@ -14,8 +14,8 @@ const NotFound = () => {
   return (
     <>
       <SEO
-        title="Page introuvable (404) — ALLNTIC"
-        description="La page demandée n'existe pas ou a été déplacée. Retournez à l'accueil ALLNTIC."
+        title="Page introuvable (404) — ALLNTIC GROUP"
+        description="La page demandée n'existe pas ou a été déplacée. Retournez à l'accueil ALLNTIC GROUP."
         noindex
       />
     <div className="min-h-screen bg-gradient-to-br from-royal-blue-dark via-royal-blue to-royal-blue-light flex items-center justify-center px-6">
@@ -23,7 +23,7 @@ const NotFound = () => {
         <div className="mb-8">
           <img 
             src={allnticLogo} 
-            alt="ALLNTIC Logo" 
+            alt="ALLNTIC GROUP Logo" 
             className="w-32 h-32 mx-auto mb-6 animate-pulse"
             loading="eager"
           />

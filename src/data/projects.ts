@@ -1,4 +1,4 @@
-// Projets & Innovations ALLNTIC — data centralisée pour évolutivité.
+// Projets & Innovations ALLNTIC GROUP — data centralisée pour évolutivité.
 import imgWeb from "@/assets/realisation-web.jpg";
 import imgReseau from "@/assets/realisation-reseau.jpg";
 import imgSecurite from "@/assets/realisation-securite.jpg";
@@ -35,7 +35,7 @@ export const statusLabel = (s: ProjectStatus) => STATUS_LABEL[s];
 export const PROJECTS: ShowcaseProject[] = [
   {
     slug: "allntic",
-    name: "ALLNTIC",
+    name: "ALLNTIC GROUP",
     tagline: "Solutions IT & Sécurité Électronique",
     description:
       "Marque technologique fondée par Agnidom Pygnali Aboubakar, regroupant l'ensemble des services IT, réseaux, vidéosurveillance, développement web et cybersécurité en Côte d'Ivoire.",
@@ -63,13 +63,13 @@ export const PROJECTS: ShowcaseProject[] = [
   },
   {
     slug: "allntic-portfolio",
-    name: "Portfolio ALLNTIC",
+    name: "Portfolio ALLNTIC GROUP",
     tagline: "Portfolio professionnel du fondateur",
     description:
       "Portfolio personnel d'Agnidom Pygnali Aboubakar, présentant son parcours technique, ses réalisations et ses expertises en IT et sécurité électronique.",
     technologies: ["React", "Tailwind", "SEO", "PWA"],
     objective:
-      "Mettre en avant le parcours et l'expertise du fondateur d'ALLNTIC.",
+      "Mettre en avant le parcours et l'expertise du fondateur d'ALLNTIC GROUP.",
     status: "actif",
     image: imgSecurite,
     link: "https://allntic.com",
@@ -103,7 +103,7 @@ export const PROJECTS: ShowcaseProject[] = [
   },
   {
     slug: "agence-digitale",
-    name: "Agence Technique ALLNTIC",
+    name: "Agence Technique ALLNTIC GROUP",
     tagline: "Pôle intégré IT, Web & Sécurité",
     description:
       "Création d'une agence technique digitale alliant IT, web, sécurité électronique et formation pour accompagner la transformation numérique africaine.",

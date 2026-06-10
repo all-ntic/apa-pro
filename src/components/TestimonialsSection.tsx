@@ -17,7 +17,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Directeur Général",
     company: "PME Tech Solutions",
     content:
-      "ALLNTIC a transformé notre infrastructure réseau. Installation professionnelle, sécurisée et performante. Excellent suivi technique et réactivité remarquable.",
+      "ALLNTIC GROUP a transformé notre infrastructure réseau. Installation professionnelle, sécurisée et performante. Excellent suivi technique et réactivité remarquable.",
     rating: 5,
   },
   {
@@ -26,7 +26,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Responsable Marketing",
     company: "Agence Digitale CI",
     content:
-      "Site web moderne, responsive et parfaitement optimisé SEO. ALLNTIC a su comprendre nos besoins et livrer un résultat au-delà de nos attentes.",
+      "Site web moderne, responsive et parfaitement optimisé SEO. ALLNTIC GROUP a su comprendre nos besoins et livrer un résultat au-delà de nos attentes.",
     rating: 5,
   },
   {
@@ -35,7 +35,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Gérant",
     company: "Boutique Élégance",
     content:
-      "Système de vidéosurveillance installé avec soin. Caméras de qualité, accès mobile fluide et formation complète. Je me sens en sécurité grâce à ALLNTIC.",
+      "Système de vidéosurveillance installé avec soin. Caméras de qualité, accès mobile fluide et formation complète. Je me sens en sécurité grâce à ALLNTIC GROUP.",
     rating: 5,
   },
   {
@@ -53,7 +53,7 @@ const TESTIMONIALS: Testimonial[] = [
     role: "Fondatrice",
     company: "Startup HealthCI",
     content:
-      "ALLNTIC a déployé notre IPBX et notre WiFi pro en moins d'une semaine. Tout fonctionne parfaitement, équipe à l'écoute et professionnelle.",
+      "ALLNTIC GROUP a déployé notre IPBX et notre WiFi pro en moins d'une semaine. Tout fonctionne parfaitement, équipe à l'écoute et professionnelle.",
     rating: 5,
   },
 ];
@@ -89,7 +89,7 @@ const TestimonialsSection = () => {
             Ils nous font <span className="gradient-text">confiance</span>
           </h2>
           <p className="text-lg text-muted-foreground">
-            Retours de clients équipés et accompagnés par ALLNTIC en Côte d'Ivoire.
+            Retours de clients équipés et accompagnés par ALLNTIC GROUP en Côte d'Ivoire.
           </p>
         </div>
 

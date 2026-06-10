@@ -8,7 +8,7 @@ const Footer = () => {
   const quickLinks = [
     { name: "Accueil", href: "#accueil" },
     { name: "À propos", href: "#apropos" },
-    { name: "ALLNTIC", href: "#allntic" },
+    { name: "ALLNTIC GROUP", href: "#allntic" },
     { name: "Services", href: "#services" },
     { name: "Projets", href: "#projets" },
     { name: "Réalisations", href: "#realisations" },
@@ -49,9 +49,9 @@ const Footer = () => {
           {/* Informations entreprise */}
           <div className="lg:col-span-2">
             <div className="mb-6 flex items-center gap-3">
-              <img src={allnticLogo} alt="ALLNTIC logo" className="w-12 h-12 rounded-full object-cover ring-1 ring-white/20" width="48" height="48" />
+              <img src={allnticLogo} alt="ALLNTIC GROUP logo" className="w-12 h-12 rounded-full object-cover ring-1 ring-white/20" width="48" height="48" />
               <div>
-                <h3 className="text-2xl font-bold">ALLNTIC</h3>
+                <h3 className="text-2xl font-bold">ALLNTIC GROUP</h3>
                 <p className="text-accent-gold text-sm">Agnidom Pygnali Aboubakar</p>
               </div>
             </div>
@@ -149,7 +149,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://web.facebook.com/ALLNTIC"
+                href="https://web.facebook.com/ALLNTIC GROUP"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
@@ -202,7 +202,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-300 text-sm">
-            <p>© {currentYear} ALLNTIC - Agnidom Pygnali Aboubakar. Tous droits réservés.</p>
+            <p>© {currentYear} ALLNTIC GROUP - Agnidom Pygnali Aboubakar. Tous droits réservés.</p>
             <Link 
               to="/mentions-legales" 
               className="hover:text-cyan-electric transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-electric rounded"

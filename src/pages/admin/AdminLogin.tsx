@@ -44,8 +44,8 @@ const AdminLogin = () => {
   return (
     <>
       <SEO
-        title="Connexion administrateur — ALLNTIC"
-        description="Espace de connexion réservé à l'administration ALLNTIC."
+        title="Connexion administrateur — ALLNTIC GROUP"
+        description="Espace de connexion réservé à l'administration ALLNTIC GROUP."
         canonical="/admin/login"
         noindex
       />

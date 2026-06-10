@@ -16,10 +16,10 @@ const FAQSection = () => {
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "Quels services propose ALLNTIC ?",
+          "name": "Quels services propose ALLNTIC GROUP ?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "ALLNTIC propose une gamme complète de services IT : maintenance informatique (hardware/software), installation et administration de réseaux LAN/WAN, développement de sites web professionnels, et installation de systèmes de sécurité électronique (vidéosurveillance, alarmes, contrôle d'accès). Nous couvrons tous vos besoins technologiques avec une approche intégrée et professionnelle."
+            "text": "ALLNTIC GROUP propose une gamme complète de services IT : maintenance informatique (hardware/software), installation et administration de réseaux LAN/WAN, développement de sites web professionnels, et installation de systèmes de sécurité électronique (vidéosurveillance, alarmes, contrôle d'accès). Nous couvrons tous vos besoins technologiques avec une approche intégrée et professionnelle."
           }
         },
         {
@@ -82,8 +82,8 @@ const FAQSection = () => {
     {
       id: "item-1",
       icon: <HelpCircle className="w-5 h-5 text-royal-blue" />,
-      question: "Quels services propose ALLNTIC ?",
-      answer: "ALLNTIC propose une gamme complète de services IT : maintenance informatique (hardware/software), installation et administration de réseaux LAN/WAN, développement de sites web professionnels, et installation de systèmes de sécurité électronique (vidéosurveillance, alarmes, contrôle d'accès). Nous couvrons tous vos besoins technologiques avec une approche intégrée et professionnelle."
+      question: "Quels services propose ALLNTIC GROUP ?",
+      answer: "ALLNTIC GROUP propose une gamme complète de services IT : maintenance informatique (hardware/software), installation et administration de réseaux LAN/WAN, développement de sites web professionnels, et installation de systèmes de sécurité électronique (vidéosurveillance, alarmes, contrôle d'accès). Nous couvrons tous vos besoins technologiques avec une approche intégrée et professionnelle."
     },
     {
       id: "item-2", 

@@ -1,4 +1,4 @@
-// Catalogue centralisé des 12 services ALLNTIC pour pages SEO dynamiques.
+// Catalogue centralisé des 12 services ALLNTIC GROUP pour pages SEO dynamiques.
 // Chaque entrée alimente : URL, meta tags, H1, contenu, FAQ schema, sitemap.
 
 export type ServiceFAQ = { question: string; answer: string };
@@ -33,7 +33,7 @@ export const SERVICES: Service[] = [
     category: "securite",
     shortName: "Installation Caméras",
     title:
-      "Installation Caméras de Surveillance Abidjan | Hikvision, Dahua | ALLNTIC",
+      "Installation Caméras de Surveillance Abidjan | Hikvision, Dahua | ALLNTIC GROUP",
     metaDescription:
       "Installation professionnelle de caméras de surveillance à Abidjan. Caméras IP, analogiques, dôme, bullet, PTZ. Marques Hikvision, Dahua, Uniview. Devis gratuit 24h.",
     h1: "Installation de Caméras de Surveillance à Abidjan",
@@ -74,7 +74,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "ALLNTIC est votre installateur de référence pour la **vidéosurveillance professionnelle à Abidjan**. Que vous soyez un commerce, une entreprise, une école ou un particulier, nous concevons un système de caméras de surveillance adapté à votre site et à votre budget.",
+      "ALLNTIC GROUP est votre installateur de référence pour la **vidéosurveillance professionnelle à Abidjan**. Que vous soyez un commerce, une entreprise, une école ou un particulier, nous concevons un système de caméras de surveillance adapté à votre site et à votre budget.",
       "Nous installons des caméras IP haute définition (2MP, 4MP, 8MP, 4K), des caméras analogiques HD-TVI/CVI, ainsi que des caméras motorisées PTZ pour la surveillance étendue. Toutes nos installations incluent un enregistreur NVR ou DVR avec disque dur dédié et configuration de l'accès mobile.",
       `Intervention rapide à ${ABIDJAN_AREAS}. Devis gratuit sous 24h, installation soignée et formation à l'utilisation incluse.`,
     ],
@@ -107,7 +107,7 @@ export const SERVICES: Service[] = [
     category: "securite",
     shortName: "Vidéosurveillance",
     title:
-      "Vidéosurveillance Professionnelle Abidjan | Systèmes IP & NVR | ALLNTIC",
+      "Vidéosurveillance Professionnelle Abidjan | Systèmes IP & NVR | ALLNTIC GROUP",
     metaDescription:
       "Solutions complètes de vidéosurveillance pour entreprises, commerces et particuliers à Abidjan. Caméras IP, NVR/DVR, supervision centralisée. Pose, configuration, maintenance.",
     h1: "Vidéosurveillance Professionnelle pour Entreprises",
@@ -147,7 +147,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "La **vidéosurveillance professionnelle** est aujourd'hui un pilier de la sécurité des entreprises en Côte d'Ivoire. ALLNTIC conçoit, déploie et maintient des systèmes adaptés aux PME, grandes entreprises, commerces et copropriétés.",
+      "La **vidéosurveillance professionnelle** est aujourd'hui un pilier de la sécurité des entreprises en Côte d'Ivoire. ALLNTIC GROUP conçoit, déploie et maintient des systèmes adaptés aux PME, grandes entreprises, commerces et copropriétés.",
       "Nos solutions intègrent des caméras IP haute résolution, des enregistreurs NVR sécurisés, du stockage redondant et des outils de supervision à distance. Nous gérons aussi les déploiements multi-sites avec supervision centralisée.",
       "Maintenance préventive, mises à jour firmware, dépannage rapide : nous restons à vos côtés après l'installation pour garantir la fiabilité du système.",
     ],
@@ -173,7 +173,7 @@ export const SERVICES: Service[] = [
     slug: "reseaux-informatiques",
     category: "reseaux",
     shortName: "Réseaux Informatiques",
-    title: "Réseaux Informatiques Entreprise Abidjan | LAN, WAN, VLAN | ALLNTIC",
+    title: "Réseaux Informatiques Entreprise Abidjan | LAN, WAN, VLAN | ALLNTIC GROUP",
     metaDescription:
       "Conception, installation et administration de réseaux informatiques pour entreprises à Abidjan : LAN, WAN, VLAN, VPN, fibre optique. Cisco, MikroTik, Ubiquiti.",
     h1: "Réseaux Informatiques d'Entreprise à Abidjan",
@@ -210,7 +210,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "Un **réseau informatique d'entreprise** fiable est la colonne vertébrale de votre productivité. ALLNTIC conçoit des architectures LAN/WAN robustes, sécurisées et performantes pour les entreprises d'Abidjan et de toute la Côte d'Ivoire.",
+      "Un **réseau informatique d'entreprise** fiable est la colonne vertébrale de votre productivité. ALLNTIC GROUP conçoit des architectures LAN/WAN robustes, sécurisées et performantes pour les entreprises d'Abidjan et de toute la Côte d'Ivoire.",
       "Nous travaillons avec les meilleurs équipementiers : Cisco, MikroTik, Ubiquiti, TP-Link Pro. Câblage structuré catégorie 6/6A, fibre optique, switchs managés, VLAN, VPN, pare-feu - tout est pensé pour la disponibilité et la sécurité.",
       "Audit réseau gratuit pour identifier les points faibles, recommandations chiffrées et déploiement encadré du début à la fin.",
     ],
@@ -237,7 +237,7 @@ export const SERVICES: Service[] = [
     category: "informatique",
     shortName: "Maintenance Informatique",
     title:
-      "Maintenance Informatique Abidjan | Dépannage PME & Particuliers | ALLNTIC",
+      "Maintenance Informatique Abidjan | Dépannage PME & Particuliers | ALLNTIC GROUP",
     metaDescription:
       "Maintenance informatique professionnelle à Abidjan : dépannage matériel/logiciel, optimisation, sécurité, support à distance. Intervention 24h. Forfaits PME disponibles.",
     h1: "Maintenance Informatique Professionnelle à Abidjan",
@@ -274,7 +274,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "ALLNTIC propose des services de **maintenance informatique professionnelle** pour entreprises, PME et particuliers à Abidjan. Spécialiste du dépannage hardware et software, je garantis des interventions rapides et des solutions techniques fiables.",
+      "ALLNTIC GROUP propose des services de **maintenance informatique professionnelle** pour entreprises, PME et particuliers à Abidjan. Spécialiste du dépannage hardware et software, je garantis des interventions rapides et des solutions techniques fiables.",
       `Service disponible à ${ABIDJAN_AREAS}. Support technique sur site ou à distance selon vos besoins.`,
       "Forfaits maintenance préventive avec SLA pour PME : visites régulières, mises à jour, sauvegardes, supervision proactive de votre parc informatique.",
     ],
@@ -301,7 +301,7 @@ export const SERVICES: Service[] = [
     category: "securite",
     shortName: "Contrôle d'Accès",
     title:
-      "Contrôle d'Accès Abidjan | Badge, Biométrie, Interphone | ALLNTIC",
+      "Contrôle d'Accès Abidjan | Badge, Biométrie, Interphone | ALLNTIC GROUP",
     metaDescription:
       "Installation de systèmes de contrôle d'accès à Abidjan : badge RFID, lecteur biométrique, digicode, interphone IP, gâche électrique. Solutions entreprise et résidentiel.",
     h1: "Contrôle d'Accès et Interphonie Professionnels",
@@ -338,7 +338,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "Le **contrôle d'accès professionnel** remplace avantageusement les serrures traditionnelles. ALLNTIC installe à Abidjan des systèmes de badges RFID, lecteurs biométriques, digicodes et interphones IP.",
+      "Le **contrôle d'accès professionnel** remplace avantageusement les serrures traditionnelles. ALLNTIC GROUP installe à Abidjan des systèmes de badges RFID, lecteurs biométriques, digicodes et interphones IP.",
       "Solutions adaptées aux bureaux, immeubles, entrepôts, copropriétés et résidences. Gestion centralisée via logiciel dédié, intégration avec votre vidéosurveillance possible.",
     ],
     faq: [
@@ -359,7 +359,7 @@ export const SERVICES: Service[] = [
     category: "telephonie",
     shortName: "IPBX / VoIP",
     title:
-      "IPBX VoIP Abidjan | Téléphonie IP Entreprise | Yeastar, 3CX | ALLNTIC",
+      "IPBX VoIP Abidjan | Téléphonie IP Entreprise | Yeastar, 3CX | ALLNTIC GROUP",
     metaDescription:
       "Installation et configuration d'IPBX et solutions VoIP pour entreprises à Abidjan. Yeastar, 3CX, Asterisk. Téléphonie IP, SIP trunk, postes, softphones, standard automatique.",
     h1: "Téléphonie IP & IPBX pour Entreprises",
@@ -397,7 +397,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "L'**IPBX (téléphonie IP)** révolutionne la téléphonie d'entreprise : meilleur rapport qualité/prix, fonctionnalités avancées, mobilité totale. ALLNTIC déploie des solutions Yeastar, 3CX et Asterisk pour PME et grandes entreprises à Abidjan.",
+      "L'**IPBX (téléphonie IP)** révolutionne la téléphonie d'entreprise : meilleur rapport qualité/prix, fonctionnalités avancées, mobilité totale. ALLNTIC GROUP déploie des solutions Yeastar, 3CX et Asterisk pour PME et grandes entreprises à Abidjan.",
       "Nous gérons l'intégralité du projet : choix de la solution, dimensionnement, configuration des SIP trunks avec votre opérateur, déploiement des postes IP, formation utilisateurs et maintenance.",
     ],
     faq: [
@@ -423,7 +423,7 @@ export const SERVICES: Service[] = [
     category: "securite",
     shortName: "Sécurité Électronique",
     title:
-      "Sécurité Électronique Abidjan | Alarmes, Caméras, Accès | ALLNTIC",
+      "Sécurité Électronique Abidjan | Alarmes, Caméras, Accès | ALLNTIC GROUP",
     metaDescription:
       "Solutions complètes de sécurité électronique à Abidjan : vidéosurveillance, alarmes anti-intrusion, contrôle d'accès, interphonie. Audit, installation, maintenance.",
     h1: "Sécurité Électronique Globale pour Entreprises et Résidences",
@@ -460,7 +460,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "ALLNTIC propose une approche intégrée de la **sécurité électronique** à Abidjan : vidéosurveillance, alarmes anti-intrusion, contrôle d'accès et interphonie pensés comme un système cohérent.",
+      "ALLNTIC GROUP propose une approche intégrée de la **sécurité électronique** à Abidjan : vidéosurveillance, alarmes anti-intrusion, contrôle d'accès et interphonie pensés comme un système cohérent.",
       "Audit gratuit de votre site, recommandations chiffrées, installation soignée et maintenance régulière pour garantir l'efficacité dans la durée.",
     ],
     faq: [
@@ -481,7 +481,7 @@ export const SERVICES: Service[] = [
     category: "web",
     shortName: "Développement Web",
     title:
-      "Développement Web Abidjan | Sites Vitrines, E-commerce, SaaS | ALLNTIC",
+      "Développement Web Abidjan | Sites Vitrines, E-commerce, SaaS | ALLNTIC GROUP",
     metaDescription:
       "Création de sites web professionnels à Abidjan : vitrines, e-commerce, applications SaaS. React, Supabase, WordPress. SEO, performance, mobile-first. Devis 24h.",
     h1: "Développement Web & Sites Internet Professionnels",
@@ -518,7 +518,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "ALLNTIC crée des **sites web professionnels** à Abidjan : vitrines, e-commerce et applications métier sur mesure. Stack moderne (React, TypeScript, Supabase) ou WordPress selon vos besoins.",
+      "ALLNTIC GROUP crée des **sites web professionnels** à Abidjan : vitrines, e-commerce et applications métier sur mesure. Stack moderne (React, TypeScript, Supabase) ou WordPress selon vos besoins.",
       "Chaque projet inclut une optimisation SEO technique poussée (meta tags, schema.org, sitemap, performance Core Web Vitals), un design responsive mobile-first et une sécurité renforcée.",
       "Hébergement cloud (Vercel, Netlify), nom de domaine, maintenance et formation : un projet web clé en main.",
     ],
@@ -545,7 +545,7 @@ export const SERVICES: Service[] = [
     category: "informatique",
     shortName: "Support Entreprise",
     title:
-      "Support Informatique Entreprise Abidjan | Infogérance PME | ALLNTIC",
+      "Support Informatique Entreprise Abidjan | Infogérance PME | ALLNTIC GROUP",
     metaDescription:
       "Support informatique et infogérance pour PME à Abidjan : helpdesk, supervision, maintenance proactive, sauvegardes, sécurité. Forfaits sur mesure avec SLA garanti.",
     h1: "Support & Infogérance Informatique pour PME",
@@ -582,7 +582,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "Le **support informatique d'entreprise** ne devrait jamais être un frein à votre productivité. ALLNTIC propose des forfaits d'infogérance sur mesure pour PME à Abidjan : helpdesk, supervision, maintenance, sécurité.",
+      "Le **support informatique d'entreprise** ne devrait jamais être un frein à votre productivité. ALLNTIC GROUP propose des forfaits d'infogérance sur mesure pour PME à Abidjan : helpdesk, supervision, maintenance, sécurité.",
       "Vous bénéficiez d'un interlocuteur unique, d'un SLA garanti et d'une supervision proactive de votre parc informatique. Nous détectons les problèmes avant qu'ils n'impactent votre activité.",
     ],
     faq: [
@@ -603,7 +603,7 @@ export const SERVICES: Service[] = [
     category: "reseaux",
     shortName: "WiFi Professionnel",
     title:
-      "WiFi Professionnel Abidjan | UniFi, MikroTik, Aruba | ALLNTIC",
+      "WiFi Professionnel Abidjan | UniFi, MikroTik, Aruba | ALLNTIC GROUP",
     metaDescription:
       "Installation de WiFi professionnel à Abidjan : couverture optimale, hauts débits, portail captif, multi-SSID. UniFi, MikroTik, Aruba. Hôtels, bureaux, entrepôts.",
     h1: "WiFi Professionnel pour Entreprises et Établissements",
@@ -640,7 +640,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "Le **WiFi professionnel** est devenu indispensable pour les entreprises, hôtels, restaurants et écoles. ALLNTIC déploie à Abidjan des réseaux sans-fil performants avec UniFi (Ubiquiti), MikroTik et Aruba Instant On.",
+      "Le **WiFi professionnel** est devenu indispensable pour les entreprises, hôtels, restaurants et écoles. ALLNTIC GROUP déploie à Abidjan des réseaux sans-fil performants avec UniFi (Ubiquiti), MikroTik et Aruba Instant On.",
       "Étude de couverture préalable, choix des bornes adaptées, configuration multi-SSID, portail captif, supervision cloud : un WiFi qui fonctionne vraiment.",
     ],
     faq: [
@@ -661,7 +661,7 @@ export const SERVICES: Service[] = [
     category: "informatique",
     shortName: "Installation Serveurs",
     title:
-      "Installation Serveurs Abidjan | Windows Server, Linux, NAS | ALLNTIC",
+      "Installation Serveurs Abidjan | Windows Server, Linux, NAS | ALLNTIC GROUP",
     metaDescription:
       "Installation et administration de serveurs à Abidjan : Windows Server, Linux, Active Directory, NAS Synology. Virtualisation, sauvegardes, supervision.",
     h1: "Installation et Administration de Serveurs",
@@ -698,7 +698,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "L'**installation de serveurs professionnels** est le socle d'une informatique d'entreprise fiable. ALLNTIC déploie à Abidjan des serveurs Windows Server (Active Directory, fichiers, impression) et Linux pour les services métier.",
+      "L'**installation de serveurs professionnels** est le socle d'une informatique d'entreprise fiable. ALLNTIC GROUP déploie à Abidjan des serveurs Windows Server (Active Directory, fichiers, impression) et Linux pour les services métier.",
       "Solutions de stockage et sauvegarde avec NAS Synology et QNAP, virtualisation Proxmox/VMware, plan de reprise d'activité. Tout est documenté et supervisé.",
     ],
     faq: [
@@ -719,7 +719,7 @@ export const SERVICES: Service[] = [
     category: "cybersecurite",
     shortName: "Cybersécurité",
     title:
-      "Cybersécurité Entreprise Abidjan | Audit, Pare-feu, Sensibilisation | ALLNTIC",
+      "Cybersécurité Entreprise Abidjan | Audit, Pare-feu, Sensibilisation | ALLNTIC GROUP",
     metaDescription:
       "Cybersécurité pour PME à Abidjan : audit sécurité, pare-feu, anti-ransomware, sensibilisation collaborateurs, sauvegardes sécurisées. Protégez votre entreprise.",
     h1: "Cybersécurité pour PME et TPE en Côte d'Ivoire",
@@ -756,7 +756,7 @@ export const SERVICES: Service[] = [
       },
     ],
     seoContent: [
-      "La **cybersécurité des PME** est un enjeu critique. Les ransomwares et le phishing touchent désormais largement les entreprises ivoiriennes. ALLNTIC propose une approche pragmatique et accessible aux PME.",
+      "La **cybersécurité des PME** est un enjeu critique. Les ransomwares et le phishing touchent désormais largement les entreprises ivoiriennes. ALLNTIC GROUP propose une approche pragmatique et accessible aux PME.",
       "Audit du système d'information, configuration de pare-feu, déploiement d'anti-virus EDR, sauvegardes immuables, MFA, sensibilisation des collaborateurs : nous bâtissons votre défense en profondeur.",
     ],
     faq: [

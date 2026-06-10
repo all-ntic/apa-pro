@@ -34,7 +34,7 @@ const ServiceDetail = () => {
       description: service.metaDescription,
       provider: {
         "@type": "LocalBusiness",
-        name: "ALLNTIC",
+        name: "ALLNTIC GROUP",
         telephone: "+2250778023331",
         email: "all.ntic225@gmail.com",
         address: {
@@ -100,7 +100,7 @@ const ServiceDetail = () => {
         {/* Hero */}
         <header className="max-w-4xl mx-auto text-center mb-16 text-white">
           <p className="text-accent-gold uppercase tracking-wider text-sm mb-4 font-semibold">
-            ALLNTIC — Solutions IT &amp; Sécurité Électronique
+            ALLNTIC GROUP — Solutions IT &amp; Sécurité Électronique
           </p>
           <h1 className="text-3xl md:text-5xl font-bold mb-6 leading-tight">
             {service.h1}
@@ -157,7 +157,7 @@ const ServiceDetail = () => {
         {/* Benefits */}
         <section className="max-w-5xl mx-auto mb-16" aria-labelledby="benefits-title">
           <h2 id="benefits-title" className="text-2xl md:text-3xl font-bold text-white text-center mb-10">
-            Pourquoi choisir ALLNTIC
+            Pourquoi choisir ALLNTIC GROUP
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {service.benefits.map((b) => (

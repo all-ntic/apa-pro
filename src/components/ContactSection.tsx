@@ -129,7 +129,7 @@ const ContactSection = () => {
   const handleWhatsAppContact = () => {
     analytics.whatsAppClick('contact_form');
     
-    const message = encodeURIComponent(`Bonjour ALLNTIC,
+    const message = encodeURIComponent(`Bonjour ALLNTIC GROUP,
 
 Je souhaite obtenir des informations sur vos services :
 ${formData.service ? `Service : ${formData.service}` : ''}
@@ -194,7 +194,7 @@ Merci !`);
             Démarrons Votre <span className="gradient-text">Projet Ensemble</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Prêt à transformer vos systèmes IT ? Contactez ALLNTIC pour une consultation personnalisée et un devis sur mesure.
+            Prêt à transformer vos systèmes IT ? Contactez ALLNTIC GROUP pour une consultation personnalisée et un devis sur mesure.
           </p>
         </div>
 
@@ -405,7 +405,7 @@ Merci !`);
           </div>
           <div className="rounded-2xl overflow-hidden shadow-elegant border border-gray-100 aspect-[16/9] lg:aspect-[21/9]">
             <iframe
-              title="ALLNTIC — Localisation Abidjan, Côte d'Ivoire"
+              title="ALLNTIC GROUP — Localisation Abidjan, Côte d'Ivoire"
               src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31814.123456!2d-3.987!3d5.359!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sCocody%2C%20Abidjan!5e0!3m2!1sfr!2sci!4v1700000000000"
               width="100%"
               height="100%"

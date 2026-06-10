@@ -1,4 +1,4 @@
-// Articles blog statiques ALLNTIC pour SEO long traîne.
+// Articles blog statiques ALLNTIC GROUP pour SEO long traîne.
 export type BlogArticle = {
   slug: string;
   title: string;
@@ -56,7 +56,7 @@ export const ARTICLES: BlogArticle[] = [
       },
       {
         type: "callout",
-        text: "Astuce ALLNTIC : configurez impérativement un mot de passe fort sur le NVR ET désactivez les comptes par défaut. Trop d'installations restent vulnérables.",
+        text: "Astuce ALLNTIC GROUP : configurez impérativement un mot de passe fort sur le NVR ET désactivez les comptes par défaut. Trop d'installations restent vulnérables.",
       },
     ],
   },
@@ -132,7 +132,7 @@ export const ARTICLES: BlogArticle[] = [
     slug: "reseau-entreprise-bonnes-pratiques",
     title: "Réseau d'Entreprise : 8 Bonnes Pratiques Essentielles",
     metaDescription:
-      "Les 8 bonnes pratiques d'un réseau d'entreprise sécurisé et performant : VLAN, QoS, redondance, supervision, documentation. Par ALLNTIC.",
+      "Les 8 bonnes pratiques d'un réseau d'entreprise sécurisé et performant : VLAN, QoS, redondance, supervision, documentation. Par ALLNTIC GROUP.",
     excerpt:
       "VLAN, QoS, redondance, sauvegarde de configuration, supervision : les fondamentaux d'un réseau d'entreprise fiable.",
     category: "Réseaux",
@@ -236,7 +236,7 @@ export const ARTICLES: BlogArticle[] = [
     title:
       "Maintenance Informatique Préventive : Pourquoi C'est Rentable ?",
     metaDescription:
-      "Maintenance préventive vs curative : comparatif coûts, bénéfices et plan d'action concret pour PME à Abidjan. Conseils ALLNTIC.",
+      "Maintenance préventive vs curative : comparatif coûts, bénéfices et plan d'action concret pour PME à Abidjan. Conseils ALLNTIC GROUP.",
     excerpt:
       "Curative ou préventive : combien ça coûte vraiment ? Comparatif et plan d'action pour PME ivoiriennes.",
     category: "Maintenance",
