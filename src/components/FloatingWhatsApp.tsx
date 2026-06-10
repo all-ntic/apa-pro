@@ -8,7 +8,7 @@ const FloatingWhatsApp = () => {
   const handleWhatsAppClick = () => {
     analytics.whatsAppClick('floating_button');
     const message = encodeURIComponent(
-      "Bonjour ALLNTIC, je souhaite obtenir plus d'informations sur vos services."
+      "Bonjour ALLNTIC GROUP, je souhaite obtenir plus d'informations sur vos services."
     );
     window.open(`https://wa.me/2250778023331?text=${message}`, "_blank");
   };
@@ -36,7 +36,7 @@ const FloatingWhatsApp = () => {
               <MessageCircle className="w-6 h-6 text-white" />
             </div>
             <div>
-              <p className="font-semibold text-foreground">ALLNTIC</p>
+              <p className="font-semibold text-foreground">ALLNTIC GROUP</p>
               <p className="text-xs text-muted-foreground">Disponible maintenant</p>
             </div>
           </div>

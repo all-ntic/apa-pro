@@ -41,11 +41,19 @@ const Navigation = () => {
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
-            className="flex items-center space-x-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-royal-blue-dark rounded-lg"
-            aria-label="ALLNTIC - Retour à l'accueil"
+            className="group flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-gold focus-visible:ring-offset-2 focus-visible:ring-offset-royal-blue-dark rounded-xl"
+            aria-label="ALLNTIC GROUP - Retour à l'accueil"
           >
-            <img src={allnticLogo} alt="ALLNTIC logo" className="w-10 h-10 rounded-full object-cover ring-1 ring-white/20" width="40" height="40" />
-            <span className="text-xl font-bold text-white tracking-wide">ALLNTIC</span>
+            <div className="relative">
+              <div className="absolute -inset-1 rounded-xl bg-gradient-to-br from-cyan-electric/40 via-royal-blue-light/30 to-accent-gold/30 blur-md opacity-70 group-hover:opacity-100 transition" />
+              <div className="relative w-11 h-11 rounded-xl bg-white flex items-center justify-center ring-1 ring-white/30 overflow-hidden">
+                <img src={allnticLogo} alt="ALLNTIC GROUP logo" className="w-full h-full object-contain p-0.5" width="44" height="44" />
+              </div>
+            </div>
+            <div className="leading-none">
+              <span className="block text-lg font-bold text-white tracking-wide">ALLNTIC <span className="bg-gradient-to-r from-cyan-glow to-accent-gold bg-clip-text text-transparent">GROUP</span></span>
+              <span className="block text-[10px] uppercase tracking-[0.2em] text-cyan-glow/80 mt-0.5">IT · Sécurité · Web</span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}

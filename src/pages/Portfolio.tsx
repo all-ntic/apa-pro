@@ -23,8 +23,8 @@ const Portfolio = () => {
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      name: "ALLNTIC",
-      legalName: "ALLNTIC — Solutions IT & Sécurité Électronique",
+      name: "ALLNTIC GROUP",
+      legalName: "ALLNTIC GROUP — Solutions IT & Sécurité Électronique",
       url: "https://allntic.com",
       logo: "https://allntic.com/icon-512.png",
       founder: {
@@ -36,7 +36,7 @@ const Portfolio = () => {
         "https://www.linkedin.com/in/pygnali-aboubakar-agnidom-2813b6188",
         "https://www.instagram.com/allntic225",
         "https://www.youtube.com/@allntic",
-        "https://web.facebook.com/ALLNTIC",
+        "https://web.facebook.com/ALLNTIC GROUP",
         "https://www.tiktok.com/@allntic",
       ],
     },
@@ -44,7 +44,7 @@ const Portfolio = () => {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "@id": "https://allntic.com/#localbusiness",
-      name: "ALLNTIC",
+      name: "ALLNTIC GROUP",
       image: "https://allntic.com/icon-512.png",
       url: "https://allntic.com",
       telephone: "+2250778023331",
@@ -80,9 +80,9 @@ const Portfolio = () => {
       "@context": "https://schema.org",
       "@type": "Person",
       name: "Agnidom Pygnali Aboubakar",
-      alternateName: "ALLNTIC",
-      jobTitle: "Fondateur ALLNTIC — Technicien IT, Réseaux & Sécurité Électronique",
-      worksFor: { "@type": "Organization", name: "ALLNTIC" },
+      alternateName: "ALLNTIC GROUP",
+      jobTitle: "Fondateur ALLNTIC GROUP — Technicien IT, Réseaux & Sécurité Électronique",
+      worksFor: { "@type": "Organization", name: "ALLNTIC GROUP" },
       url: "https://allntic.com",
       address: {
         "@type": "PostalAddress",
@@ -94,7 +94,7 @@ const Portfolio = () => {
       "@context": "https://schema.org",
       "@type": "WebSite",
       url: "https://allntic.com",
-      name: "ALLNTIC — Solutions IT & Sécurité Électronique",
+      name: "ALLNTIC GROUP — Solutions IT & Sécurité Électronique",
       potentialAction: {
         "@type": "SearchAction",
         target: "https://allntic.com/?q={search_term_string}",
@@ -106,11 +106,11 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-background">
       <SEO
-        title="ALLNTIC — IT, Vidéosurveillance & Sécurité à Abidjan"
-        description="Solutions IT, réseaux, vidéosurveillance et cybersécurité pour entreprises et particuliers à Abidjan, Côte d'Ivoire. Par ALLNTIC."
+        title="ALLNTIC GROUP — IT, Vidéosurveillance & Sécurité à Abidjan"
+        description="Solutions IT, réseaux, vidéosurveillance et cybersécurité pour entreprises et particuliers à Abidjan, Côte d'Ivoire. Par ALLNTIC GROUP."
         canonical="/"
         keywords={[
-          "ALLNTIC", "installation caméra Abidjan", "maintenance informatique Abidjan",
+          "ALLNTIC GROUP", "installation caméra Abidjan", "maintenance informatique Abidjan",
           "réseau informatique Côte d'Ivoire", "sécurité électronique Abidjan",
           "vidéosurveillance entreprise", "développement web Abidjan",
           "IPBX VoIP", "cybersécurité", "WiFi professionnel", "contrôle d'accès",

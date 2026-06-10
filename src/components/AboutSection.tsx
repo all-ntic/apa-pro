@@ -15,7 +15,7 @@ const AboutSection = () => {
           {/* Header */}
           <div className="text-center mb-16 animate-fade-in">
             <h2 id="about-title" className="text-4xl lg:text-5xl font-bold text-foreground mb-4 font-serif">
-              À propos d'<span className="gradient-text">ALLNTIC</span>
+              À propos d'<span className="gradient-text">ALLNTIC GROUP</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-accent mx-auto mb-6" role="presentation" aria-hidden="true"></div>
           </div>
@@ -24,11 +24,11 @@ const AboutSection = () => {
           <div className="mb-16 animate-slide-in-right">
             <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-elegant border border-gray-100">
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                <strong className="text-foreground">Agnidom Pygnali Aboubakar</strong>, fondateur d'<strong className="text-royal-blue">ALLNTIC</strong>, est un entrepreneur et technicien ivoirien spécialisé dans les infrastructures informatiques, les réseaux, le développement web et la sécurité électronique.
+                <strong className="text-foreground">Agnidom Pygnali Aboubakar</strong>, fondateur d'<strong className="text-royal-blue">ALLNTIC GROUP</strong>, est un entrepreneur et technicien ivoirien spécialisé dans les infrastructures informatiques, les réseaux, le développement web et la sécurité électronique.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
-                Fondateur de <strong className="text-royal-blue">ALLNTIC</strong> et créateur de la plateforme <strong className="text-royal-blue">LesCVPro</strong>, il développe des solutions technologiques modernes pensées pour répondre aux besoins réels des entreprises, des professionnels et des particuliers en Côte d'Ivoire.
+                Fondateur de <strong className="text-royal-blue">ALLNTIC GROUP</strong> et créateur de la plateforme <strong className="text-royal-blue">LesCVPro</strong>, il développe des solutions technologiques modernes pensées pour répondre aux besoins réels des entreprises, des professionnels et des particuliers en Côte d'Ivoire.
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700 mb-6">
@@ -36,7 +36,7 @@ const AboutSection = () => {
               </p>
 
               <p className="text-lg leading-relaxed text-gray-700 mb-8">
-                À travers <strong className="text-royal-blue">ALLNTIC</strong> et ses futurs projets technologiques, son ambition est de contribuer à la transformation numérique locale en rendant les technologies plus <strong className="text-royal-blue">accessibles, professionnelles, fiables et sécurisées</strong>.
+                À travers <strong className="text-royal-blue">ALLNTIC GROUP</strong> et ses futurs projets technologiques, son ambition est de contribuer à la transformation numérique locale en rendant les technologies plus <strong className="text-royal-blue">accessibles, professionnelles, fiables et sécurisées</strong>.
               </p>
 
               <div className="border-t border-gray-100 pt-6">

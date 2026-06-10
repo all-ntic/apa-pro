@@ -54,7 +54,7 @@ const fallbackProjects: Project[] = [
   {
     image: imgWeb,
     category: "Développement Web",
-    title: "ALLNTIC - Portfolio",
+    title: "ALLNTIC GROUP - Portfolio",
     description: "Portfolio IT & Web",
     details:
       "Portfolio professionnel complet : expertise systèmes, réseaux, développement web et sécurité électronique avec chatbot intelligent et SEO avancé.",

@@ -62,7 +62,7 @@ const AllnticSection = () => {
             className="font-serif text-4xl lg:text-5xl font-bold mb-5"
           >
             <span className="bg-gradient-to-r from-cyan-glow to-white bg-clip-text text-transparent">
-              ALLNTIC
+              ALLNTIC GROUP
             </span>{" "}
             — Solutions IT & Sécurité Électronique
           </h2>
@@ -103,7 +103,7 @@ const AllnticSection = () => {
         {/* Advantages */}
         <div className="mb-16">
           <h3 className="text-center font-serif text-2xl lg:text-3xl font-bold mb-10">
-            Pourquoi choisir <span className="text-cyan-glow">ALLNTIC</span> ?
+            Pourquoi choisir <span className="text-cyan-glow">ALLNTIC GROUP</span> ?
           </h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {ADVANTAGES.map((a, i) => (

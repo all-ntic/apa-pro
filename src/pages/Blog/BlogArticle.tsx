@@ -33,10 +33,10 @@ const BlogArticle = () => {
       },
       publisher: {
         "@type": "Organization",
-        name: "ALLNTIC",
+        name: "ALLNTIC GROUP",
         logo: {
           "@type": "ImageObject",
-          url: "https://storage.googleapis.com/gpt-engineer-file-uploads/SAdL5uQGe2W7X7Gb6JNrzFaXgY02/social-images/social-1760095751167-ALLNTIC-removebg-preview.png",
+          url: "https://storage.googleapis.com/gpt-engineer-file-uploads/SAdL5uQGe2W7X7Gb6JNrzFaXgY02/social-images/social-1760095751167-ALLNTIC GROUP-removebg-preview.png",
         },
       },
       mainEntityOfPage: `https://allntic.com${canonical}`,
@@ -56,7 +56,7 @@ const BlogArticle = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-royal-blue-dark via-royal-blue to-royal-blue-light">
       <SEO
-        title={`${article.title} | Blog ALLNTIC`}
+        title={`${article.title} | Blog ALLNTIC GROUP`}
         description={article.metaDescription}
         canonical={canonical}
         keywords={article.tags}
@@ -157,7 +157,7 @@ const BlogArticle = () => {
               Besoin d'aide sur ce sujet&nbsp;?
             </h2>
             <p className="text-white/80 mb-4">
-              ALLNTIC intervient à Abidjan et en Côte d'Ivoire pour vos projets IT
+              ALLNTIC GROUP intervient à Abidjan et en Côte d'Ivoire pour vos projets IT
               et sécurité électronique.
             </p>
             <Button asChild className="bg-green-600 hover:bg-green-700 text-white">

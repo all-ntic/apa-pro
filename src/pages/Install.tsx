@@ -39,8 +39,8 @@ const Install = () => {
   return (
     <>
       <SEO
-        title="Installer l'application ALLNTIC sur votre appareil"
-        description="Installez l'application ALLNTIC en PWA sur Android, iOS ou ordinateur pour un accès rapide à nos services IT et sécurité électronique."
+        title="Installer l'application ALLNTIC GROUP sur votre appareil"
+        description="Installez l'application ALLNTIC GROUP en PWA sur Android, iOS ou ordinateur pour un accès rapide à nos services IT et sécurité électronique."
         canonical="/install"
       />
     <div className="min-h-screen bg-[hsl(var(--navy-dark))] flex items-center justify-center p-4">
@@ -52,7 +52,7 @@ const Install = () => {
             </div>
           </div>
           <CardTitle className="text-3xl font-bold text-[hsl(var(--navy-dark))]">
-            Installer ALLNTIC
+            Installer ALLNTIC GROUP
           </CardTitle>
           <CardDescription className="text-lg mt-2">
             Installez l'application sur votre appareil pour une expérience optimale

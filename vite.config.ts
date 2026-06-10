@@ -43,9 +43,9 @@ export default defineConfig(({ mode }) => ({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
-        name: 'ALLNTIC - Agnidom Pygnali Aboubakar | Expert IT & Développement Web',
-        short_name: 'ALLNTIC',
-        description: 'Portfolio professionnel ALLNTIC : technicien expert en systèmes informatiques, réseaux, développement web et sécurité électronique à Abidjan.',
+        name: 'ALLNTIC GROUP - Agnidom Pygnali Aboubakar | Expert IT & Développement Web',
+        short_name: 'ALLNTIC GROUP',
+        description: 'Portfolio professionnel ALLNTIC GROUP : technicien expert en systèmes informatiques, réseaux, développement web et sécurité électronique à Abidjan.',
         theme_color: '#1a2639',
         background_color: '#1a2639',
         display: 'standalone',

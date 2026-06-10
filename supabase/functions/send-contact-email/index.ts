@@ -137,7 +137,7 @@ const handler = async (req: Request): Promise<Response> => {
 
     // Send email to the business with sanitized data
     const emailResponse = await resend.emails.send({
-      from: "ALLNTIC Contact <infos@allntic.com>",
+      from: "ALLNTIC GROUP Contact <infos@allntic.com>",
       to: ["infos@allntic.com"],
       reply_to: sanitizedEmail,
       subject: `Nouvelle demande de contact - ${sanitizedService}`,
@@ -150,13 +150,13 @@ const handler = async (req: Request): Promise<Response> => {
         <p><strong>Message:</strong></p>
         <p>${sanitizedMessage.replace(/\n/g, '<br>')}</p>
         <hr>
-        <p><em>Envoyé depuis le formulaire de contact ALLNTIC</em></p>
+        <p><em>Envoyé depuis le formulaire de contact ALLNTIC GROUP</em></p>
       `,
     });
 
     // Send confirmation email to the user with sanitized data
     await resend.emails.send({
-      from: "ALLNTIC <infos@allntic.com>",
+      from: "ALLNTIC GROUP <infos@allntic.com>",
       to: [sanitizedEmail],
       subject: "Confirmation de réception de votre demande",
       html: `
@@ -165,7 +165,7 @@ const handler = async (req: Request): Promise<Response> => {
         <p>Notre équipe vous contactera dans les plus brefs délais.</p>
         <p>Votre message:</p>
         <blockquote style="border-left: 3px solid #ccc; padding-left: 10px; margin: 10px 0;">${sanitizedMessage.replace(/\n/g, '<br>')}</blockquote>
-        <p>Cordialement,<br>L'équipe ALLNTIC</p>
+        <p>Cordialement,<br>L'équipe ALLNTIC GROUP</p>
       `,
     });
 

@@ -27,7 +27,7 @@ const BlogIndex = () => {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    name: "Blog ALLNTIC",
+    name: "Blog ALLNTIC GROUP",
     url: "https://allntic.com/blog",
     blogPost: ARTICLES.map((a) => ({
       "@type": "BlogPosting",
@@ -40,8 +40,8 @@ const BlogIndex = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-royal-blue-dark via-royal-blue to-royal-blue-light">
       <SEO
-        title="Blog Technique IT, Sécurité, Réseaux | ALLNTIC Abidjan"
-        description="Tutoriels, guides pratiques et conseils experts en informatique, vidéosurveillance, réseaux, IPBX et cybersécurité. Par ALLNTIC, intégrateur IT à Abidjan."
+        title="Blog Technique IT, Sécurité, Réseaux | ALLNTIC GROUP Abidjan"
+        description="Tutoriels, guides pratiques et conseils experts en informatique, vidéosurveillance, réseaux, IPBX et cybersécurité. Par ALLNTIC GROUP, intégrateur IT à Abidjan."
         canonical="/blog"
         jsonLd={jsonLd}
       />
@@ -50,7 +50,7 @@ const BlogIndex = () => {
       <main className="container mx-auto px-6 py-24">
         <header className="max-w-3xl mx-auto text-center mb-12 text-white">
           <p className="text-accent-gold uppercase tracking-wider text-sm mb-3 font-semibold">
-            Blog ALLNTIC
+            Blog ALLNTIC GROUP
           </p>
           <h1 className="text-3xl md:text-5xl font-bold mb-5">
             Conseils, guides et expertise IT

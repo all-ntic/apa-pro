@@ -50,13 +50,13 @@ const ServicesIndex = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-royal-blue-dark via-royal-blue to-royal-blue-light">
       <SEO
-        title="Nos Services IT & Sécurité Électronique à Abidjan | ALLNTIC"
+        title="Nos Services IT & Sécurité Électronique à Abidjan | ALLNTIC GROUP"
         description="Découvrez tous nos services : installation caméras, vidéosurveillance, réseaux, maintenance, IPBX, contrôle d'accès, WiFi pro, cybersécurité, développement web. Abidjan, Côte d'Ivoire."
         canonical="/services"
         keywords={[
           "services informatique Abidjan",
           "sécurité électronique Côte d'Ivoire",
-          "ALLNTIC services",
+          "ALLNTIC GROUP services",
         ]}
         jsonLd={jsonLd}
       />
@@ -65,7 +65,7 @@ const ServicesIndex = () => {
       <main className="container mx-auto px-6 py-24">
         <header className="max-w-3xl mx-auto text-center mb-14 text-white">
           <p className="text-accent-gold uppercase tracking-wider text-sm mb-3 font-semibold">
-            ALLNTIC — Solutions IT &amp; Sécurité Électronique
+            ALLNTIC GROUP — Solutions IT &amp; Sécurité Électronique
           </p>
           <h1 className="text-3xl md:text-5xl font-bold mb-5">
             Nos Services Professionnels

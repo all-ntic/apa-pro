@@ -57,7 +57,7 @@ const SEO = ({
       {fullCanonical && <meta property="og:url" content={fullCanonical} />}
       <meta property="og:image" content={image} />
       <meta property="og:locale" content="fr_CI" />
-      <meta property="og:site_name" content="ALLNTIC" />
+      <meta property="og:site_name" content="ALLNTIC GROUP" />
 
       {/* Twitter */}
       <meta name="twitter:card" content="summary_large_image" />
