@@ -48,10 +48,15 @@ const Footer = () => {
         <div className="grid lg:grid-cols-4 gap-8">
           {/* Informations entreprise */}
           <div className="lg:col-span-2">
-            <div className="mb-6 flex items-center gap-3">
-              <img src={allnticLogo} alt="ALLNTIC GROUP logo" className="w-12 h-12 rounded-full object-cover ring-1 ring-white/20" width="48" height="48" />
+            <div className="mb-6 flex items-center gap-4">
+              <div className="relative">
+                <div className="absolute -inset-1 rounded-2xl bg-gradient-to-br from-cyan-electric/40 via-royal-blue-light/40 to-accent-gold/30 blur-md opacity-70" />
+                <div className="relative w-14 h-14 rounded-2xl bg-white flex items-center justify-center ring-1 ring-white/20 overflow-hidden">
+                  <img src={allnticLogo} alt="ALLNTIC GROUP logo" className="w-full h-full object-contain p-1" width="56" height="56" />
+                </div>
+              </div>
               <div>
-                <h3 className="text-2xl font-bold">ALLNTIC GROUP</h3>
+                <h3 className="text-2xl font-bold">ALLNTIC <span className="bg-gradient-to-r from-cyan-glow to-accent-gold bg-clip-text text-transparent">GROUP</span></h3>
                 <p className="text-accent-gold text-sm">Agnidom Pygnali Aboubakar</p>
               </div>
             </div>

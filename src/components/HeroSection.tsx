@@ -37,10 +37,10 @@ const HeroSection = () => {
           {/* Left — Content */}
           <div className="lg:col-span-7 text-white space-y-6 lg:space-y-8">
             {/* Brand chip */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-electric/40 bg-cyan-electric/10 backdrop-blur-sm animate-fade-in">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-electric/40 bg-gradient-to-r from-royal-blue/30 via-cyan-electric/15 to-accent-gold/15 backdrop-blur-sm animate-fade-in shadow-[0_0_30px_-5px_hsl(var(--cyan-electric)/0.5)]">
               <span className="w-2 h-2 rounded-full bg-cyan-electric animate-glow-pulse" />
-              <span className="text-sm font-medium text-cyan-glow tracking-wide">
-                ALLNTIC GROUP — Solutions IT & Sécurité Électronique
+              <span className="text-sm font-semibold tracking-wide bg-gradient-to-r from-cyan-glow via-white to-accent-gold bg-clip-text text-transparent">
+                ALLNTIC GROUP — IT · Sécurité Électronique · Web
               </span>
             </div>
 
