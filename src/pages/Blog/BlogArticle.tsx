@@ -27,10 +27,11 @@ const BlogArticle = () => {
       description: article.metaDescription,
       datePublished: article.date,
       author: {
-        "@type": "Person",
-        name: "Agnidom Pygnali Aboubakar",
+        "@type": "Organization",
+        name: "ALLNTIC GROUP",
         url: "https://allntic.com",
       },
+
       publisher: {
         "@type": "Organization",
         name: "ALLNTIC GROUP",

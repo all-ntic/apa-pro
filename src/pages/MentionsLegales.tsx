@@ -56,9 +56,9 @@ const MentionsLegales = () => {
                 <div>
                   <h3 className="text-lg font-semibold text-foreground mb-2">1. Éditeur du site</h3>
                   <ul className="space-y-2">
-                    <li><strong>Nom :</strong> Agnidom Pygnali Aboubakar</li>
-                    <li><strong>Nom commercial :</strong> ALLNTIC GROUP</li>
-                    <li><strong>Activité :</strong> Technicien Systèmes, Réseaux, Développement Web et Sécurité Électronique</li>
+                    <li><strong>Raison sociale :</strong> ALLNTIC GROUP</li>
+                    <li><strong>Activité :</strong> Solutions IT, Réseaux, Développement Web et Sécurité Électronique</li>
+
                     <li className="flex items-center gap-2">
                       <MapPin className="w-4 h-4 text-royal-blue" aria-hidden="true" />
                       <span><strong>Adresse :</strong> Abidjan, Côte d'Ivoire</span>

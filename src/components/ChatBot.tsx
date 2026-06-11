@@ -47,10 +47,11 @@ const ChatBot = () => {
       return "Je vais très bien, merci ! Et vous ? Comment puis-je vous assister dans vos projets techniques ?";
     }
     
-    // Identité et profil ALLNTIC GROUP
-    if (message.includes("qui") || message.includes("allntic") || message.includes("apa") || message.includes("aboubakar") || message.includes("pygnali") || message.includes("agnidom")) {
-      return "Je suis ALLNTIC GROUP (Agnidom Pygnali Aboubakar), technicien ivoirien expert en systèmes informatiques, réseaux, développement web et sécurité électronique basé à Abidjan, Cocody. Ma devise : Fiabilité, performance et sécurité au service du numérique africain.";
+    // Identité ALLNTIC GROUP
+    if (message.includes("qui") || message.includes("allntic") || message.includes("groupe") || message.includes("entreprise")) {
+      return "ALLNTIC GROUP est un pôle technique pluridisciplinaire basé à Abidjan (Cocody), spécialisé en systèmes informatiques, réseaux, développement web et sécurité électronique. Notre devise : Fiabilité, performance et sécurité au service du numérique africain.";
     }
+
     
     if (message.includes("mission") || message.includes("objectif")) {
       return "Ma mission : Accompagner particuliers et entreprises dans la transformation numérique sécurisée grâce à des solutions intégrées en IT, web et sécurité électronique. Ma vision : Faire de la Côte d'Ivoire un pôle technologique africain.";
@@ -134,9 +135,10 @@ const ChatBot = () => {
       return "Contact : WhatsApp +225 07 78 02 33 31, Email all.ntic225@gmail.com, Site https://allntic.com. Suivez-moi sur LinkedIn, GitHub, Instagram, YouTube, Facebook, TikTok @allntic. Réponse sous 24h garantie.";
     }
     
-    if (message.includes("linkedin") || message.includes("github") || message.includes("instagram") || message.includes("facebook") || message.includes("youtube") || message.includes("tiktok") || message.includes("réseau social")) {
-      return "Mes réseaux : GitHub github.com/all-ntic, LinkedIn linkedin.com/in/pygnali-aboubakar-agnidom-2813b6188, Instagram/TikTok @allntic225, YouTube @allntic, Facebook ALLNTIC GROUP. Suivez mes actualités et projets techniques !";
+    if (message.includes("github") || message.includes("instagram") || message.includes("facebook") || message.includes("youtube") || message.includes("tiktok") || message.includes("réseau social")) {
+      return "Nos réseaux : GitHub github.com/all-ntic, Instagram/TikTok @allntic225, YouTube @allntic, Facebook ALLNTIC. Suivez nos actualités et projets techniques !";
     }
+
     
     // Certifications et qualifications
     if (message.includes("certification") || message.includes("diplôme") || message.includes("qualification")) {
