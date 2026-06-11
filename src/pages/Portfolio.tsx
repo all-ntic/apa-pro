@@ -102,8 +102,8 @@ const Portfolio = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <AboutSection />
         <AllnticSection />
+
         <ServicesGrid />
         <ProjectsSection />
         <RealizationsSection />
