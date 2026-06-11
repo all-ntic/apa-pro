@@ -1,6 +1,5 @@
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
-import AboutSection from "@/components/AboutSection";
 import AllnticSection from "@/components/AllnticSection";
 import ServicesGrid from "@/components/ServicesGrid";
 import ProjectsSection from "@/components/ProjectsSection";
@@ -13,12 +12,13 @@ import Footer from "@/components/Footer";
 import SEO from "@/components/seo/SEO";
 import { useAnalytics, useScrollDepth, useTimeOnPage } from "@/hooks/useAnalytics";
 
+
 const Portfolio = () => {
   useAnalytics();
   useScrollDepth();
   useTimeOnPage();
 
-  // Rich JSON-LD : Organization + LocalBusiness + Person + WebSite
+  // Rich JSON-LD : Organization + LocalBusiness + WebSite
   const jsonLd = [
     {
       "@context": "https://schema.org",
@@ -27,16 +27,11 @@ const Portfolio = () => {
       legalName: "ALLNTIC GROUP — Solutions IT & Sécurité Électronique",
       url: "https://allntic.com",
       logo: "https://allntic.com/icon-512.png",
-      founder: {
-        "@type": "Person",
-        name: "Agnidom Pygnali Aboubakar",
-      },
       sameAs: [
         "https://github.com/all-ntic",
-        "https://www.linkedin.com/in/pygnali-aboubakar-agnidom-2813b6188",
         "https://www.instagram.com/allntic225",
         "https://www.youtube.com/@allntic",
-        "https://web.facebook.com/ALLNTIC GROUP",
+        "https://web.facebook.com/ALLNTIC",
         "https://www.tiktok.com/@allntic",
       ],
     },
@@ -78,20 +73,6 @@ const Portfolio = () => {
     },
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Agnidom Pygnali Aboubakar",
-      alternateName: "ALLNTIC GROUP",
-      jobTitle: "Fondateur ALLNTIC GROUP — Technicien IT, Réseaux & Sécurité Électronique",
-      worksFor: { "@type": "Organization", name: "ALLNTIC GROUP" },
-      url: "https://allntic.com",
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: "Abidjan",
-        addressCountry: "CI",
-      },
-    },
-    {
-      "@context": "https://schema.org",
       "@type": "WebSite",
       url: "https://allntic.com",
       name: "ALLNTIC GROUP — Solutions IT & Sécurité Électronique",
@@ -102,6 +83,7 @@ const Portfolio = () => {
       },
     },
   ];
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -120,8 +102,8 @@ const Portfolio = () => {
       <Navigation />
       <main>
         <HeroSection />
-        <AboutSection />
         <AllnticSection />
+
         <ServicesGrid />
         <ProjectsSection />
         <RealizationsSection />

@@ -38,7 +38,8 @@ export const PROJECTS: ShowcaseProject[] = [
     name: "ALLNTIC GROUP",
     tagline: "Solutions IT & Sécurité Électronique",
     description:
-      "Marque technologique fondée par Agnidom Pygnali Aboubakar, regroupant l'ensemble des services IT, réseaux, vidéosurveillance, développement web et cybersécurité en Côte d'Ivoire.",
+      "Pôle technologique regroupant l'ensemble des services IT, réseaux, vidéosurveillance, développement web et cybersécurité en Côte d'Ivoire.",
+
     technologies: ["IT", "Réseaux", "Vidéosurveillance", "Web", "Cybersécurité"],
     objective:
       "Devenir une référence en ingénierie numérique et sécurité électronique en Afrique de l'Ouest.",
@@ -64,17 +65,18 @@ export const PROJECTS: ShowcaseProject[] = [
   {
     slug: "allntic-portfolio",
     name: "Portfolio ALLNTIC GROUP",
-    tagline: "Portfolio professionnel du fondateur",
+    tagline: "Site vitrine corporate",
     description:
-      "Portfolio personnel d'Agnidom Pygnali Aboubakar, présentant son parcours technique, ses réalisations et ses expertises en IT et sécurité électronique.",
+      "Site vitrine officiel d'ALLNTIC GROUP présentant l'expertise du pôle technique, ses réalisations et son catalogue de services IT et sécurité électronique.",
     technologies: ["React", "Tailwind", "SEO", "PWA"],
     objective:
-      "Mettre en avant le parcours et l'expertise du fondateur d'ALLNTIC GROUP.",
+      "Mettre en avant l'expertise et les services d'ALLNTIC GROUP en Afrique de l'Ouest.",
     status: "actif",
     image: imgSecurite,
     link: "https://allntic.com",
     category: "Portfolio",
   },
+
   {
     slug: "saas-interventions",
     name: "Plateforme de gestion d'interventions",

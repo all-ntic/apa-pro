@@ -1,4 +1,4 @@
-import { MessageCircle, Phone, MapPin, Facebook, Linkedin, Instagram, Youtube } from "lucide-react";
+import { MessageCircle, Phone, MapPin, Facebook, Instagram, Youtube } from "lucide-react";
 import { Link } from "react-router-dom";
 import allnticLogo from "@/assets/allntic-logo.png";
 
@@ -65,13 +65,15 @@ const Footer = () => {
               </div>
               <div className="min-w-0">
                 <h3 className="text-xl sm:text-2xl font-bold truncate">ALLNTIC <span className="bg-gradient-to-r from-cyan-glow to-accent-gold bg-clip-text text-transparent">GROUP</span></h3>
-                <p className="text-accent-gold text-sm">Agnidom Pygnali Aboubakar · Fondateur</p>
+                <p className="text-accent-gold text-sm">IT · Sécurité · Web</p>
               </div>
             </div>
+
             
             <p className="text-gray-300 mb-6 leading-relaxed max-w-md">
-              <strong className="text-white">ALLNTIC GROUP</strong> — pôle technique pluridisciplinaire spécialisé en IT, réseaux, vidéosurveillance, sécurité électronique et développement web. Des solutions intégrées, durables et pragmatiques pour les entreprises et institutions à Abidjan et en Afrique de l'Ouest.
+              <strong className="text-white">ALLNTIC GROUP</strong> — pôle technique pluridisciplinaire spécialisé en IT, réseaux, vidéosurveillance, sécurité électronique et développement web pour les entreprises et institutions en Afrique de l'Ouest.
             </p>
+
 
             <div className="space-y-3">
               <div className="flex items-center text-gray-300">
@@ -161,7 +163,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://web.facebook.com/ALLNTIC GROUP"
+                href="https://web.facebook.com/ALLNTIC"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
@@ -170,16 +172,8 @@ const Footer = () => {
                 <Facebook className="w-5 h-5" />
               </a>
               <a
-                href="https://www.linkedin.com/in/pygnali-aboubakar-agnidom-2813b6188"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-5 h-5" />
-              </a>
-              <a
                 href="https://www.instagram.com/allntic225"
+
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-white/5 hover:bg-cyan-electric/20 text-gray-300 hover:text-cyan-electric p-2.5 rounded-full transition-all duration-300"
@@ -214,7 +208,7 @@ const Footer = () => {
         {/* Copyright */}
         <div className="pt-6 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-gray-300 text-sm">
-            <p>© {currentYear} ALLNTIC GROUP - Agnidom Pygnali Aboubakar. Tous droits réservés.</p>
+            <p>© {currentYear} ALLNTIC GROUP. Tous droits réservés.</p>
             <Link 
               to="/mentions-legales" 
               className="hover:text-cyan-electric transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-electric rounded"
