@@ -4,7 +4,11 @@ import type { Database } from './types';
 import { brokeredPreviewStorage } from './previewAuthStorage';
 
 const SUPABASE_URL = "https://zdxwqutdjzcpdxouojgh.supabase.co";
-const SUPABASE_PUBLISHABLE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InpkeHdxdXRkanpjcGR4b3VvamdoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgzNzIwMzcsImV4cCI6MjA5Mzk0ODAzN30.8OU2D15IU5BHgTPnksd3ZSFemuVojVqESA8KrVjHLS8";
+const SUPABASE_PUBLISHABLE_KEY = process.env.SUPABASE_PUBLISHABLE_KEY;
+
+if (!SUPABASE_PUBLISHABLE_KEY) {
+  throw new Error('Missing environment variable: SUPABASE_PUBLISHABLE_KEY');
+}
 
 // Import the supabase client like this:
 // import { supabase } from "@/integrations/supabase/client";
