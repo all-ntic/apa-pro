@@ -5,7 +5,7 @@ import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 const resend = new Resend(Deno.env.get("RESEND_API_KEY"));
 
 const corsHeaders = {
-  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Origin": Deno.env.get("ALLOWED_ORIGIN") ?? "",
   "Access-Control-Allow-Headers":
     "authorization, x-client-info, apikey, content-type",
 };
@@ -164,7 +164,7 @@ const handler = async (req: Request): Promise<Response> => {
         <p>Nous avons bien reçu votre demande concernant <strong>${sanitizedService}</strong>.</p>
         <p>Notre équipe vous contactera dans les plus brefs délais.</p>
         <p>Votre message:</p>
-        <blockquote style="border-left: 3px solid #ccc; padding-left: 10px; margin: 10px 0;">${sanitizedMessage.replace(/\n/g, '<br>')}</blockquote>
+        <blockquote style=\"border-left: 3px solid #ccc; padding-left: 10px; margin: 10px 0;\">${sanitizedMessage.replace(/\n/g, '<br>')}</blockquote>
         <p>Cordialement,<br>L'équipe ALLNTIC GROUP</p>
       `,
     });
